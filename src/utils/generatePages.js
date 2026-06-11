@@ -8,21 +8,23 @@ const __dirname = path.dirname(__filename);
 const rawData = fs.readFileSync(path.join(__dirname, '../../dropdown.json'), 'utf8');
 const data = JSON.parse(rawData);
 
-// Collect all raw items
+// Collect all raw items with their parent category to use as page name
 const allItems = [];
 data.navigation.forEach(mod => {
   if (!mod.categories) return;
   mod.categories.forEach(cat => {
     if (typeof cat === 'string') {
-      allItems.push({ name: cat, originalModule: mod.module, originalCategory: 'General' });
+      allItems.push({ name: cat, originalModule: mod.module, originalCategory: 'General', pageName: cat });
     } else if (cat.items) {
       cat.items.forEach(item => {
         if (typeof item === 'string') {
-          allItems.push({ name: item, originalModule: mod.module, originalCategory: cat.name });
+          // If it's under General Actions, it should be its own page
+          const pageName = cat.name === 'General Actions' ? item : cat.name;
+          allItems.push({ name: item, originalModule: mod.module, originalCategory: cat.name, pageName });
         } else if (item.name && item.items) {
           item.items.forEach(sub => {
             if (typeof sub === 'string') {
-              allItems.push({ name: sub, originalModule: mod.module, originalCategory: `${cat.name} > ${item.name}` });
+              allItems.push({ name: sub, originalModule: mod.module, originalCategory: item.name, pageName: item.name });
             }
           });
         }
@@ -73,56 +75,13 @@ function pushToCategory(modName, catName, pageName, item) {
   }
 }
 
-// Grouping Logic to reduce 461 items into ~200-250 pages
+// Grouping Logic to reduce 461 items into ~156 pages
 allItems.forEach(item => {
   const lower = item.name.toLowerCase();
   const ogMod = item.originalModule;
-  const ogCat = item.originalCategory;
+  const pageName = item.pageName; // Exact parent category name from dropdown.json
 
-  // Derive a smart "Page Name" by grouping similar items
-  let pageName = item.name;
-
-  // Smart Merging Rules:
-  // 1. Group multiple "Approve", "Reject", "Cancel" into a single approval page per category
-  if (lower.includes('approv') || lower.includes('cancel')) {
-    if (lower.includes('leave')) pageName = "Leave Approvals";
-    else if (lower.includes('od') || lower.includes('mispunch')) pageName = "Attendance Exceptions";
-    else if (lower.includes('expense') || lower.includes('tour')) pageName = "Travel & Expense Approvals";
-    else if (lower.includes('loan') || lower.includes('advance')) pageName = "Loan & Advance Approvals";
-    else pageName = "General Approvals";
-  }
-  
-  // 2. Group Import / Uploads into combined pages
-  if (lower.includes('import') || lower.includes('upload')) {
-    if (lower.includes('attendance') || lower.includes('punch')) pageName = "Attendance & Punch Imports";
-    else if (lower.includes('employee') || lower.includes('detail')) pageName = "Employee Data Imports";
-    else if (lower.includes('salary') || lower.includes('pay')) pageName = "Salary & Payroll Imports";
-    else if (lower.includes('tax') || lower.includes('tds')) pageName = "Tax Data Imports";
-    else pageName = item.name.replace(/import\s*|\s*upload/gi, '').trim() + " Imports";
-  }
-
-  // 3. Group Masters into consolidated Setup pages
-  if (lower.includes('master')) {
-    if (lower.includes('bank') || lower.includes('branch')) pageName = "Banking Configuration";
-    else if (lower.includes('company') || lower.includes('location') || lower.includes('region')) pageName = "Company Structure";
-    else if (lower.includes('department') || lower.includes('grade') || lower.includes('designation')) pageName = "Organizational Hierarchy";
-    else pageName = item.name.replace(/\s*master/gi, '') + " Setup";
-  }
-
-  // 4. Reports Merging
-  if (lower.includes('report') || lower.includes('register') || lower.includes('statement')) {
-    if (lower.includes('leave') || lower.includes('absent')) pageName = "Leave & Absence Reports";
-    else if (lower.includes('attendance') || lower.includes('shift')) pageName = "Attendance & Shift Reports";
-    else if (lower.includes('salary') || lower.includes('pay')) pageName = "Salary & Pay Reports";
-    else if (lower.includes('pf') || lower.includes('esi') || lower.includes('pt')) pageName = "Statutory & Compliance Reports";
-    else if (lower.includes('tax') || lower.includes('tds')) pageName = "Taxation Reports";
-    else if (lower.includes('employee') || lower.includes('join') || lower.includes('resign')) pageName = "Employee Lifecycle Reports";
-  }
-
-  // Remove trailing/leading special characters from pageName
-  pageName = pageName.charAt(0).toUpperCase() + pageName.slice(1);
-
-  // ROUTING LOGIC (Same as before, but passing the grouped pageName)
+  // ROUTING LOGIC TO PLACE THE PAGE IN THE RIGHT NEW V2 MODULE & CATEGORY
   // 1. REPORTS
   if (lower.includes('report') || lower.includes('list of') || lower.includes('statement') || lower.includes('register') || lower.includes('challan details') || lower.includes('generate')) {
     if (!lower.includes('generate offer letter') && !lower.includes('generate type of assets')) {
