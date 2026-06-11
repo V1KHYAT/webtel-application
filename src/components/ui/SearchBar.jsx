@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 import dropdownDataV1 from '../../../dropdown.json';
 import premiumIA from '../../data/premium-ia.json';
 import v3IA from '../../data/v3-ia.json';
+import v4IA from '../../data/v4-ia.json';
 
 // V1 flattener
 function flattenIA_V1(navigationData) {
@@ -86,6 +87,37 @@ v3IA.navigation.forEach(mod => {
   });
 });
 
+// Format V4 Data
+const formattedV4Data = [];
+v4IA.navigation.forEach(mod => {
+  if (!mod.categories) return;
+  mod.categories.forEach(cat => {
+    if (!cat.pages) return;
+    cat.pages.forEach(page => {
+      formattedV4Data.push({
+        id: page.id,
+        name: page.name,
+        type: 'V4 Page',
+        module: mod.module,
+        category: cat.name,
+        legacySources: page.legacyContentSources || [],
+        route: `/page/${page.id}`
+      });
+      (page.legacyContentSources || []).forEach(legacy => {
+        formattedV4Data.push({
+          id: page.id,
+          name: legacy,
+          type: 'Legacy Feature inside V4',
+          module: mod.module,
+          category: page.name,
+          legacySources: [],
+          route: `/page/${page.id}`
+        });
+      });
+    });
+  });
+});
+
 const fuseOptions = {
   keys: ['name', 'module', 'category', 'type', 'legacySources'],
   threshold: 0.3,
@@ -95,6 +127,7 @@ const fuseOptions = {
 const fuseV1 = new Fuse(formattedV1Data, fuseOptions);
 const fuseV2 = new Fuse(formattedV2Data, fuseOptions);
 const fuseV3 = new Fuse(formattedV3Data, fuseOptions);
+const fuseV4 = new Fuse(formattedV4Data, fuseOptions);
 
 export default function SearchBar() {
   const [query, setQuery] = useState('');
@@ -110,7 +143,7 @@ export default function SearchBar() {
       return;
     }
 
-    const fuse = iaVersion === 3 ? fuseV3 : (iaVersion === 2 ? fuseV2 : fuseV1);
+    const fuse = iaVersion === 4 ? fuseV4 : (iaVersion === 3 ? fuseV3 : (iaVersion === 2 ? fuseV2 : fuseV1));
     const searchResults = fuse.search(query);
     setResults(searchResults.slice(0, 8).map(res => res.item));
   }, [query, iaVersion]);

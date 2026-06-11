@@ -10,6 +10,7 @@ export function MenuProvider({ children }) {
       if (e.key === '1') setIaVersion(1);
       if (e.key === '2') setIaVersion(2);
       if (e.key === '3') setIaVersion(3);
+      if (e.key === '4') setIaVersion(4);
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);

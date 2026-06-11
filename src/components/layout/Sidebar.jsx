@@ -9,6 +9,7 @@ import {
 import dropdownDataV1 from '../../../dropdown.json';
 import premiumIA from '../../data/premium-ia.json';
 import v3IA from '../../data/v3-ia.json';
+import v4IA from '../../data/v4-ia.json';
 import { useMenu } from '../../context/MenuContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -194,7 +195,9 @@ export default function Sidebar() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Get current modules based on version
   const modules = useMemo(() => {
+    if (iaVersion === 4) return v4IA.navigation;
     if (iaVersion === 3) return v3IA.navigation;
     if (iaVersion === 2) return premiumIA.navigation;
 
@@ -229,9 +232,9 @@ export default function Sidebar() {
     <div className="sidebar-column" style={{ position: 'relative' }}>
       
       {/* AB Test Badge */}
-      <div style={{ position: 'absolute', top: '-30px', left: 0, fontSize: '11px', fontWeight: 'bold', color: 'var(--primary-color)' }}>
-        [ Press 1, 2, or 3 to toggle IA: V{iaVersion} ]
-      </div>
+        <div className="px-4 text-xs font-semibold text-gray-500 mb-2 uppercase tracking-wider text-center" style={{ borderTop: '1px solid #333', paddingTop: '12px' }}>
+          [ Press 1, 2, 3, or 4 to toggle IA: V{iaVersion} ]
+        </div>
 
       <div className="notion-sidebar">
         <div className="notion-group" style={{ fontSize: '13px', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.2px', padding: '16px 16px 8px 16px', borderBottom: '1px solid var(--border-light)', marginBottom: '8px', textTransform: 'none' }}>

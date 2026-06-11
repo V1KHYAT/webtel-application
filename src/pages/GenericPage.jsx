@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { ChevronLeft, LayoutGrid, Search, Filter, SlidersHorizontal, FileText, CheckCircle, Settings, ChevronRight } from 'lucide-react';
 import premiumIA from '../data/premium-ia.json';
 import v3IA from '../data/v3-ia.json';
+import v4IA from '../data/v4-ia.json';
 import { useMenu } from '../context/MenuContext';
 
 export default function GenericPage() {
@@ -15,7 +16,7 @@ export default function GenericPage() {
   let currentPage = null;
   let currentModule = null;
 
-  const currentIA = iaVersion === 3 ? v3IA : premiumIA;
+  const currentIA = iaVersion === 4 ? v4IA : (iaVersion === 3 ? v3IA : premiumIA);
 
   for (const mod of currentIA.navigation) {
     if (!mod.categories) continue;
