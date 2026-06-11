@@ -2,23 +2,15 @@ import React, { useState, useMemo, useEffect, useRef } from 'react';
 import { Search, ChevronRight } from 'lucide-react';
 import Fuse from 'fuse.js';
 import { useMenu } from '../../context/MenuContext';
+import { useNavigate } from 'react-router-dom';
 import dropdownDataV1 from '../../../dropdown.json';
-import dropdownDataV2 from '../../data/dropdown-v2.json';
+import pagesDataV3 from '../../data/pages-ia.json';
 
-// Helper to flatten IA tree into searchable items
-function flattenIA(navigationData) {
+// V1 flattener
+function flattenIA_V1(navigationData) {
   const items = [];
   navigationData.forEach(mod => {
     if (!mod.categories) return;
-    
-    // For V2 Report Builder which has an array of strings directly under categories
-    if (mod.categories.length > 0 && typeof mod.categories[0] === 'string') {
-      mod.categories.forEach(item => {
-        items.push({ name: item, module: mod.module, category: mod.module });
-      });
-      return;
-    }
-
     mod.categories.forEach(cat => {
       if (typeof cat === 'string') {
         items.push({ name: cat, module: mod.module, category: mod.module });
@@ -40,13 +32,30 @@ function flattenIA(navigationData) {
   return items;
 }
 
-const allItemsV1 = flattenIA(dropdownDataV1.navigation);
-const allItemsV2 = flattenIA(dropdownDataV2.navigation);
+// V2/V3 flattener (Pages)
+function flattenIA_Pages(navigationData) {
+  const items = [];
+  navigationData.forEach(mod => {
+    mod.pages.forEach(page => {
+      page.legacyFeatures.forEach(feat => {
+        items.push({
+          name: feat,
+          module: mod.module,
+          category: `Mapped to: ${page.name}`,
+          route: `/page/${page.id}`
+        });
+      });
+    });
+  });
+  return items;
+}
 
-// Configure fuse for fuzzy searching
+const allItemsV1 = flattenIA_V1(dropdownDataV1.navigation);
+const allItemsV2 = flattenIA_Pages(pagesDataV3.navigation);
+
 const fuseOptions = {
   keys: ['name', 'category', 'module'],
-  threshold: 0.4, // lower is more strict, 0.4 allows good typos
+  threshold: 0.4,
   ignoreLocation: true
 };
 
@@ -57,13 +66,12 @@ export default function SearchBar() {
   const [query, setQuery] = useState('');
   const [isFocused, setIsFocused] = useState(false);
   const wrapperRef = useRef(null);
-  
+  const navigate = useNavigate();
   const { iaVersion } = useMenu();
 
   const results = useMemo(() => {
     if (!query.trim()) return [];
     const fuse = iaVersion === 1 ? fuseV1 : fuseV2;
-    // Fuse returns [{ item: { name, module, category }, refIndex }, ...]
     const fuseResults = fuse.search(query);
     return fuseResults.slice(0, 8).map(res => res.item);
   }, [query, iaVersion]);
@@ -122,7 +130,14 @@ export default function SearchBar() {
                 Suggestions for V{iaVersion}
               </div>
               {results.map((res, i) => (
-                <a key={i} href="#" style={{ 
+                <a key={i} href="#" 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    setIsFocused(false);
+                    setQuery('');
+                    if (res.route) navigate(res.route);
+                  }}
+                  style={{ 
                   display: 'flex', 
                   alignItems: 'center', 
                   justifyContent: 'space-between', 

@@ -7,8 +7,9 @@ import {
   FileUp, Settings as SettingsIcon, Database
 } from 'lucide-react';
 import dropdownDataV1 from '../../../dropdown.json';
-import dropdownDataV2 from '../../data/dropdown-v2.json';
+import pagesDataV3 from '../../data/pages-ia.json';
 import { useMenu } from '../../context/MenuContext';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const iconMapV1 = {
   "Administration": Building2,
@@ -115,10 +116,13 @@ const NestedMenu = ({ items, depth = 0 }) => {
 export default function Sidebar() {
   const [expandedModule, setExpandedModule] = useState(null);
   const { iaVersion } = useMenu();
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const modules = useMemo(() => {
-    const rawData = iaVersion === 1 ? dropdownDataV1.navigation : dropdownDataV2.navigation;
-    
+    if (iaVersion === 2) return pagesDataV3.navigation;
+
+    const rawData = dropdownDataV1.navigation;
     return rawData.map(mod => {
       if (!mod.categories) return mod;
       
@@ -135,7 +139,6 @@ export default function Sidebar() {
         }
       });
       
-      // Append general actions without nesting
       generalActions.forEach(action => {
         newCategories.push(action);
       });
@@ -161,7 +164,15 @@ export default function Sidebar() {
         <nav className="notion-nav">
           
           <div style={{ marginBottom: '8px' }}>
-            <a href="#" className={expandedModule === null ? 'active' : ''} onClick={(e) => { e.preventDefault(); setExpandedModule(null); }}>
+            <a 
+              href="#" 
+              className={location.pathname === '/' ? 'active' : ''} 
+              onClick={(e) => { 
+                e.preventDefault(); 
+                setExpandedModule(null); 
+                navigate('/');
+              }}
+            >
               <Home size={18} />
               <span style={{ flex: 1 }}>Home</span>
             </a>
@@ -185,9 +196,49 @@ export default function Sidebar() {
                   {isExpanded ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
                 </a>
                 
-                {isExpanded && mod.categories && (
+                {isExpanded && (
                   <div className="notion-submenu" style={{ paddingLeft: '8px' }}>
-                    <NestedMenu items={mod.categories} depth={0} />
+                    {iaVersion === 1 ? (
+                      <NestedMenu items={mod.categories} depth={0} />
+                    ) : (
+                      <div style={{ marginTop: '4px', marginBottom: '8px' }}>
+                        {mod.pages.map((page) => (
+                          <a 
+                            key={page.id}
+                            href="#"
+                            onClick={(e) => {
+                              e.preventDefault();
+                              navigate(`/page/${page.id}`);
+                            }}
+                            style={{ 
+                              fontSize: '12px', 
+                              padding: '6px 10px', 
+                              display: 'block', 
+                              color: location.pathname === `/page/${page.id}` ? 'var(--primary-color)' : 'var(--text-secondary)',
+                              background: location.pathname === `/page/${page.id}` ? 'var(--primary-light)' : 'transparent',
+                              fontWeight: location.pathname === `/page/${page.id}` ? 600 : 500,
+                              borderRadius: 'var(--radius-sm)',
+                              textDecoration: 'none',
+                              marginBottom: '2px'
+                            }}
+                            onMouseEnter={(e) => {
+                              if (location.pathname !== `/page/${page.id}`) {
+                                e.currentTarget.style.color = 'var(--primary-color)';
+                                e.currentTarget.style.background = 'var(--primary-subtle)';
+                              }
+                            }}
+                            onMouseLeave={(e) => {
+                              if (location.pathname !== `/page/${page.id}`) {
+                                e.currentTarget.style.color = 'var(--text-secondary)';
+                                e.currentTarget.style.background = 'transparent';
+                              }
+                            }}
+                          >
+                            {page.name}
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 )}
               </div>
