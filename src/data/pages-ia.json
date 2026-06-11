@@ -2,717 +2,3452 @@
   "navigation": [
     {
       "module": "People",
-      "pages": [
+      "categories": [
         {
-          "id": "employee-directory",
           "name": "Employee Directory",
-          "legacyFeatures": [
-            "Employee PF Nomination Details",
-            "Enter Bank A/c No. of Employee",
-            "Mark Employee Payment Mode",
-            "Create Document Type",
-            "Scan and Store Employee Document",
-            "View Employee Details and Historical Data",
-            "Employee Contact Details",
-            "Employee Appointment Letter, Bond etc.",
-            "Employees Bonus Details",
-            "Employee of the Month",
-            "Organization Chart",
-            "Trace Employee(s) Through Google Map",
-            "Convert Temporary to Permanent Employee",
-            "Intercompany Transfer",
-            "Create or Update Document Type",
-            "Issue Employee Document Groupwise",
-            "Issue Employee Document",
-            "Task List / Roster",
-            "Query Category",
-            "Create/Update Question",
-            "Employee Movement Action Panel",
-            "Accident Incident Details",
-            "Employee References Management",
-            "Employee Search & Send Email",
-            "Query Builder",
-            "Ask Me",
-            "Full and Finalization",
-            "Manage Loan / Advance (Individually)",
-            "Manage Security Deposit",
-            "Loan / Advance Details"
+          "pages": [
+            {
+              "id": "employee-pf-nomination-details",
+              "name": "Employee PF Nomination Details",
+              "legacyFeatures": [
+                "Employee PF Nomination Details"
+              ]
+            },
+            {
+              "id": "enter-bank-a-c-no-of-employee",
+              "name": "Enter Bank A/c No. of Employee",
+              "legacyFeatures": [
+                "Enter Bank A/c No. of Employee"
+              ]
+            },
+            {
+              "id": "mark-employee-payment-mode",
+              "name": "Mark Employee Payment Mode",
+              "legacyFeatures": [
+                "Mark Employee Payment Mode"
+              ]
+            },
+            {
+              "id": "create-document-type",
+              "name": "Create Document Type",
+              "legacyFeatures": [
+                "Create Document Type"
+              ]
+            },
+            {
+              "id": "scan-and-store-employee-document",
+              "name": "Scan and Store Employee Document",
+              "legacyFeatures": [
+                "Scan and Store Employee Document"
+              ]
+            },
+            {
+              "id": "view-employee-details-and-historical-data",
+              "name": "View Employee Details and Historical Data",
+              "legacyFeatures": [
+                "View Employee Details and Historical Data"
+              ]
+            },
+            {
+              "id": "employee-contact-details",
+              "name": "Employee Contact Details",
+              "legacyFeatures": [
+                "Employee Contact Details"
+              ]
+            },
+            {
+              "id": "employee-appointment-letter-bond-etc",
+              "name": "Employee Appointment Letter, Bond etc.",
+              "legacyFeatures": [
+                "Employee Appointment Letter, Bond etc."
+              ]
+            },
+            {
+              "id": "employees-bonus-details",
+              "name": "Employees Bonus Details",
+              "legacyFeatures": [
+                "Employees Bonus Details"
+              ]
+            },
+            {
+              "id": "employee-of-the-month",
+              "name": "Employee of the Month",
+              "legacyFeatures": [
+                "Employee of the Month"
+              ]
+            },
+            {
+              "id": "organization-chart",
+              "name": "Organization Chart",
+              "legacyFeatures": [
+                "Organization Chart"
+              ]
+            },
+            {
+              "id": "trace-employee-s-through-google-map",
+              "name": "Trace Employee(s) Through Google Map",
+              "legacyFeatures": [
+                "Trace Employee(s) Through Google Map"
+              ]
+            },
+            {
+              "id": "convert-temporary-to-permanent-employee",
+              "name": "Convert Temporary to Permanent Employee",
+              "legacyFeatures": [
+                "Convert Temporary to Permanent Employee"
+              ]
+            },
+            {
+              "id": "intercompany-transfer",
+              "name": "Intercompany Transfer",
+              "legacyFeatures": [
+                "Intercompany Transfer"
+              ]
+            },
+            {
+              "id": "create-or-update-document-type",
+              "name": "Create or Update Document Type",
+              "legacyFeatures": [
+                "Create or Update Document Type"
+              ]
+            },
+            {
+              "id": "issue-employee-document-groupwise",
+              "name": "Issue Employee Document Groupwise",
+              "legacyFeatures": [
+                "Issue Employee Document Groupwise"
+              ]
+            },
+            {
+              "id": "issue-employee-document",
+              "name": "Issue Employee Document",
+              "legacyFeatures": [
+                "Issue Employee Document"
+              ]
+            },
+            {
+              "id": "task-list-roster",
+              "name": "Task List / Roster",
+              "legacyFeatures": [
+                "Task List / Roster"
+              ]
+            },
+            {
+              "id": "query-category",
+              "name": "Query Category",
+              "legacyFeatures": [
+                "Query Category"
+              ]
+            },
+            {
+              "id": "create-update-question",
+              "name": "Create/Update Question",
+              "legacyFeatures": [
+                "Create/Update Question"
+              ]
+            },
+            {
+              "id": "employee-movement-action-panel",
+              "name": "Employee Movement Action Panel",
+              "legacyFeatures": [
+                "Employee Movement Action Panel"
+              ]
+            },
+            {
+              "id": "accident-incident-details",
+              "name": "Accident Incident Details",
+              "legacyFeatures": [
+                "Accident Incident Details"
+              ]
+            },
+            {
+              "id": "employee-references-management",
+              "name": "Employee References Management",
+              "legacyFeatures": [
+                "Employee References Management"
+              ]
+            },
+            {
+              "id": "employee-search-send-email",
+              "name": "Employee Search & Send Email",
+              "legacyFeatures": [
+                "Employee Search & Send Email"
+              ]
+            },
+            {
+              "id": "query-builder",
+              "name": "Query Builder",
+              "legacyFeatures": [
+                "Query Builder"
+              ]
+            },
+            {
+              "id": "ask-me",
+              "name": "Ask Me",
+              "legacyFeatures": [
+                "Ask Me"
+              ]
+            },
+            {
+              "id": "full-and-finalization",
+              "name": "Full and Finalization",
+              "legacyFeatures": [
+                "Full and Finalization"
+              ]
+            },
+            {
+              "id": "manage-loan-advance-individually",
+              "name": "Manage Loan / Advance (Individually)",
+              "legacyFeatures": [
+                "Manage Loan / Advance (Individually)"
+              ]
+            },
+            {
+              "id": "manage-security-deposit",
+              "name": "Manage Security Deposit",
+              "legacyFeatures": [
+                "Manage Security Deposit"
+              ]
+            },
+            {
+              "id": "loan-advance-details",
+              "name": "Loan / Advance Details",
+              "legacyFeatures": [
+                "Loan / Advance Details"
+              ]
+            }
           ]
         },
         {
-          "id": "exit-management",
           "name": "Exit Management",
-          "legacyFeatures": [
-            "Employee Exit Letter",
-            "Direct Employee Resignation"
+          "pages": [
+            {
+              "id": "employee-exit-letter",
+              "name": "Employee Exit Letter",
+              "legacyFeatures": [
+                "Employee Exit Letter"
+              ]
+            },
+            {
+              "id": "direct-employee-resignation",
+              "name": "Direct Employee Resignation",
+              "legacyFeatures": [
+                "Direct Employee Resignation"
+              ]
+            }
           ]
         },
         {
-          "id": "employee-relations",
           "name": "Employee Relations",
-          "legacyFeatures": [
-            "Create or Update Disciplinary Action Type",
-            "Enter Disciplinary Action taken",
-            "Create or Update Award Type",
-            "Create or Update Award Description",
-            "Enter Awards given to Employee",
-            "Help Desk Ticket Category",
-            "HelpDesk Ticket Location",
-            "HelpDesk Ticket Authority",
-            "Pending Ticket",
-            "Search Ticket"
+          "pages": [
+            {
+              "id": "create-or-update-disciplinary-action-type",
+              "name": "Create or Update Disciplinary Action Type",
+              "legacyFeatures": [
+                "Create or Update Disciplinary Action Type"
+              ]
+            },
+            {
+              "id": "enter-disciplinary-action-taken",
+              "name": "Enter Disciplinary Action taken",
+              "legacyFeatures": [
+                "Enter Disciplinary Action taken"
+              ]
+            },
+            {
+              "id": "create-or-update-award-type",
+              "name": "Create or Update Award Type",
+              "legacyFeatures": [
+                "Create or Update Award Type"
+              ]
+            },
+            {
+              "id": "create-or-update-award-description",
+              "name": "Create or Update Award Description",
+              "legacyFeatures": [
+                "Create or Update Award Description"
+              ]
+            },
+            {
+              "id": "enter-awards-given-to-employee",
+              "name": "Enter Awards given to Employee",
+              "legacyFeatures": [
+                "Enter Awards given to Employee"
+              ]
+            },
+            {
+              "id": "help-desk-ticket-category",
+              "name": "Help Desk Ticket Category",
+              "legacyFeatures": [
+                "Help Desk Ticket Category"
+              ]
+            },
+            {
+              "id": "helpdesk-ticket-location",
+              "name": "HelpDesk Ticket Location",
+              "legacyFeatures": [
+                "HelpDesk Ticket Location"
+              ]
+            },
+            {
+              "id": "helpdesk-ticket-authority",
+              "name": "HelpDesk Ticket Authority",
+              "legacyFeatures": [
+                "HelpDesk Ticket Authority"
+              ]
+            },
+            {
+              "id": "pending-ticket",
+              "name": "Pending Ticket",
+              "legacyFeatures": [
+                "Pending Ticket"
+              ]
+            },
+            {
+              "id": "search-ticket",
+              "name": "Search Ticket",
+              "legacyFeatures": [
+                "Search Ticket"
+              ]
+            }
           ]
         },
         {
-          "id": "recruitment",
           "name": "Recruitment Hub",
-          "legacyFeatures": [
-            "Create Assessment Set",
-            "Send Assessment",
-            "Temporary Employee Verification Details (Individual)",
-            "Temporary Employee Verification Details (Group Wise)",
-            "Candidate Source",
-            "Candidate Rating",
-            "Candidate Status",
-            "Recruiter Status",
-            "JD Bank",
-            "MRF Requisition",
-            "JD Requisition",
-            "Search Recruiter and Map with JD",
-            "Search JD and Map with CV",
-            "Assign JD to Placement Agencies / Institute",
-            "Interview Schedule",
-            "Shortlist and Rate Candidate",
-            "Final Candidate Selection Process",
-            "Temporary Employee Generation",
-            "Convert Temporary to Permanent Employee"
+          "pages": [
+            {
+              "id": "create-assessment-set",
+              "name": "Create Assessment Set",
+              "legacyFeatures": [
+                "Create Assessment Set"
+              ]
+            },
+            {
+              "id": "send-assessment",
+              "name": "Send Assessment",
+              "legacyFeatures": [
+                "Send Assessment"
+              ]
+            },
+            {
+              "id": "temporary-employee-verification-details-individual",
+              "name": "Temporary Employee Verification Details (Individual)",
+              "legacyFeatures": [
+                "Temporary Employee Verification Details (Individual)"
+              ]
+            },
+            {
+              "id": "temporary-employee-verification-details-group-wise",
+              "name": "Temporary Employee Verification Details (Group Wise)",
+              "legacyFeatures": [
+                "Temporary Employee Verification Details (Group Wise)"
+              ]
+            },
+            {
+              "id": "candidate-source",
+              "name": "Candidate Source",
+              "legacyFeatures": [
+                "Candidate Source"
+              ]
+            },
+            {
+              "id": "candidate-rating",
+              "name": "Candidate Rating",
+              "legacyFeatures": [
+                "Candidate Rating"
+              ]
+            },
+            {
+              "id": "candidate-status",
+              "name": "Candidate Status",
+              "legacyFeatures": [
+                "Candidate Status"
+              ]
+            },
+            {
+              "id": "recruiter-status",
+              "name": "Recruiter Status",
+              "legacyFeatures": [
+                "Recruiter Status"
+              ]
+            },
+            {
+              "id": "jd-bank",
+              "name": "JD Bank",
+              "legacyFeatures": [
+                "JD Bank"
+              ]
+            },
+            {
+              "id": "mrf-requisition",
+              "name": "MRF Requisition",
+              "legacyFeatures": [
+                "MRF Requisition"
+              ]
+            },
+            {
+              "id": "jd-requisition",
+              "name": "JD Requisition",
+              "legacyFeatures": [
+                "JD Requisition"
+              ]
+            },
+            {
+              "id": "search-recruiter-and-map-with-jd",
+              "name": "Search Recruiter and Map with JD",
+              "legacyFeatures": [
+                "Search Recruiter and Map with JD"
+              ]
+            },
+            {
+              "id": "search-jd-and-map-with-cv",
+              "name": "Search JD and Map with CV",
+              "legacyFeatures": [
+                "Search JD and Map with CV"
+              ]
+            },
+            {
+              "id": "assign-jd-to-placement-agencies-institute",
+              "name": "Assign JD to Placement Agencies / Institute",
+              "legacyFeatures": [
+                "Assign JD to Placement Agencies / Institute"
+              ]
+            },
+            {
+              "id": "interview-schedule",
+              "name": "Interview Schedule",
+              "legacyFeatures": [
+                "Interview Schedule"
+              ]
+            },
+            {
+              "id": "shortlist-and-rate-candidate",
+              "name": "Shortlist and Rate Candidate",
+              "legacyFeatures": [
+                "Shortlist and Rate Candidate"
+              ]
+            },
+            {
+              "id": "final-candidate-selection-process",
+              "name": "Final Candidate Selection Process",
+              "legacyFeatures": [
+                "Final Candidate Selection Process"
+              ]
+            },
+            {
+              "id": "temporary-employee-generation",
+              "name": "Temporary Employee Generation",
+              "legacyFeatures": [
+                "Temporary Employee Generation"
+              ]
+            },
+            {
+              "id": "convert-temporary-to-permanent-employee",
+              "name": "Convert Temporary to Permanent Employee",
+              "legacyFeatures": [
+                "Convert Temporary to Permanent Employee"
+              ]
+            }
           ]
         },
         {
-          "id": "onboarding",
           "name": "Onboarding Pipeline",
-          "legacyFeatures": [
-            "Temporary Employee List(e-Recruitment)",
-            "Temporary Employee Generation",
-            "Create & Assign Document to Temporary Employee",
-            "Assign Salary Structure to Temporary Employee",
-            "Create Document Type (Offer Letter)",
-            "Generate Offer Letter Format",
-            "Send Offer Letter to Temporary Employee",
-            "Convert Temporary to Permanent Employee",
-            "Asset Request For Temporary Employee"
+          "pages": [
+            {
+              "id": "temporary-employee-list-e-recruitment",
+              "name": "Temporary Employee List(e-Recruitment)",
+              "legacyFeatures": [
+                "Temporary Employee List(e-Recruitment)"
+              ]
+            },
+            {
+              "id": "temporary-employee-generation",
+              "name": "Temporary Employee Generation",
+              "legacyFeatures": [
+                "Temporary Employee Generation"
+              ]
+            },
+            {
+              "id": "create-assign-document-to-temporary-employee",
+              "name": "Create & Assign Document to Temporary Employee",
+              "legacyFeatures": [
+                "Create & Assign Document to Temporary Employee"
+              ]
+            },
+            {
+              "id": "assign-salary-structure-to-temporary-employee",
+              "name": "Assign Salary Structure to Temporary Employee",
+              "legacyFeatures": [
+                "Assign Salary Structure to Temporary Employee"
+              ]
+            },
+            {
+              "id": "create-document-type-offer-letter",
+              "name": "Create Document Type (Offer Letter)",
+              "legacyFeatures": [
+                "Create Document Type (Offer Letter)"
+              ]
+            },
+            {
+              "id": "generate-offer-letter-format",
+              "name": "Generate Offer Letter Format",
+              "legacyFeatures": [
+                "Generate Offer Letter Format"
+              ]
+            },
+            {
+              "id": "send-offer-letter-to-temporary-employee",
+              "name": "Send Offer Letter to Temporary Employee",
+              "legacyFeatures": [
+                "Send Offer Letter to Temporary Employee"
+              ]
+            },
+            {
+              "id": "convert-temporary-to-permanent-employee",
+              "name": "Convert Temporary to Permanent Employee",
+              "legacyFeatures": [
+                "Convert Temporary to Permanent Employee"
+              ]
+            },
+            {
+              "id": "asset-request-for-temporary-employee",
+              "name": "Asset Request For Temporary Employee",
+              "legacyFeatures": [
+                "Asset Request For Temporary Employee"
+              ]
+            }
           ]
         }
       ]
     },
     {
       "module": "Attendance & Leave",
-      "pages": [
+      "categories": [
         {
-          "id": "leave-management",
           "name": "Leave Management",
-          "legacyFeatures": [
-            "Leave and Attendance Setting & Assignment",
-            "Sanction Leave/Mispunch (Customized)",
-            "Leave Encashment and Sanction",
-            "Leave Without Pay",
-            "Employee Leave Balance (Various Formats)"
+          "pages": [
+            {
+              "id": "leave-and-attendance-setting-assignment",
+              "name": "Leave and Attendance Setting & Assignment",
+              "legacyFeatures": [
+                "Leave and Attendance Setting & Assignment"
+              ]
+            },
+            {
+              "id": "sanction-leave-mispunch-customized",
+              "name": "Sanction Leave/Mispunch (Customized)",
+              "legacyFeatures": [
+                "Sanction Leave/Mispunch (Customized)"
+              ]
+            },
+            {
+              "id": "leave-encashment-and-sanction",
+              "name": "Leave Encashment and Sanction",
+              "legacyFeatures": [
+                "Leave Encashment and Sanction"
+              ]
+            },
+            {
+              "id": "leave-without-pay",
+              "name": "Leave Without Pay",
+              "legacyFeatures": [
+                "Leave Without Pay"
+              ]
+            },
+            {
+              "id": "employee-leave-balance-various-formats",
+              "name": "Employee Leave Balance (Various Formats)",
+              "legacyFeatures": [
+                "Employee Leave Balance (Various Formats)"
+              ]
+            }
           ]
         },
         {
-          "id": "shift-roster",
           "name": "Shift & Roster Planning",
-          "legacyFeatures": [
-            "Shift Fooding OT Setting",
-            "Assign Shift(Works With Att. Machine Data)",
-            "Manual Punch Correction and Auto Shift Assignment"
+          "pages": [
+            {
+              "id": "shift-fooding-ot-setting",
+              "name": "Shift Fooding OT Setting",
+              "legacyFeatures": [
+                "Shift Fooding OT Setting"
+              ]
+            },
+            {
+              "id": "assign-shift-works-with-att-machine-data",
+              "name": "Assign Shift(Works With Att. Machine Data)",
+              "legacyFeatures": [
+                "Assign Shift(Works With Att. Machine Data)"
+              ]
+            },
+            {
+              "id": "manual-punch-correction-and-auto-shift-assignment",
+              "name": "Manual Punch Correction and Auto Shift Assignment",
+              "legacyFeatures": [
+                "Manual Punch Correction and Auto Shift Assignment"
+              ]
+            }
           ]
         },
         {
-          "id": "daily-attendance",
           "name": "Daily Attendance",
-          "legacyFeatures": [
-            "Assign Weekly off",
-            "Assign Holiday",
-            "Capture Punch Time",
-            "Download Attendance Through Web API",
-            "GEO Fence Mapping",
-            "Employee Moble Device Restriction",
-            "Adjust Late Coming",
-            "Manual Compensatory off Assignment",
-            "Monthly Attendance Entry With OT",
-            "Attendance Process",
-            "Calculate Overtime & Fooding",
-            "Night Allowance Calculate & Assign",
-            "Attendance Adjustment",
-            "Attendance Punch time Correction",
-            "Daily Attendance / Punch Entry",
-            "Map Associate with Employee to Mark Attendance",
-            "Timesheet Category",
-            "Employee Track (Attendance)",
-            "Manpower Requirement & Costing"
+          "pages": [
+            {
+              "id": "assign-weekly-off",
+              "name": "Assign Weekly off",
+              "legacyFeatures": [
+                "Assign Weekly off"
+              ]
+            },
+            {
+              "id": "assign-holiday",
+              "name": "Assign Holiday",
+              "legacyFeatures": [
+                "Assign Holiday"
+              ]
+            },
+            {
+              "id": "capture-punch-time",
+              "name": "Capture Punch Time",
+              "legacyFeatures": [
+                "Capture Punch Time"
+              ]
+            },
+            {
+              "id": "download-attendance-through-web-api",
+              "name": "Download Attendance Through Web API",
+              "legacyFeatures": [
+                "Download Attendance Through Web API"
+              ]
+            },
+            {
+              "id": "geo-fence-mapping",
+              "name": "GEO Fence Mapping",
+              "legacyFeatures": [
+                "GEO Fence Mapping"
+              ]
+            },
+            {
+              "id": "employee-moble-device-restriction",
+              "name": "Employee Moble Device Restriction",
+              "legacyFeatures": [
+                "Employee Moble Device Restriction"
+              ]
+            },
+            {
+              "id": "adjust-late-coming",
+              "name": "Adjust Late Coming",
+              "legacyFeatures": [
+                "Adjust Late Coming"
+              ]
+            },
+            {
+              "id": "manual-compensatory-off-assignment",
+              "name": "Manual Compensatory off Assignment",
+              "legacyFeatures": [
+                "Manual Compensatory off Assignment"
+              ]
+            },
+            {
+              "id": "monthly-attendance-entry-with-ot",
+              "name": "Monthly Attendance Entry With OT",
+              "legacyFeatures": [
+                "Monthly Attendance Entry With OT"
+              ]
+            },
+            {
+              "id": "attendance-process",
+              "name": "Attendance Process",
+              "legacyFeatures": [
+                "Attendance Process"
+              ]
+            },
+            {
+              "id": "calculate-overtime-fooding",
+              "name": "Calculate Overtime & Fooding",
+              "legacyFeatures": [
+                "Calculate Overtime & Fooding"
+              ]
+            },
+            {
+              "id": "night-allowance-calculate-assign",
+              "name": "Night Allowance Calculate & Assign",
+              "legacyFeatures": [
+                "Night Allowance Calculate & Assign"
+              ]
+            },
+            {
+              "id": "attendance-adjustment",
+              "name": "Attendance Adjustment",
+              "legacyFeatures": [
+                "Attendance Adjustment"
+              ]
+            },
+            {
+              "id": "attendance-punch-time-correction",
+              "name": "Attendance Punch time Correction",
+              "legacyFeatures": [
+                "Attendance Punch time Correction"
+              ]
+            },
+            {
+              "id": "daily-attendance-punch-entry",
+              "name": "Daily Attendance / Punch Entry",
+              "legacyFeatures": [
+                "Daily Attendance / Punch Entry"
+              ]
+            },
+            {
+              "id": "map-associate-with-employee-to-mark-attendance",
+              "name": "Map Associate with Employee to Mark Attendance",
+              "legacyFeatures": [
+                "Map Associate with Employee to Mark Attendance"
+              ]
+            },
+            {
+              "id": "timesheet-category",
+              "name": "Timesheet Category",
+              "legacyFeatures": [
+                "Timesheet Category"
+              ]
+            },
+            {
+              "id": "employee-track-attendance",
+              "name": "Employee Track (Attendance)",
+              "legacyFeatures": [
+                "Employee Track (Attendance)"
+              ]
+            },
+            {
+              "id": "manpower-requirement-costing",
+              "name": "Manpower Requirement & Costing",
+              "legacyFeatures": [
+                "Manpower Requirement & Costing"
+              ]
+            }
           ]
         }
       ]
     },
     {
       "module": "Payroll",
-      "pages": [
+      "categories": [
         {
-          "id": "tax-declarations",
           "name": "Tax & Declarations",
-          "legacyFeatures": [
-            "PF UAN Details",
-            "Create or Update Perquisite",
-            "Assign Perquisite",
-            "Calculate Perquisite",
-            "Create or Update Chapter VI A Section",
-            "Enter Chapter-VI A Investments (Individually)",
-            "Enter TDS before Salary Process (Individually)",
-            "Create or Update Tax Challan",
-            "PF / ESI / PT Group Details",
-            "Monthly PF Stmt, Form 12A, Form 5, Form10, Covering Letter, Form2",
-            "PF Form 3A",
-            "PF Form 6A",
-            "PF Challan",
-            "PF Form 9",
-            "Employee PF / Pension Details",
-            "Combined Challan for PF / ESI",
-            "ESI Declaration Form",
-            "PF or ESI Monthly Journal Voucher",
-            "Remaining Salary (OT) ESI Challan",
-            "Professional Tax Challan",
-            "TDS Estimation Slip, Salary Paid Detail, Form 16, Form 12BA",
-            "TDS, Rent Receipts given by Employee, Previous Employer Salary",
-            "Tax Calculator",
-            "Voluntary PF(Vol. PF)",
-            "Tax Process",
-            "Edit Tax After Salary Process"
+          "pages": [
+            {
+              "id": "pf-uan-details",
+              "name": "PF UAN Details",
+              "legacyFeatures": [
+                "PF UAN Details"
+              ]
+            },
+            {
+              "id": "create-or-update-perquisite",
+              "name": "Create or Update Perquisite",
+              "legacyFeatures": [
+                "Create or Update Perquisite"
+              ]
+            },
+            {
+              "id": "assign-perquisite",
+              "name": "Assign Perquisite",
+              "legacyFeatures": [
+                "Assign Perquisite"
+              ]
+            },
+            {
+              "id": "calculate-perquisite",
+              "name": "Calculate Perquisite",
+              "legacyFeatures": [
+                "Calculate Perquisite"
+              ]
+            },
+            {
+              "id": "create-or-update-chapter-vi-a-section",
+              "name": "Create or Update Chapter VI A Section",
+              "legacyFeatures": [
+                "Create or Update Chapter VI A Section"
+              ]
+            },
+            {
+              "id": "enter-chapter-vi-a-investments-individually",
+              "name": "Enter Chapter-VI A Investments (Individually)",
+              "legacyFeatures": [
+                "Enter Chapter-VI A Investments (Individually)"
+              ]
+            },
+            {
+              "id": "enter-tds-before-salary-process-individually",
+              "name": "Enter TDS before Salary Process (Individually)",
+              "legacyFeatures": [
+                "Enter TDS before Salary Process (Individually)"
+              ]
+            },
+            {
+              "id": "create-or-update-tax-challan",
+              "name": "Create or Update Tax Challan",
+              "legacyFeatures": [
+                "Create or Update Tax Challan"
+              ]
+            },
+            {
+              "id": "pf-esi-pt-group-details",
+              "name": "PF / ESI / PT Group Details",
+              "legacyFeatures": [
+                "PF / ESI / PT Group Details"
+              ]
+            },
+            {
+              "id": "monthly-pf-stmt-form-12a-form-5-form10-covering-letter-form2",
+              "name": "Monthly PF Stmt, Form 12A, Form 5, Form10, Covering Letter, Form2",
+              "legacyFeatures": [
+                "Monthly PF Stmt, Form 12A, Form 5, Form10, Covering Letter, Form2"
+              ]
+            },
+            {
+              "id": "pf-form-3a",
+              "name": "PF Form 3A",
+              "legacyFeatures": [
+                "PF Form 3A"
+              ]
+            },
+            {
+              "id": "pf-form-6a",
+              "name": "PF Form 6A",
+              "legacyFeatures": [
+                "PF Form 6A"
+              ]
+            },
+            {
+              "id": "pf-challan",
+              "name": "PF Challan",
+              "legacyFeatures": [
+                "PF Challan"
+              ]
+            },
+            {
+              "id": "pf-form-9",
+              "name": "PF Form 9",
+              "legacyFeatures": [
+                "PF Form 9"
+              ]
+            },
+            {
+              "id": "employee-pf-pension-details",
+              "name": "Employee PF / Pension Details",
+              "legacyFeatures": [
+                "Employee PF / Pension Details"
+              ]
+            },
+            {
+              "id": "combined-challan-for-pf-esi",
+              "name": "Combined Challan for PF / ESI",
+              "legacyFeatures": [
+                "Combined Challan for PF / ESI"
+              ]
+            },
+            {
+              "id": "esi-declaration-form",
+              "name": "ESI Declaration Form",
+              "legacyFeatures": [
+                "ESI Declaration Form"
+              ]
+            },
+            {
+              "id": "pf-or-esi-monthly-journal-voucher",
+              "name": "PF or ESI Monthly Journal Voucher",
+              "legacyFeatures": [
+                "PF or ESI Monthly Journal Voucher"
+              ]
+            },
+            {
+              "id": "remaining-salary-ot-esi-challan",
+              "name": "Remaining Salary (OT) ESI Challan",
+              "legacyFeatures": [
+                "Remaining Salary (OT) ESI Challan"
+              ]
+            },
+            {
+              "id": "professional-tax-challan",
+              "name": "Professional Tax Challan",
+              "legacyFeatures": [
+                "Professional Tax Challan"
+              ]
+            },
+            {
+              "id": "tds-estimation-slip-salary-paid-detail-form-16-form-12ba",
+              "name": "TDS Estimation Slip, Salary Paid Detail, Form 16, Form 12BA",
+              "legacyFeatures": [
+                "TDS Estimation Slip, Salary Paid Detail, Form 16, Form 12BA"
+              ]
+            },
+            {
+              "id": "tds-rent-receipts-given-by-employee-previous-employer-salary",
+              "name": "TDS, Rent Receipts given by Employee, Previous Employer Salary",
+              "legacyFeatures": [
+                "TDS, Rent Receipts given by Employee, Previous Employer Salary"
+              ]
+            },
+            {
+              "id": "tax-calculator",
+              "name": "Tax Calculator",
+              "legacyFeatures": [
+                "Tax Calculator"
+              ]
+            },
+            {
+              "id": "voluntary-pf-vol-pf",
+              "name": "Voluntary PF(Vol. PF)",
+              "legacyFeatures": [
+                "Voluntary PF(Vol. PF)"
+              ]
+            },
+            {
+              "id": "tax-process",
+              "name": "Tax Process",
+              "legacyFeatures": [
+                "Tax Process"
+              ]
+            },
+            {
+              "id": "edit-tax-after-salary-process",
+              "name": "Edit Tax After Salary Process",
+              "legacyFeatures": [
+                "Edit Tax After Salary Process"
+              ]
+            }
           ]
         },
         {
-          "id": "run-payroll",
           "name": "Run Payroll",
-          "legacyFeatures": [
-            "Employee Rent Details (Individually)",
-            "Enter or Update Employee LIC Policy Details",
-            "Form-F, Form-11, Form-16, Appointment Ltr, Form2 (Revised)",
-            "Create DBF File",
-            "UAN Registration",
-            "Gratuity Details",
-            "Manage Leave Encashment (Individually)",
-            "Salary Process",
-            "UnLock Salary",
-            "Hold / Unhold Salary",
-            "Salary Variance For Two Months",
-            "Salary Variance For Multiple Months",
-            "Group Wise Journal Voucher",
-            "Project Wise Journal Voucher",
-            "Company Wise Journal Voucher(Custom Made)",
-            "Journal Voucher (Customized)",
-            "Unpaid Salary Details",
-            "Enter Unpaid Salary Details (Custom Made)",
-            "Salary Lock / Unlock Month",
-            "Map Payhead with SAP CODE"
+          "pages": [
+            {
+              "id": "employee-rent-details-individually",
+              "name": "Employee Rent Details (Individually)",
+              "legacyFeatures": [
+                "Employee Rent Details (Individually)"
+              ]
+            },
+            {
+              "id": "enter-or-update-employee-lic-policy-details",
+              "name": "Enter or Update Employee LIC Policy Details",
+              "legacyFeatures": [
+                "Enter or Update Employee LIC Policy Details"
+              ]
+            },
+            {
+              "id": "form-f-form-11-form-16-appointment-ltr-form2-revised",
+              "name": "Form-F, Form-11, Form-16, Appointment Ltr, Form2 (Revised)",
+              "legacyFeatures": [
+                "Form-F, Form-11, Form-16, Appointment Ltr, Form2 (Revised)"
+              ]
+            },
+            {
+              "id": "create-dbf-file",
+              "name": "Create DBF File",
+              "legacyFeatures": [
+                "Create DBF File"
+              ]
+            },
+            {
+              "id": "uan-registration",
+              "name": "UAN Registration",
+              "legacyFeatures": [
+                "UAN Registration"
+              ]
+            },
+            {
+              "id": "gratuity-details",
+              "name": "Gratuity Details",
+              "legacyFeatures": [
+                "Gratuity Details"
+              ]
+            },
+            {
+              "id": "manage-leave-encashment-individually",
+              "name": "Manage Leave Encashment (Individually)",
+              "legacyFeatures": [
+                "Manage Leave Encashment (Individually)"
+              ]
+            },
+            {
+              "id": "salary-process",
+              "name": "Salary Process",
+              "legacyFeatures": [
+                "Salary Process"
+              ]
+            },
+            {
+              "id": "unlock-salary",
+              "name": "UnLock Salary",
+              "legacyFeatures": [
+                "UnLock Salary"
+              ]
+            },
+            {
+              "id": "hold-unhold-salary",
+              "name": "Hold / Unhold Salary",
+              "legacyFeatures": [
+                "Hold / Unhold Salary"
+              ]
+            },
+            {
+              "id": "salary-variance-for-two-months",
+              "name": "Salary Variance For Two Months",
+              "legacyFeatures": [
+                "Salary Variance For Two Months"
+              ]
+            },
+            {
+              "id": "salary-variance-for-multiple-months",
+              "name": "Salary Variance For Multiple Months",
+              "legacyFeatures": [
+                "Salary Variance For Multiple Months"
+              ]
+            },
+            {
+              "id": "group-wise-journal-voucher",
+              "name": "Group Wise Journal Voucher",
+              "legacyFeatures": [
+                "Group Wise Journal Voucher"
+              ]
+            },
+            {
+              "id": "project-wise-journal-voucher",
+              "name": "Project Wise Journal Voucher",
+              "legacyFeatures": [
+                "Project Wise Journal Voucher"
+              ]
+            },
+            {
+              "id": "company-wise-journal-voucher-custom-made",
+              "name": "Company Wise Journal Voucher(Custom Made)",
+              "legacyFeatures": [
+                "Company Wise Journal Voucher(Custom Made)"
+              ]
+            },
+            {
+              "id": "journal-voucher-customized",
+              "name": "Journal Voucher (Customized)",
+              "legacyFeatures": [
+                "Journal Voucher (Customized)"
+              ]
+            },
+            {
+              "id": "unpaid-salary-details",
+              "name": "Unpaid Salary Details",
+              "legacyFeatures": [
+                "Unpaid Salary Details"
+              ]
+            },
+            {
+              "id": "enter-unpaid-salary-details-custom-made",
+              "name": "Enter Unpaid Salary Details (Custom Made)",
+              "legacyFeatures": [
+                "Enter Unpaid Salary Details (Custom Made)"
+              ]
+            },
+            {
+              "id": "salary-lock-unlock-month",
+              "name": "Salary Lock / Unlock Month",
+              "legacyFeatures": [
+                "Salary Lock / Unlock Month"
+              ]
+            },
+            {
+              "id": "map-payhead-with-sap-code",
+              "name": "Map Payhead with SAP CODE",
+              "legacyFeatures": [
+                "Map Payhead with SAP CODE"
+              ]
+            }
           ]
         },
         {
-          "id": "salary-structures",
           "name": "Salary Structures",
-          "legacyFeatures": [
-            "Assign Salary Structure to Employees (Individually)",
-            "Assign Salary Structure to Employees (Group)",
-            "Manage Arrears",
-            "Manage Increments",
-            "Salary Structure Assigned to Employee",
-            "Employees Monthly Arrear Details"
+          "pages": [
+            {
+              "id": "assign-salary-structure-to-employees-individually",
+              "name": "Assign Salary Structure to Employees (Individually)",
+              "legacyFeatures": [
+                "Assign Salary Structure to Employees (Individually)"
+              ]
+            },
+            {
+              "id": "assign-salary-structure-to-employees-group",
+              "name": "Assign Salary Structure to Employees (Group)",
+              "legacyFeatures": [
+                "Assign Salary Structure to Employees (Group)"
+              ]
+            },
+            {
+              "id": "manage-arrears",
+              "name": "Manage Arrears",
+              "legacyFeatures": [
+                "Manage Arrears"
+              ]
+            },
+            {
+              "id": "manage-increments",
+              "name": "Manage Increments",
+              "legacyFeatures": [
+                "Manage Increments"
+              ]
+            },
+            {
+              "id": "salary-structure-assigned-to-employee",
+              "name": "Salary Structure Assigned to Employee",
+              "legacyFeatures": [
+                "Salary Structure Assigned to Employee"
+              ]
+            },
+            {
+              "id": "employees-monthly-arrear-details",
+              "name": "Employees Monthly Arrear Details",
+              "legacyFeatures": [
+                "Employees Monthly Arrear Details"
+              ]
+            }
           ]
         },
         {
-          "id": "payouts",
           "name": "Payouts & Disbursements",
-          "legacyFeatures": [
-            "Employee Payment Mode Details",
-            "Salary Transfer Details",
-            "Salary Transfer Details With Reference No.",
-            "Print Cheque",
-            "Enter or Update Payment Details (Custom Made)",
-            "Enter Employee Cheque Details"
+          "pages": [
+            {
+              "id": "employee-payment-mode-details",
+              "name": "Employee Payment Mode Details",
+              "legacyFeatures": [
+                "Employee Payment Mode Details"
+              ]
+            },
+            {
+              "id": "salary-transfer-details",
+              "name": "Salary Transfer Details",
+              "legacyFeatures": [
+                "Salary Transfer Details"
+              ]
+            },
+            {
+              "id": "salary-transfer-details-with-reference-no",
+              "name": "Salary Transfer Details With Reference No.",
+              "legacyFeatures": [
+                "Salary Transfer Details With Reference No."
+              ]
+            },
+            {
+              "id": "print-cheque",
+              "name": "Print Cheque",
+              "legacyFeatures": [
+                "Print Cheque"
+              ]
+            },
+            {
+              "id": "enter-or-update-payment-details-custom-made",
+              "name": "Enter or Update Payment Details (Custom Made)",
+              "legacyFeatures": [
+                "Enter or Update Payment Details (Custom Made)"
+              ]
+            },
+            {
+              "id": "enter-employee-cheque-details",
+              "name": "Enter Employee Cheque Details",
+              "legacyFeatures": [
+                "Enter Employee Cheque Details"
+              ]
+            }
           ]
         }
       ]
     },
     {
       "module": "Performance & Training",
-      "pages": [
+      "categories": [
         {
-          "id": "performance-reviews",
           "name": "Performance Reviews",
-          "legacyFeatures": [
-            "Create Category Parameters",
-            "Create Period, Appraisee & Appraiser",
-            "PRMS Promotion & Attachment Link",
-            "KRA/KPI Goal Library"
+          "pages": [
+            {
+              "id": "create-category-parameters",
+              "name": "Create Category Parameters",
+              "legacyFeatures": [
+                "Create Category Parameters"
+              ]
+            },
+            {
+              "id": "create-period-appraisee-appraiser",
+              "name": "Create Period, Appraisee & Appraiser",
+              "legacyFeatures": [
+                "Create Period, Appraisee & Appraiser"
+              ]
+            },
+            {
+              "id": "prms-promotion-attachment-link",
+              "name": "PRMS Promotion & Attachment Link",
+              "legacyFeatures": [
+                "PRMS Promotion & Attachment Link"
+              ]
+            },
+            {
+              "id": "kra-kpi-goal-library",
+              "name": "KRA/KPI Goal Library",
+              "legacyFeatures": [
+                "KRA/KPI Goal Library"
+              ]
+            }
           ]
         },
         {
-          "id": "training-hub",
           "name": "Learning & Training",
-          "legacyFeatures": [
-            "Enter Training Schedule",
-            "Recommend Mandatory Hours To Employee(s)",
-            "TDA Handholding",
-            "Assessment/Feedback/Survey Employee Mapping"
+          "pages": [
+            {
+              "id": "enter-training-schedule",
+              "name": "Enter Training Schedule",
+              "legacyFeatures": [
+                "Enter Training Schedule"
+              ]
+            },
+            {
+              "id": "recommend-mandatory-hours-to-employee-s",
+              "name": "Recommend Mandatory Hours To Employee(s)",
+              "legacyFeatures": [
+                "Recommend Mandatory Hours To Employee(s)"
+              ]
+            },
+            {
+              "id": "tda-handholding",
+              "name": "TDA Handholding",
+              "legacyFeatures": [
+                "TDA Handholding"
+              ]
+            },
+            {
+              "id": "assessment-feedback-survey-employee-mapping",
+              "name": "Assessment/Feedback/Survey Employee Mapping",
+              "legacyFeatures": [
+                "Assessment/Feedback/Survey Employee Mapping"
+              ]
+            }
           ]
         }
       ]
     },
     {
       "module": "Travel & Expenses",
-      "pages": [
+      "categories": [
         {
-          "id": "expense-claims",
           "name": "Expense Claims",
-          "legacyFeatures": [
-            "Option C i(Excel Attachment)Expense Type",
-            "Create or Update Expense Type Details",
-            "Assign Expense Limit to Employee",
-            "Daily / Monthly Attendance with Expense Details Format 2",
-            "Create or Update Reimbursement Cover Letter",
-            "Process Reimbursements",
-            "Reimbursement Hold/Unhold",
-            "Finance Mail Room"
+          "pages": [
+            {
+              "id": "option-c-i-excel-attachment-expense-type",
+              "name": "Option C i(Excel Attachment)Expense Type",
+              "legacyFeatures": [
+                "Option C i(Excel Attachment)Expense Type"
+              ]
+            },
+            {
+              "id": "create-or-update-expense-type-details",
+              "name": "Create or Update Expense Type Details",
+              "legacyFeatures": [
+                "Create or Update Expense Type Details"
+              ]
+            },
+            {
+              "id": "assign-expense-limit-to-employee",
+              "name": "Assign Expense Limit to Employee",
+              "legacyFeatures": [
+                "Assign Expense Limit to Employee"
+              ]
+            },
+            {
+              "id": "daily-monthly-attendance-with-expense-details-format-2",
+              "name": "Daily / Monthly Attendance with Expense Details Format 2",
+              "legacyFeatures": [
+                "Daily / Monthly Attendance with Expense Details Format 2"
+              ]
+            },
+            {
+              "id": "create-or-update-reimbursement-cover-letter",
+              "name": "Create or Update Reimbursement Cover Letter",
+              "legacyFeatures": [
+                "Create or Update Reimbursement Cover Letter"
+              ]
+            },
+            {
+              "id": "process-reimbursements",
+              "name": "Process Reimbursements",
+              "legacyFeatures": [
+                "Process Reimbursements"
+              ]
+            },
+            {
+              "id": "reimbursement-hold-unhold",
+              "name": "Reimbursement Hold/Unhold",
+              "legacyFeatures": [
+                "Reimbursement Hold/Unhold"
+              ]
+            },
+            {
+              "id": "finance-mail-room",
+              "name": "Finance Mail Room",
+              "legacyFeatures": [
+                "Finance Mail Room"
+              ]
+            }
           ]
         },
         {
-          "id": "travel-desk",
           "name": "Travel Desk",
-          "legacyFeatures": [
-            "Create / Update Travel Mode, Hotel Category, Expense Category"
+          "pages": [
+            {
+              "id": "create-update-travel-mode-hotel-category-expense-category",
+              "name": "Create / Update Travel Mode, Hotel Category, Expense Category",
+              "legacyFeatures": [
+                "Create / Update Travel Mode, Hotel Category, Expense Category"
+              ]
+            }
           ]
         }
       ]
     },
     {
       "module": "Assets",
-      "pages": [
+      "categories": [
         {
-          "id": "asset-registry",
           "name": "Asset Registry",
-          "legacyFeatures": [
-            "Asset Type",
-            "Asset Details",
-            "Asset Transfer Process Assign",
-            "Asset Transfer Process Return",
-            "Issue / Return Asset",
-            "Generate Type of Assets",
-            "Asset AMC / Insurance / Sales"
+          "pages": [
+            {
+              "id": "asset-type",
+              "name": "Asset Type",
+              "legacyFeatures": [
+                "Asset Type"
+              ]
+            },
+            {
+              "id": "asset-details",
+              "name": "Asset Details",
+              "legacyFeatures": [
+                "Asset Details"
+              ]
+            },
+            {
+              "id": "asset-transfer-process-assign",
+              "name": "Asset Transfer Process Assign",
+              "legacyFeatures": [
+                "Asset Transfer Process Assign"
+              ]
+            },
+            {
+              "id": "asset-transfer-process-return",
+              "name": "Asset Transfer Process Return",
+              "legacyFeatures": [
+                "Asset Transfer Process Return"
+              ]
+            },
+            {
+              "id": "issue-return-asset",
+              "name": "Issue / Return Asset",
+              "legacyFeatures": [
+                "Issue / Return Asset"
+              ]
+            },
+            {
+              "id": "generate-type-of-assets",
+              "name": "Generate Type of Assets",
+              "legacyFeatures": [
+                "Generate Type of Assets"
+              ]
+            },
+            {
+              "id": "asset-amc-insurance-sales",
+              "name": "Asset AMC / Insurance / Sales",
+              "legacyFeatures": [
+                "Asset AMC / Insurance / Sales"
+              ]
+            }
           ]
         }
       ]
     },
     {
       "module": "Approvals Hub",
-      "pages": [
+      "categories": [
         {
-          "id": "general-approvals",
           "name": "General Approvals",
-          "legacyFeatures": [
-            "Asset Approval",
-            "Resignation Approve / Reject",
-            "Exit Interview Approve / Reject",
-            "Clearance Approve / Reject",
-            "Temporary Overtime Approval/Rejection (Associate)",
-            "Final Overtime Approval/Rejection (Associate)",
-            "Timesheet Approve/Reject",
-            "Approve Changes made by Employee to his/her Master Record",
-            "Employee Overtime Approval",
-            "Employee Overtime Approval/Rejection (Daily)",
-            "Approve Chap. VIA, Rent Receipts, Other Income Requested by Employee",
-            "Enter Reimbursements & Approve Reimbursements",
-            "Objective Setting & Appraisal Approval",
-            "MRF Approval & Rejection",
-            "JD Approval & Rejection"
+          "pages": [
+            {
+              "id": "asset-approval",
+              "name": "Asset Approval",
+              "legacyFeatures": [
+                "Asset Approval"
+              ]
+            },
+            {
+              "id": "resignation-approve-reject",
+              "name": "Resignation Approve / Reject",
+              "legacyFeatures": [
+                "Resignation Approve / Reject"
+              ]
+            },
+            {
+              "id": "exit-interview-approve-reject",
+              "name": "Exit Interview Approve / Reject",
+              "legacyFeatures": [
+                "Exit Interview Approve / Reject"
+              ]
+            },
+            {
+              "id": "clearance-approve-reject",
+              "name": "Clearance Approve / Reject",
+              "legacyFeatures": [
+                "Clearance Approve / Reject"
+              ]
+            },
+            {
+              "id": "temporary-overtime-approval-rejection-associate",
+              "name": "Temporary Overtime Approval/Rejection (Associate)",
+              "legacyFeatures": [
+                "Temporary Overtime Approval/Rejection (Associate)"
+              ]
+            },
+            {
+              "id": "final-overtime-approval-rejection-associate",
+              "name": "Final Overtime Approval/Rejection (Associate)",
+              "legacyFeatures": [
+                "Final Overtime Approval/Rejection (Associate)"
+              ]
+            },
+            {
+              "id": "timesheet-approve-reject",
+              "name": "Timesheet Approve/Reject",
+              "legacyFeatures": [
+                "Timesheet Approve/Reject"
+              ]
+            },
+            {
+              "id": "approve-changes-made-by-employee-to-his-her-master-record",
+              "name": "Approve Changes made by Employee to his/her Master Record",
+              "legacyFeatures": [
+                "Approve Changes made by Employee to his/her Master Record"
+              ]
+            },
+            {
+              "id": "employee-overtime-approval",
+              "name": "Employee Overtime Approval",
+              "legacyFeatures": [
+                "Employee Overtime Approval"
+              ]
+            },
+            {
+              "id": "employee-overtime-approval-rejection-daily",
+              "name": "Employee Overtime Approval/Rejection (Daily)",
+              "legacyFeatures": [
+                "Employee Overtime Approval/Rejection (Daily)"
+              ]
+            },
+            {
+              "id": "approve-chap-via-rent-receipts-other-income-requested-by-employee",
+              "name": "Approve Chap. VIA, Rent Receipts, Other Income Requested by Employee",
+              "legacyFeatures": [
+                "Approve Chap. VIA, Rent Receipts, Other Income Requested by Employee"
+              ]
+            },
+            {
+              "id": "enter-reimbursements-approve-reimbursements",
+              "name": "Enter Reimbursements & Approve Reimbursements",
+              "legacyFeatures": [
+                "Enter Reimbursements & Approve Reimbursements"
+              ]
+            },
+            {
+              "id": "objective-setting-appraisal-approval",
+              "name": "Objective Setting & Appraisal Approval",
+              "legacyFeatures": [
+                "Objective Setting & Appraisal Approval"
+              ]
+            },
+            {
+              "id": "mrf-approval-rejection",
+              "name": "MRF Approval & Rejection",
+              "legacyFeatures": [
+                "MRF Approval & Rejection"
+              ]
+            },
+            {
+              "id": "jd-approval-rejection",
+              "name": "JD Approval & Rejection",
+              "legacyFeatures": [
+                "JD Approval & Rejection"
+              ]
+            }
           ]
         },
         {
-          "id": "attendance-approvals",
           "name": "Attendance & Leave Approvals",
-          "legacyFeatures": [
-            "Sanctioned Leaves with LWP & Unauthorized Leave Details",
-            "Leave Approve Reject",
-            "OD/Tour/Mispunch Approve Reject",
-            "Cancel Approve Leave",
-            "Cancel Approve OD/TOUR/MisPunch",
-            "Attendance Entry/Approve/Reject",
-            "Attendance Approve/Reject(Associate)",
-            "Attendance Approval/Rejection (Mobile App)",
-            "Approve OD & Tour Request Requested by Employee",
-            "Mark/Approve Training Attendance"
+          "pages": [
+            {
+              "id": "sanctioned-leaves-with-lwp-unauthorized-leave-details",
+              "name": "Sanctioned Leaves with LWP & Unauthorized Leave Details",
+              "legacyFeatures": [
+                "Sanctioned Leaves with LWP & Unauthorized Leave Details"
+              ]
+            },
+            {
+              "id": "leave-approve-reject",
+              "name": "Leave Approve Reject",
+              "legacyFeatures": [
+                "Leave Approve Reject"
+              ]
+            },
+            {
+              "id": "od-tour-mispunch-approve-reject",
+              "name": "OD/Tour/Mispunch Approve Reject",
+              "legacyFeatures": [
+                "OD/Tour/Mispunch Approve Reject"
+              ]
+            },
+            {
+              "id": "cancel-approve-leave",
+              "name": "Cancel Approve Leave",
+              "legacyFeatures": [
+                "Cancel Approve Leave"
+              ]
+            },
+            {
+              "id": "cancel-approve-od-tour-mispunch",
+              "name": "Cancel Approve OD/TOUR/MisPunch",
+              "legacyFeatures": [
+                "Cancel Approve OD/TOUR/MisPunch"
+              ]
+            },
+            {
+              "id": "attendance-entry-approve-reject",
+              "name": "Attendance Entry/Approve/Reject",
+              "legacyFeatures": [
+                "Attendance Entry/Approve/Reject"
+              ]
+            },
+            {
+              "id": "attendance-approve-reject-associate",
+              "name": "Attendance Approve/Reject(Associate)",
+              "legacyFeatures": [
+                "Attendance Approve/Reject(Associate)"
+              ]
+            },
+            {
+              "id": "attendance-approval-rejection-mobile-app",
+              "name": "Attendance Approval/Rejection (Mobile App)",
+              "legacyFeatures": [
+                "Attendance Approval/Rejection (Mobile App)"
+              ]
+            },
+            {
+              "id": "approve-od-tour-request-requested-by-employee",
+              "name": "Approve OD & Tour Request Requested by Employee",
+              "legacyFeatures": [
+                "Approve OD & Tour Request Requested by Employee"
+              ]
+            },
+            {
+              "id": "mark-approve-training-attendance",
+              "name": "Mark/Approve Training Attendance",
+              "legacyFeatures": [
+                "Mark/Approve Training Attendance"
+              ]
+            }
           ]
         },
         {
-          "id": "finance-approvals",
           "name": "Finance & Payroll Approvals",
-          "legacyFeatures": [
-            "Authorize Employees To View Salary Slip and TDS Slip",
-            "Approve Loan Requested by Employee"
+          "pages": [
+            {
+              "id": "authorize-employees-to-view-salary-slip-and-tds-slip",
+              "name": "Authorize Employees To View Salary Slip and TDS Slip",
+              "legacyFeatures": [
+                "Authorize Employees To View Salary Slip and TDS Slip"
+              ]
+            },
+            {
+              "id": "approve-loan-requested-by-employee",
+              "name": "Approve Loan Requested by Employee",
+              "legacyFeatures": [
+                "Approve Loan Requested by Employee"
+              ]
+            }
           ]
         },
         {
-          "id": "expense-approvals",
           "name": "Travel & Expense Approvals",
-          "legacyFeatures": [
-            "Approve Employee Travel Request Requested by Employee",
-            "Approve Employee Expense Request",
-            "Option A(Expense Approval Project Wise)",
-            "Option C ii(Excel Attachment)Approve Expense",
-            "Business Travel Approval",
-            "Expense Approval",
-            "Local Expense Approval",
-            "Travel Finance Approval",
-            "Local Expense Approval(Finance Person)"
+          "pages": [
+            {
+              "id": "approve-employee-travel-request-requested-by-employee",
+              "name": "Approve Employee Travel Request Requested by Employee",
+              "legacyFeatures": [
+                "Approve Employee Travel Request Requested by Employee"
+              ]
+            },
+            {
+              "id": "approve-employee-expense-request",
+              "name": "Approve Employee Expense Request",
+              "legacyFeatures": [
+                "Approve Employee Expense Request"
+              ]
+            },
+            {
+              "id": "option-a-expense-approval-project-wise",
+              "name": "Option A(Expense Approval Project Wise)",
+              "legacyFeatures": [
+                "Option A(Expense Approval Project Wise)"
+              ]
+            },
+            {
+              "id": "option-c-ii-excel-attachment-approve-expense",
+              "name": "Option C ii(Excel Attachment)Approve Expense",
+              "legacyFeatures": [
+                "Option C ii(Excel Attachment)Approve Expense"
+              ]
+            },
+            {
+              "id": "business-travel-approval",
+              "name": "Business Travel Approval",
+              "legacyFeatures": [
+                "Business Travel Approval"
+              ]
+            },
+            {
+              "id": "expense-approval",
+              "name": "Expense Approval",
+              "legacyFeatures": [
+                "Expense Approval"
+              ]
+            },
+            {
+              "id": "local-expense-approval",
+              "name": "Local Expense Approval",
+              "legacyFeatures": [
+                "Local Expense Approval"
+              ]
+            },
+            {
+              "id": "travel-finance-approval",
+              "name": "Travel Finance Approval",
+              "legacyFeatures": [
+                "Travel Finance Approval"
+              ]
+            },
+            {
+              "id": "local-expense-approval-finance-person",
+              "name": "Local Expense Approval(Finance Person)",
+              "legacyFeatures": [
+                "Local Expense Approval(Finance Person)"
+              ]
+            }
           ]
         }
       ]
     },
     {
       "module": "Import Center",
-      "pages": [
+      "categories": [
         {
-          "id": "data-export",
           "name": "Data Exports",
-          "legacyFeatures": [
-            "Import Export Location Settings",
-            "Import Export Master Fields",
-            "Import Export Weekly Off",
-            "LTA / Sodexho Request Export",
-            "Import Export Monthly CLA Detail",
-            "Import/Export Additional Authority",
-            "Export/Import Previous Year Final Rating"
+          "pages": [
+            {
+              "id": "import-export-location-settings",
+              "name": "Import Export Location Settings",
+              "legacyFeatures": [
+                "Import Export Location Settings"
+              ]
+            },
+            {
+              "id": "import-export-master-fields",
+              "name": "Import Export Master Fields",
+              "legacyFeatures": [
+                "Import Export Master Fields"
+              ]
+            },
+            {
+              "id": "import-export-weekly-off",
+              "name": "Import Export Weekly Off",
+              "legacyFeatures": [
+                "Import Export Weekly Off"
+              ]
+            },
+            {
+              "id": "lta-sodexho-request-export",
+              "name": "LTA / Sodexho Request Export",
+              "legacyFeatures": [
+                "LTA / Sodexho Request Export"
+              ]
+            },
+            {
+              "id": "import-export-monthly-cla-detail",
+              "name": "Import Export Monthly CLA Detail",
+              "legacyFeatures": [
+                "Import Export Monthly CLA Detail"
+              ]
+            },
+            {
+              "id": "import-export-additional-authority",
+              "name": "Import/Export Additional Authority",
+              "legacyFeatures": [
+                "Import/Export Additional Authority"
+              ]
+            },
+            {
+              "id": "export-import-previous-year-final-rating",
+              "name": "Export/Import Previous Year Final Rating",
+              "legacyFeatures": [
+                "Export/Import Previous Year Final Rating"
+              ]
+            }
           ]
         },
         {
-          "id": "employee-imports",
           "name": "Employee & Candidate Data",
-          "legacyFeatures": [
-            "Import Employee Master Field & Value",
-            "Import Employee Master(Main)",
-            "Import Employee Qualification",
-            "Import Employee Master Changes(Using Keyword)",
-            "Import Employee PAN",
-            "Import Employee Details by CSV files(Custom Made)",
-            "Import Employee Finalization Details",
-            "Import Employee Bank A/c No.",
-            "Import Employee Payment Mode Details",
-            "Upload Employee Image (Bulk)",
-            "Import Documents for Employee",
-            "Employee Important Dates",
-            "Import Candidate Detail",
-            "Import Employee Monthly Car Perquisite Details",
-            "Import Monthly Rent Paid By Employee",
-            "Import Annual Rent Paid By Employee",
-            "Import CTC of Existing Employees",
-            "Upload Document of Temporary Employee"
+          "pages": [
+            {
+              "id": "import-employee-master-field-value",
+              "name": "Import Employee Master Field & Value",
+              "legacyFeatures": [
+                "Import Employee Master Field & Value"
+              ]
+            },
+            {
+              "id": "import-employee-master-main",
+              "name": "Import Employee Master(Main)",
+              "legacyFeatures": [
+                "Import Employee Master(Main)"
+              ]
+            },
+            {
+              "id": "import-employee-qualification",
+              "name": "Import Employee Qualification",
+              "legacyFeatures": [
+                "Import Employee Qualification"
+              ]
+            },
+            {
+              "id": "import-employee-master-changes-using-keyword",
+              "name": "Import Employee Master Changes(Using Keyword)",
+              "legacyFeatures": [
+                "Import Employee Master Changes(Using Keyword)"
+              ]
+            },
+            {
+              "id": "import-employee-pan",
+              "name": "Import Employee PAN",
+              "legacyFeatures": [
+                "Import Employee PAN"
+              ]
+            },
+            {
+              "id": "import-employee-details-by-csv-files-custom-made",
+              "name": "Import Employee Details by CSV files(Custom Made)",
+              "legacyFeatures": [
+                "Import Employee Details by CSV files(Custom Made)"
+              ]
+            },
+            {
+              "id": "import-employee-master-field-value-1",
+              "name": "Import Employee Master Field & Value",
+              "legacyFeatures": [
+                "Import Employee Master Field & Value"
+              ]
+            },
+            {
+              "id": "import-employee-finalization-details",
+              "name": "Import Employee Finalization Details",
+              "legacyFeatures": [
+                "Import Employee Finalization Details"
+              ]
+            },
+            {
+              "id": "import-employee-bank-a-c-no",
+              "name": "Import Employee Bank A/c No.",
+              "legacyFeatures": [
+                "Import Employee Bank A/c No."
+              ]
+            },
+            {
+              "id": "import-employee-payment-mode-details",
+              "name": "Import Employee Payment Mode Details",
+              "legacyFeatures": [
+                "Import Employee Payment Mode Details"
+              ]
+            },
+            {
+              "id": "upload-employee-image-bulk",
+              "name": "Upload Employee Image (Bulk)",
+              "legacyFeatures": [
+                "Upload Employee Image (Bulk)"
+              ]
+            },
+            {
+              "id": "import-documents-for-employee",
+              "name": "Import Documents for Employee",
+              "legacyFeatures": [
+                "Import Documents for Employee"
+              ]
+            },
+            {
+              "id": "employee-important-dates",
+              "name": "Employee Important Dates",
+              "legacyFeatures": [
+                "Employee Important Dates"
+              ]
+            },
+            {
+              "id": "import-candidate-detail",
+              "name": "Import Candidate Detail",
+              "legacyFeatures": [
+                "Import Candidate Detail"
+              ]
+            },
+            {
+              "id": "import-employee-monthly-car-perquisite-details",
+              "name": "Import Employee Monthly Car Perquisite Details",
+              "legacyFeatures": [
+                "Import Employee Monthly Car Perquisite Details"
+              ]
+            },
+            {
+              "id": "import-monthly-rent-paid-by-employee",
+              "name": "Import Monthly Rent Paid By Employee",
+              "legacyFeatures": [
+                "Import Monthly Rent Paid By Employee"
+              ]
+            },
+            {
+              "id": "import-annual-rent-paid-by-employee",
+              "name": "Import Annual Rent Paid By Employee",
+              "legacyFeatures": [
+                "Import Annual Rent Paid By Employee"
+              ]
+            },
+            {
+              "id": "import-employee-finalization-details-1",
+              "name": "Import Employee Finalization Details",
+              "legacyFeatures": [
+                "Import Employee Finalization Details"
+              ]
+            },
+            {
+              "id": "import-ctc-of-existing-employees",
+              "name": "Import CTC of Existing Employees",
+              "legacyFeatures": [
+                "Import CTC of Existing Employees"
+              ]
+            },
+            {
+              "id": "upload-document-of-temporary-employee",
+              "name": "Upload Document of Temporary Employee",
+              "legacyFeatures": [
+                "Upload Document of Temporary Employee"
+              ]
+            }
           ]
         },
         {
-          "id": "payroll-imports",
           "name": "Payroll & Tax Imports",
-          "legacyFeatures": [
-            "Import Export Employee Master with Pay mode details and Salary Structure",
-            "Import PF (Before Salary Process)",
-            "Import Monthly PF (After Salary Process)",
-            "Import PF Opening Balance",
-            "Import ESI after Salary Process",
-            "Import PT (Before Salary Process)",
-            "Import PT (After Salary Process)",
-            "Import Chapter VI A Investment Details",
-            "Import Employee Previous Employer Salary",
-            "Import Variable Payhead Non-Taxable Amount",
-            "Import TDS (Before Salary Process)",
-            "Import Salary Structure",
-            "Import Payhead Amount & Tax Paid Apart From Salary",
-            "Import Employee Previous Calculated Salary",
-            "Import Salary Matrix",
-            "Import Method to Hold-Release Salary",
-            "Import TDS (After Salary Process)",
-            "Option B(Upload Expense Requested & Approved Amount)"
+          "pages": [
+            {
+              "id": "import-export-employee-master-with-pay-mode-details-and-salary-structure",
+              "name": "Import Export Employee Master with Pay mode details and Salary Structure",
+              "legacyFeatures": [
+                "Import Export Employee Master with Pay mode details and Salary Structure"
+              ]
+            },
+            {
+              "id": "import-pf-before-salary-process",
+              "name": "Import PF (Before Salary Process)",
+              "legacyFeatures": [
+                "Import PF (Before Salary Process)"
+              ]
+            },
+            {
+              "id": "import-monthly-pf-after-salary-process",
+              "name": "Import Monthly PF (After Salary Process)",
+              "legacyFeatures": [
+                "Import Monthly PF (After Salary Process)"
+              ]
+            },
+            {
+              "id": "import-pf-opening-balance",
+              "name": "Import PF Opening Balance",
+              "legacyFeatures": [
+                "Import PF Opening Balance"
+              ]
+            },
+            {
+              "id": "import-esi-after-salary-process",
+              "name": "Import ESI after Salary Process",
+              "legacyFeatures": [
+                "Import ESI after Salary Process"
+              ]
+            },
+            {
+              "id": "import-pt-before-salary-process",
+              "name": "Import PT (Before Salary Process)",
+              "legacyFeatures": [
+                "Import PT (Before Salary Process)"
+              ]
+            },
+            {
+              "id": "import-pt-after-salary-process",
+              "name": "Import PT (After Salary Process)",
+              "legacyFeatures": [
+                "Import PT (After Salary Process)"
+              ]
+            },
+            {
+              "id": "import-chapter-vi-a-investment-details",
+              "name": "Import Chapter VI A Investment Details",
+              "legacyFeatures": [
+                "Import Chapter VI A Investment Details"
+              ]
+            },
+            {
+              "id": "import-employee-previous-employer-salary",
+              "name": "Import Employee Previous Employer Salary",
+              "legacyFeatures": [
+                "Import Employee Previous Employer Salary"
+              ]
+            },
+            {
+              "id": "import-variable-payhead-non-taxable-amount",
+              "name": "Import Variable Payhead Non-Taxable Amount",
+              "legacyFeatures": [
+                "Import Variable Payhead Non-Taxable Amount"
+              ]
+            },
+            {
+              "id": "import-tds-before-salary-process",
+              "name": "Import TDS (Before Salary Process)",
+              "legacyFeatures": [
+                "Import TDS (Before Salary Process)"
+              ]
+            },
+            {
+              "id": "import-salary-structure",
+              "name": "Import Salary Structure",
+              "legacyFeatures": [
+                "Import Salary Structure"
+              ]
+            },
+            {
+              "id": "import-payhead-amount-tax-paid-apart-from-salary",
+              "name": "Import Payhead Amount & Tax Paid Apart From Salary",
+              "legacyFeatures": [
+                "Import Payhead Amount & Tax Paid Apart From Salary"
+              ]
+            },
+            {
+              "id": "import-employee-previous-calculated-salary",
+              "name": "Import Employee Previous Calculated Salary",
+              "legacyFeatures": [
+                "Import Employee Previous Calculated Salary"
+              ]
+            },
+            {
+              "id": "import-salary-matrix",
+              "name": "Import Salary Matrix",
+              "legacyFeatures": [
+                "Import Salary Matrix"
+              ]
+            },
+            {
+              "id": "import-method-to-hold-release-salary",
+              "name": "Import Method to Hold-Release Salary",
+              "legacyFeatures": [
+                "Import Method to Hold-Release Salary"
+              ]
+            },
+            {
+              "id": "import-tds-after-salary-process",
+              "name": "Import TDS (After Salary Process)",
+              "legacyFeatures": [
+                "Import TDS (After Salary Process)"
+              ]
+            },
+            {
+              "id": "option-b-upload-expense-requested-approved-amount",
+              "name": "Option B(Upload Expense Requested & Approved Amount)",
+              "legacyFeatures": [
+                "Option B(Upload Expense Requested & Approved Amount)"
+              ]
+            }
           ]
         },
         {
-          "id": "attendance-imports",
           "name": "Attendance Imports",
-          "legacyFeatures": [
-            "Assign Shift through Import(Works With Att. Machine Data)",
-            "Import No. of Shifts",
-            "Import No. of Shifts with Rate",
-            "Import Leave, OD, Tour, Manual Punch",
-            "Export / Import Monthly Attendance with Leave Details",
-            "Import Monthly Attendance"
+          "pages": [
+            {
+              "id": "assign-shift-through-import-works-with-att-machine-data",
+              "name": "Assign Shift through Import(Works With Att. Machine Data)",
+              "legacyFeatures": [
+                "Assign Shift through Import(Works With Att. Machine Data)"
+              ]
+            },
+            {
+              "id": "import-no-of-shifts",
+              "name": "Import No. of Shifts",
+              "legacyFeatures": [
+                "Import No. of Shifts"
+              ]
+            },
+            {
+              "id": "import-no-of-shifts-with-rate",
+              "name": "Import No. of Shifts with Rate",
+              "legacyFeatures": [
+                "Import No. of Shifts with Rate"
+              ]
+            },
+            {
+              "id": "import-leave-od-tour-manual-punch",
+              "name": "Import Leave, OD, Tour, Manual Punch",
+              "legacyFeatures": [
+                "Import Leave, OD, Tour, Manual Punch"
+              ]
+            },
+            {
+              "id": "export-import-monthly-attendance-with-leave-details",
+              "name": "Export / Import Monthly Attendance with Leave Details",
+              "legacyFeatures": [
+                "Export / Import Monthly Attendance with Leave Details"
+              ]
+            },
+            {
+              "id": "import-monthly-attendance",
+              "name": "Import Monthly Attendance",
+              "legacyFeatures": [
+                "Import Monthly Attendance"
+              ]
+            }
           ]
         },
         {
-          "id": "bulk-imports",
           "name": "General Bulk Imports",
-          "legacyFeatures": [
-            "Import Overtime Approval Authority",
-            "Import OT Rate Factor and Hours/Day Factor",
-            "Import Overtime Hours / Days",
-            "Import Car Perquisite",
-            "Import Asset Perquisite Detail",
-            "Income from Other Sources (Individually & Import)",
-            "Import Mediclaim",
-            "Import Leave Encashment",
-            "Import Reimbursements Opening Balance",
-            "Import Reimbursements Claim and Bills",
-            "Import Reimbursements Bills",
-            "Import Loan / Advance Transaction Detail",
-            "Team Achievement Approve/Reject/Upload",
-            "Import Target Accroding to Combination",
-            "Import Trainer(s) Feedback",
-            "Enter / Import CV"
+          "pages": [
+            {
+              "id": "import-overtime-approval-authority",
+              "name": "Import Overtime Approval Authority",
+              "legacyFeatures": [
+                "Import Overtime Approval Authority"
+              ]
+            },
+            {
+              "id": "import-ot-rate-factor-and-hours-day-factor",
+              "name": "Import OT Rate Factor and Hours/Day Factor",
+              "legacyFeatures": [
+                "Import OT Rate Factor and Hours/Day Factor"
+              ]
+            },
+            {
+              "id": "import-overtime-hours-days",
+              "name": "Import Overtime Hours / Days",
+              "legacyFeatures": [
+                "Import Overtime Hours / Days"
+              ]
+            },
+            {
+              "id": "import-car-perquisite",
+              "name": "Import Car Perquisite",
+              "legacyFeatures": [
+                "Import Car Perquisite"
+              ]
+            },
+            {
+              "id": "import-asset-perquisite-detail",
+              "name": "Import Asset Perquisite Detail",
+              "legacyFeatures": [
+                "Import Asset Perquisite Detail"
+              ]
+            },
+            {
+              "id": "income-from-other-sources-individually-import",
+              "name": "Income from Other Sources (Individually & Import)",
+              "legacyFeatures": [
+                "Income from Other Sources (Individually & Import)"
+              ]
+            },
+            {
+              "id": "import-mediclaim",
+              "name": "Import Mediclaim",
+              "legacyFeatures": [
+                "Import Mediclaim"
+              ]
+            },
+            {
+              "id": "import-leave-encashment",
+              "name": "Import Leave Encashment",
+              "legacyFeatures": [
+                "Import Leave Encashment"
+              ]
+            },
+            {
+              "id": "import-reimbursements-opening-balance",
+              "name": "Import Reimbursements Opening Balance",
+              "legacyFeatures": [
+                "Import Reimbursements Opening Balance"
+              ]
+            },
+            {
+              "id": "import-reimbursements-claim-and-bills",
+              "name": "Import Reimbursements Claim and Bills",
+              "legacyFeatures": [
+                "Import Reimbursements Claim and Bills"
+              ]
+            },
+            {
+              "id": "import-reimbursements-bills",
+              "name": "Import Reimbursements Bills",
+              "legacyFeatures": [
+                "Import Reimbursements Bills"
+              ]
+            },
+            {
+              "id": "import-loan-advance-transaction-detail",
+              "name": "Import Loan / Advance Transaction Detail",
+              "legacyFeatures": [
+                "Import Loan / Advance Transaction Detail"
+              ]
+            },
+            {
+              "id": "team-achievement-approve-reject-upload",
+              "name": "Team Achievement Approve/Reject/Upload",
+              "legacyFeatures": [
+                "Team Achievement Approve/Reject/Upload"
+              ]
+            },
+            {
+              "id": "import-target-accroding-to-combination",
+              "name": "Import Target Accroding to Combination",
+              "legacyFeatures": [
+                "Import Target Accroding to Combination"
+              ]
+            },
+            {
+              "id": "import-trainer-s-feedback",
+              "name": "Import Trainer(s) Feedback",
+              "legacyFeatures": [
+                "Import Trainer(s) Feedback"
+              ]
+            },
+            {
+              "id": "enter-import-cv",
+              "name": "Enter / Import CV",
+              "legacyFeatures": [
+                "Enter / Import CV"
+              ]
+            }
           ]
         }
       ]
     },
     {
       "module": "Report Builder",
-      "pages": [
+      "categories": [
         {
-          "id": "payroll-reports",
           "name": "Payroll & Tax Reports",
-          "legacyFeatures": [
-            "Salary Slip & Register Configuration",
-            "List of Designation",
-            "List of Joinees / Resigner",
-            "List of Joinee / Resignee Without CTC",
-            "Generate Salary Certificate(Custom Made)",
-            "Generate E-TDS",
-            "Employee PF Eligibility Report",
-            "Multiple PF/ESI Reports",
-            "Monthly ESI Statement",
-            "Remaining Salary (OT) ESI Statement",
-            "ESI Register of Employees (Form 6) / Form 5 Contribution",
-            "ESI Challan Details",
-            "PT & LWF TAX Report",
-            "TDS Challan Details",
-            "Generate Salary Transfer to Bank Report",
-            "Generate Salary Transfer to Bank Report with Reference No.",
-            "Year to Date (YTD) Employee Salary Register",
-            "Finalized Employee Slip & Report Generation",
-            "Salary Slip & Register (Various Formats & E-Mailing)",
-            "Salary(MISC.) Payment Report",
-            "Generate Reimbursement Slip and Register",
-            "Reimbursement Slip & Register"
+          "pages": [
+            {
+              "id": "salary-slip-register-configuration",
+              "name": "Salary Slip & Register Configuration",
+              "legacyFeatures": [
+                "Salary Slip & Register Configuration"
+              ]
+            },
+            {
+              "id": "list-of-designation",
+              "name": "List of Designation",
+              "legacyFeatures": [
+                "List of Designation"
+              ]
+            },
+            {
+              "id": "list-of-joinees-resigner",
+              "name": "List of Joinees / Resigner",
+              "legacyFeatures": [
+                "List of Joinees / Resigner"
+              ]
+            },
+            {
+              "id": "list-of-joinee-resignee-without-ctc",
+              "name": "List of Joinee / Resignee Without CTC",
+              "legacyFeatures": [
+                "List of Joinee / Resignee Without CTC"
+              ]
+            },
+            {
+              "id": "generate-salary-certificate-custom-made",
+              "name": "Generate Salary Certificate(Custom Made)",
+              "legacyFeatures": [
+                "Generate Salary Certificate(Custom Made)"
+              ]
+            },
+            {
+              "id": "generate-e-tds",
+              "name": "Generate E-TDS",
+              "legacyFeatures": [
+                "Generate E-TDS"
+              ]
+            },
+            {
+              "id": "employee-pf-eligibility-report",
+              "name": "Employee PF Eligibility Report",
+              "legacyFeatures": [
+                "Employee PF Eligibility Report"
+              ]
+            },
+            {
+              "id": "multiple-pf-esi-reports",
+              "name": "Multiple PF/ESI Reports",
+              "legacyFeatures": [
+                "Multiple PF/ESI Reports"
+              ]
+            },
+            {
+              "id": "monthly-esi-statement",
+              "name": "Monthly ESI Statement",
+              "legacyFeatures": [
+                "Monthly ESI Statement"
+              ]
+            },
+            {
+              "id": "remaining-salary-ot-esi-statement",
+              "name": "Remaining Salary (OT) ESI Statement",
+              "legacyFeatures": [
+                "Remaining Salary (OT) ESI Statement"
+              ]
+            },
+            {
+              "id": "esi-register-of-employees-form-6-form-5-contribution",
+              "name": "ESI Register of Employees (Form 6) / Form 5 Contribution",
+              "legacyFeatures": [
+                "ESI Register of Employees (Form 6) / Form 5 Contribution"
+              ]
+            },
+            {
+              "id": "esi-challan-details",
+              "name": "ESI Challan Details",
+              "legacyFeatures": [
+                "ESI Challan Details"
+              ]
+            },
+            {
+              "id": "pt-lwf-tax-report",
+              "name": "PT & LWF TAX Report",
+              "legacyFeatures": [
+                "PT & LWF TAX Report"
+              ]
+            },
+            {
+              "id": "tds-challan-details",
+              "name": "TDS Challan Details",
+              "legacyFeatures": [
+                "TDS Challan Details"
+              ]
+            },
+            {
+              "id": "generate-salary-transfer-to-bank-report",
+              "name": "Generate Salary Transfer to Bank Report",
+              "legacyFeatures": [
+                "Generate Salary Transfer to Bank Report"
+              ]
+            },
+            {
+              "id": "generate-salary-transfer-to-bank-report-with-reference-no",
+              "name": "Generate Salary Transfer to Bank Report with Reference No.",
+              "legacyFeatures": [
+                "Generate Salary Transfer to Bank Report with Reference No."
+              ]
+            },
+            {
+              "id": "year-to-date-ytd-employee-salary-register",
+              "name": "Year to Date (YTD) Employee Salary Register",
+              "legacyFeatures": [
+                "Year to Date (YTD) Employee Salary Register"
+              ]
+            },
+            {
+              "id": "finalized-employee-slip-report-generation",
+              "name": "Finalized Employee Slip & Report Generation",
+              "legacyFeatures": [
+                "Finalized Employee Slip & Report Generation"
+              ]
+            },
+            {
+              "id": "salary-slip-register-various-formats-e-mailing",
+              "name": "Salary Slip & Register (Various Formats & E-Mailing)",
+              "legacyFeatures": [
+                "Salary Slip & Register (Various Formats & E-Mailing)"
+              ]
+            },
+            {
+              "id": "salary-misc-payment-report",
+              "name": "Salary(MISC.) Payment Report",
+              "legacyFeatures": [
+                "Salary(MISC.) Payment Report"
+              ]
+            },
+            {
+              "id": "generate-reimbursement-slip-and-register",
+              "name": "Generate Reimbursement Slip and Register",
+              "legacyFeatures": [
+                "Generate Reimbursement Slip and Register"
+              ]
+            },
+            {
+              "id": "reimbursement-slip-register",
+              "name": "Reimbursement Slip & Register",
+              "legacyFeatures": [
+                "Reimbursement Slip & Register"
+              ]
+            }
           ]
         },
         {
-          "id": "custom-reports",
           "name": "Custom Reports & Dashboards",
-          "legacyFeatures": [
-            "Map Reporting Manager With Team",
-            "List of Reporting Manager",
-            "List of Banks",
-            "List of Qualifications",
-            "List of Category",
-            "List of Country",
-            "List of State",
-            "List of City",
-            "List of Cost Center",
-            "List of Region",
-            "List of Location",
-            "List of Unit",
-            "List of Level",
-            "List of Grade",
-            "List of Domicile",
-            "List of Consultant",
-            "List of Department",
-            "List of Sub Department",
-            "List of Language",
-            "Intercompany Transfer Report",
-            "Generate Assets Issued or Returned Report",
-            "List of Asset",
-            "Generate e-Separation Report",
-            "List of Holidays",
-            "Timesheet Report",
-            "Timesheet Report (Custom)",
-            "Overtime Reports",
-            "LWF Report",
-            "Payment Reconciliation Statement",
-            "Bank Reports",
-            "List of Payheads",
-            "LIC Premium Paid Report",
-            "Monthly Budget Variance Report (Custom Made)",
-            "Audit Trail Report",
-            "Report Builder",
-            "Generate Reimbursement Report using Report Builder",
-            "Travel Reports",
-            "Expense Report",
-            "Target vs Achievement Report",
-            "PRMS Reports",
-            "Training Reports",
-            "MRF / JD Report",
-            "SLA Report",
-            "Budget Report"
+          "pages": [
+            {
+              "id": "map-reporting-manager-with-team",
+              "name": "Map Reporting Manager With Team",
+              "legacyFeatures": [
+                "Map Reporting Manager With Team"
+              ]
+            },
+            {
+              "id": "list-of-reporting-manager",
+              "name": "List of Reporting Manager",
+              "legacyFeatures": [
+                "List of Reporting Manager"
+              ]
+            },
+            {
+              "id": "list-of-banks",
+              "name": "List of Banks",
+              "legacyFeatures": [
+                "List of Banks"
+              ]
+            },
+            {
+              "id": "list-of-qualifications",
+              "name": "List of Qualifications",
+              "legacyFeatures": [
+                "List of Qualifications"
+              ]
+            },
+            {
+              "id": "list-of-category",
+              "name": "List of Category",
+              "legacyFeatures": [
+                "List of Category"
+              ]
+            },
+            {
+              "id": "list-of-country",
+              "name": "List of Country",
+              "legacyFeatures": [
+                "List of Country"
+              ]
+            },
+            {
+              "id": "list-of-state",
+              "name": "List of State",
+              "legacyFeatures": [
+                "List of State"
+              ]
+            },
+            {
+              "id": "list-of-city",
+              "name": "List of City",
+              "legacyFeatures": [
+                "List of City"
+              ]
+            },
+            {
+              "id": "list-of-cost-center",
+              "name": "List of Cost Center",
+              "legacyFeatures": [
+                "List of Cost Center"
+              ]
+            },
+            {
+              "id": "list-of-region",
+              "name": "List of Region",
+              "legacyFeatures": [
+                "List of Region"
+              ]
+            },
+            {
+              "id": "list-of-location",
+              "name": "List of Location",
+              "legacyFeatures": [
+                "List of Location"
+              ]
+            },
+            {
+              "id": "list-of-unit",
+              "name": "List of Unit",
+              "legacyFeatures": [
+                "List of Unit"
+              ]
+            },
+            {
+              "id": "list-of-level",
+              "name": "List of Level",
+              "legacyFeatures": [
+                "List of Level"
+              ]
+            },
+            {
+              "id": "list-of-grade",
+              "name": "List of Grade",
+              "legacyFeatures": [
+                "List of Grade"
+              ]
+            },
+            {
+              "id": "list-of-domicile",
+              "name": "List of Domicile",
+              "legacyFeatures": [
+                "List of Domicile"
+              ]
+            },
+            {
+              "id": "list-of-consultant",
+              "name": "List of Consultant",
+              "legacyFeatures": [
+                "List of Consultant"
+              ]
+            },
+            {
+              "id": "list-of-department",
+              "name": "List of Department",
+              "legacyFeatures": [
+                "List of Department"
+              ]
+            },
+            {
+              "id": "list-of-sub-department",
+              "name": "List of Sub Department",
+              "legacyFeatures": [
+                "List of Sub Department"
+              ]
+            },
+            {
+              "id": "list-of-language",
+              "name": "List of Language",
+              "legacyFeatures": [
+                "List of Language"
+              ]
+            },
+            {
+              "id": "intercompany-transfer-report",
+              "name": "Intercompany Transfer Report",
+              "legacyFeatures": [
+                "Intercompany Transfer Report"
+              ]
+            },
+            {
+              "id": "generate-assets-issued-or-returned-report",
+              "name": "Generate Assets Issued or Returned Report",
+              "legacyFeatures": [
+                "Generate Assets Issued or Returned Report"
+              ]
+            },
+            {
+              "id": "list-of-asset",
+              "name": "List of Asset",
+              "legacyFeatures": [
+                "List of Asset"
+              ]
+            },
+            {
+              "id": "generate-e-separation-report",
+              "name": "Generate e-Separation Report",
+              "legacyFeatures": [
+                "Generate e-Separation Report"
+              ]
+            },
+            {
+              "id": "list-of-holidays",
+              "name": "List of Holidays",
+              "legacyFeatures": [
+                "List of Holidays"
+              ]
+            },
+            {
+              "id": "timesheet-report",
+              "name": "Timesheet Report",
+              "legacyFeatures": [
+                "Timesheet Report"
+              ]
+            },
+            {
+              "id": "timesheet-report-custom",
+              "name": "Timesheet Report (Custom)",
+              "legacyFeatures": [
+                "Timesheet Report (Custom)"
+              ]
+            },
+            {
+              "id": "overtime-reports",
+              "name": "Overtime Reports",
+              "legacyFeatures": [
+                "Overtime Reports"
+              ]
+            },
+            {
+              "id": "lwf-report",
+              "name": "LWF Report",
+              "legacyFeatures": [
+                "LWF Report"
+              ]
+            },
+            {
+              "id": "payment-reconciliation-statement",
+              "name": "Payment Reconciliation Statement",
+              "legacyFeatures": [
+                "Payment Reconciliation Statement"
+              ]
+            },
+            {
+              "id": "bank-reports",
+              "name": "Bank Reports",
+              "legacyFeatures": [
+                "Bank Reports"
+              ]
+            },
+            {
+              "id": "list-of-payheads",
+              "name": "List of Payheads",
+              "legacyFeatures": [
+                "List of Payheads"
+              ]
+            },
+            {
+              "id": "lic-premium-paid-report",
+              "name": "LIC Premium Paid Report",
+              "legacyFeatures": [
+                "LIC Premium Paid Report"
+              ]
+            },
+            {
+              "id": "monthly-budget-variance-report-custom-made",
+              "name": "Monthly Budget Variance Report (Custom Made)",
+              "legacyFeatures": [
+                "Monthly Budget Variance Report (Custom Made)"
+              ]
+            },
+            {
+              "id": "audit-trail-report",
+              "name": "Audit Trail Report",
+              "legacyFeatures": [
+                "Audit Trail Report"
+              ]
+            },
+            {
+              "id": "report-builder",
+              "name": "Report Builder",
+              "legacyFeatures": [
+                "Report Builder"
+              ]
+            },
+            {
+              "id": "generate-reimbursement-report-using-report-builder",
+              "name": "Generate Reimbursement Report using Report Builder",
+              "legacyFeatures": [
+                "Generate Reimbursement Report using Report Builder"
+              ]
+            },
+            {
+              "id": "travel-reports",
+              "name": "Travel Reports",
+              "legacyFeatures": [
+                "Travel Reports"
+              ]
+            },
+            {
+              "id": "expense-report",
+              "name": "Expense Report",
+              "legacyFeatures": [
+                "Expense Report"
+              ]
+            },
+            {
+              "id": "target-vs-achievement-report",
+              "name": "Target vs Achievement Report",
+              "legacyFeatures": [
+                "Target vs Achievement Report"
+              ]
+            },
+            {
+              "id": "prms-reports",
+              "name": "PRMS Reports",
+              "legacyFeatures": [
+                "PRMS Reports"
+              ]
+            },
+            {
+              "id": "training-reports",
+              "name": "Training Reports",
+              "legacyFeatures": [
+                "Training Reports"
+              ]
+            },
+            {
+              "id": "mrf-jd-report",
+              "name": "MRF / JD Report",
+              "legacyFeatures": [
+                "MRF / JD Report"
+              ]
+            },
+            {
+              "id": "sla-report",
+              "name": "SLA Report",
+              "legacyFeatures": [
+                "SLA Report"
+              ]
+            },
+            {
+              "id": "budget-report",
+              "name": "Budget Report",
+              "legacyFeatures": [
+                "Budget Report"
+              ]
+            }
           ]
         },
         {
-          "id": "employee-reports",
           "name": "Employee Reports",
-          "legacyFeatures": [
-            "List of Employees (ID Card)",
-            "Employee Document Report",
-            "List of Employee Documents",
-            "Report on Awards given to Employee",
-            "List of New Joinee(e-Recruitment)",
-            "Temporary Employee Report Generation",
-            "Month Wise Temporary Employee Joining Report",
-            "List of New Joinee(Onboarding)"
+          "pages": [
+            {
+              "id": "list-of-employees-id-card",
+              "name": "List of Employees (ID Card)",
+              "legacyFeatures": [
+                "List of Employees (ID Card)"
+              ]
+            },
+            {
+              "id": "employee-document-report",
+              "name": "Employee Document Report",
+              "legacyFeatures": [
+                "Employee Document Report"
+              ]
+            },
+            {
+              "id": "list-of-employee-documents",
+              "name": "List of Employee Documents",
+              "legacyFeatures": [
+                "List of Employee Documents"
+              ]
+            },
+            {
+              "id": "report-on-awards-given-to-employee",
+              "name": "Report on Awards given to Employee",
+              "legacyFeatures": [
+                "Report on Awards given to Employee"
+              ]
+            },
+            {
+              "id": "list-of-new-joinee-e-recruitment",
+              "name": "List of New Joinee(e-Recruitment)",
+              "legacyFeatures": [
+                "List of New Joinee(e-Recruitment)"
+              ]
+            },
+            {
+              "id": "temporary-employee-report-generation",
+              "name": "Temporary Employee Report Generation",
+              "legacyFeatures": [
+                "Temporary Employee Report Generation"
+              ]
+            },
+            {
+              "id": "month-wise-temporary-employee-joining-report",
+              "name": "Month Wise Temporary Employee Joining Report",
+              "legacyFeatures": [
+                "Month Wise Temporary Employee Joining Report"
+              ]
+            },
+            {
+              "id": "list-of-new-joinee-onboarding",
+              "name": "List of New Joinee(Onboarding)",
+              "legacyFeatures": [
+                "List of New Joinee(Onboarding)"
+              ]
+            }
           ]
         },
         {
-          "id": "attendance-reports",
           "name": "Attendance & Leave Reports",
-          "legacyFeatures": [
-            "Employee Leave Register",
-            "Employee Attendance Register Form No.26",
-            "Monthly Attendance Report",
-            "Monthly Attendance Reports",
-            "Daily attendance Reports",
-            "Long Days Absentee Report",
-            "Attendance Register Form25 (Customized)",
-            "Leave & Attendance Settings Report",
-            "Salary Slip & Register (With Attendance Details) (Custom Made)"
+          "pages": [
+            {
+              "id": "employee-leave-register",
+              "name": "Employee Leave Register",
+              "legacyFeatures": [
+                "Employee Leave Register"
+              ]
+            },
+            {
+              "id": "employee-attendance-register-form-no-26",
+              "name": "Employee Attendance Register Form No.26",
+              "legacyFeatures": [
+                "Employee Attendance Register Form No.26"
+              ]
+            },
+            {
+              "id": "monthly-attendance-report",
+              "name": "Monthly Attendance Report",
+              "legacyFeatures": [
+                "Monthly Attendance Report"
+              ]
+            },
+            {
+              "id": "monthly-attendance-reports",
+              "name": "Monthly Attendance Reports",
+              "legacyFeatures": [
+                "Monthly Attendance Reports"
+              ]
+            },
+            {
+              "id": "daily-attendance-reports",
+              "name": "Daily attendance Reports",
+              "legacyFeatures": [
+                "Daily attendance Reports"
+              ]
+            },
+            {
+              "id": "long-days-absentee-report",
+              "name": "Long Days Absentee Report",
+              "legacyFeatures": [
+                "Long Days Absentee Report"
+              ]
+            },
+            {
+              "id": "attendance-register-form25-customized",
+              "name": "Attendance Register Form25 (Customized)",
+              "legacyFeatures": [
+                "Attendance Register Form25 (Customized)"
+              ]
+            },
+            {
+              "id": "leave-attendance-settings-report",
+              "name": "Leave & Attendance Settings Report",
+              "legacyFeatures": [
+                "Leave & Attendance Settings Report"
+              ]
+            },
+            {
+              "id": "salary-slip-register-with-attendance-details-custom-made",
+              "name": "Salary Slip & Register (With Attendance Details) (Custom Made)",
+              "legacyFeatures": [
+                "Salary Slip & Register (With Attendance Details) (Custom Made)"
+              ]
+            }
           ]
         }
       ]
     },
     {
       "module": "Settings",
-      "pages": [
+      "categories": [
         {
-          "id": "org-profile",
           "name": "Organization Profile",
-          "legacyFeatures": [
-            "Company Details",
-            "Bank Master",
-            "Branch Master",
-            "Company News",
-            "PF / ESI / PT Location & Unit Mapping",
-            "Department",
-            "Sub Department",
-            "Grade",
-            "Region",
-            "Location",
-            "Map Locations With User Group",
-            "List Bank and Their Branches",
-            "Clearance Department / Sub-department Master"
+          "pages": [
+            {
+              "id": "company-details",
+              "name": "Company Details",
+              "legacyFeatures": [
+                "Company Details"
+              ]
+            },
+            {
+              "id": "bank-master",
+              "name": "Bank Master",
+              "legacyFeatures": [
+                "Bank Master"
+              ]
+            },
+            {
+              "id": "branch-master",
+              "name": "Branch Master",
+              "legacyFeatures": [
+                "Branch Master"
+              ]
+            },
+            {
+              "id": "company-news",
+              "name": "Company News",
+              "legacyFeatures": [
+                "Company News"
+              ]
+            },
+            {
+              "id": "pf-esi-pt-location-unit-mapping",
+              "name": "PF / ESI / PT Location & Unit Mapping",
+              "legacyFeatures": [
+                "PF / ESI / PT Location & Unit Mapping"
+              ]
+            },
+            {
+              "id": "department",
+              "name": "Department",
+              "legacyFeatures": [
+                "Department"
+              ]
+            },
+            {
+              "id": "sub-department",
+              "name": "Sub Department",
+              "legacyFeatures": [
+                "Sub Department"
+              ]
+            },
+            {
+              "id": "grade",
+              "name": "Grade",
+              "legacyFeatures": [
+                "Grade"
+              ]
+            },
+            {
+              "id": "region",
+              "name": "Region",
+              "legacyFeatures": [
+                "Region"
+              ]
+            },
+            {
+              "id": "location",
+              "name": "Location",
+              "legacyFeatures": [
+                "Location"
+              ]
+            },
+            {
+              "id": "map-locations-with-user-group",
+              "name": "Map Locations With User Group",
+              "legacyFeatures": [
+                "Map Locations With User Group"
+              ]
+            },
+            {
+              "id": "list-bank-and-their-branches",
+              "name": "List Bank and Their Branches",
+              "legacyFeatures": [
+                "List Bank and Their Branches"
+              ]
+            },
+            {
+              "id": "clearance-department-sub-department-master",
+              "name": "Clearance Department / Sub-department Master",
+              "legacyFeatures": [
+                "Clearance Department / Sub-department Master"
+              ]
+            }
           ]
         },
         {
-          "id": "system-config",
           "name": "System Configuration",
-          "legacyFeatures": [
-            "Global Settings",
-            "Mail & SMS Configuration",
-            "Set Code for Employee",
-            "Publish Msg on Payslip, Birthday Etc. Scheduler",
-            "Enter or Update Labour Welfare Fund Slab",
-            "SBI Loan Interest Rate",
-            "Language",
-            "Level",
-            "Domicile",
-            "Qualification",
-            "Blood Group",
-            "Country",
-            "State",
-            "City",
-            "Contractor",
-            "Cost Center",
-            "Unit",
-            "Create or Enter Field Value and Their Master",
-            "Minimum Wages Master",
-            "Minimum Wages Assignment",
-            "Reimbursement Configuration",
-            "Formula",
-            "Ledger",
-            "Change Employee Code",
-            "Create or Update Menus on Employee Portal",
-            "Block Menus on Employee Portal",
-            "Disclaimer",
-            "About Application Update",
-            "Employee Master(Main)",
-            "Asset Brand Master",
-            "Asset Template Master",
-            "Vendor Master",
-            "Create or Update Document Template",
-            "Define Labels For Parameters",
-            "Question Type Master",
-            "Clearance Template Configuration",
-            "Employee Movement Template Configuration",
-            "Overtime Master",
-            "Create Overtime Template (Associate)",
-            "Assign OverTime Template",
-            "Template Configuration",
-            "Transport Mode Rate Master",
-            "Travel Master",
-            "Template Master",
-            "Category Master",
-            "PRMS Feedback Question Master",
-            "Budget Master",
-            "Training Master",
-            "Induction Training Master",
-            "Training Feedback Question Master",
-            "Assessment/Feedback/Survey Category Master",
-            "Assessment/Feedback/Survey Question Master",
-            "Temporary Employee Verification Master",
-            "Template Settings & Assignment",
-            "Define SLA",
-            "Placement Agencies / Institute Master and Map with Recruiter"
+          "pages": [
+            {
+              "id": "global-settings",
+              "name": "Global Settings",
+              "legacyFeatures": [
+                "Global Settings"
+              ]
+            },
+            {
+              "id": "mail-sms-configuration",
+              "name": "Mail & SMS Configuration",
+              "legacyFeatures": [
+                "Mail & SMS Configuration"
+              ]
+            },
+            {
+              "id": "set-code-for-employee",
+              "name": "Set Code for Employee",
+              "legacyFeatures": [
+                "Set Code for Employee"
+              ]
+            },
+            {
+              "id": "publish-msg-on-payslip-birthday-etc-scheduler",
+              "name": "Publish Msg on Payslip, Birthday Etc. Scheduler",
+              "legacyFeatures": [
+                "Publish Msg on Payslip, Birthday Etc. Scheduler"
+              ]
+            },
+            {
+              "id": "enter-or-update-labour-welfare-fund-slab",
+              "name": "Enter or Update Labour Welfare Fund Slab",
+              "legacyFeatures": [
+                "Enter or Update Labour Welfare Fund Slab"
+              ]
+            },
+            {
+              "id": "sbi-loan-interest-rate",
+              "name": "SBI Loan Interest Rate",
+              "legacyFeatures": [
+                "SBI Loan Interest Rate"
+              ]
+            },
+            {
+              "id": "language",
+              "name": "Language",
+              "legacyFeatures": [
+                "Language"
+              ]
+            },
+            {
+              "id": "level",
+              "name": "Level",
+              "legacyFeatures": [
+                "Level"
+              ]
+            },
+            {
+              "id": "domicile",
+              "name": "Domicile",
+              "legacyFeatures": [
+                "Domicile"
+              ]
+            },
+            {
+              "id": "qualification",
+              "name": "Qualification",
+              "legacyFeatures": [
+                "Qualification"
+              ]
+            },
+            {
+              "id": "blood-group",
+              "name": "Blood Group",
+              "legacyFeatures": [
+                "Blood Group"
+              ]
+            },
+            {
+              "id": "country",
+              "name": "Country",
+              "legacyFeatures": [
+                "Country"
+              ]
+            },
+            {
+              "id": "state",
+              "name": "State",
+              "legacyFeatures": [
+                "State"
+              ]
+            },
+            {
+              "id": "city",
+              "name": "City",
+              "legacyFeatures": [
+                "City"
+              ]
+            },
+            {
+              "id": "contractor",
+              "name": "Contractor",
+              "legacyFeatures": [
+                "Contractor"
+              ]
+            },
+            {
+              "id": "cost-center",
+              "name": "Cost Center",
+              "legacyFeatures": [
+                "Cost Center"
+              ]
+            },
+            {
+              "id": "unit",
+              "name": "Unit",
+              "legacyFeatures": [
+                "Unit"
+              ]
+            },
+            {
+              "id": "create-or-enter-field-value-and-their-master",
+              "name": "Create or Enter Field Value and Their Master",
+              "legacyFeatures": [
+                "Create or Enter Field Value and Their Master"
+              ]
+            },
+            {
+              "id": "minimum-wages-master",
+              "name": "Minimum Wages Master",
+              "legacyFeatures": [
+                "Minimum Wages Master"
+              ]
+            },
+            {
+              "id": "minimum-wages-assignment",
+              "name": "Minimum Wages Assignment",
+              "legacyFeatures": [
+                "Minimum Wages Assignment"
+              ]
+            },
+            {
+              "id": "reimbursement-configuration",
+              "name": "Reimbursement Configuration",
+              "legacyFeatures": [
+                "Reimbursement Configuration"
+              ]
+            },
+            {
+              "id": "formula",
+              "name": "Formula",
+              "legacyFeatures": [
+                "Formula"
+              ]
+            },
+            {
+              "id": "ledger",
+              "name": "Ledger",
+              "legacyFeatures": [
+                "Ledger"
+              ]
+            },
+            {
+              "id": "change-employee-code",
+              "name": "Change Employee Code",
+              "legacyFeatures": [
+                "Change Employee Code"
+              ]
+            },
+            {
+              "id": "create-or-update-menus-on-employee-portal",
+              "name": "Create or Update Menus on Employee Portal",
+              "legacyFeatures": [
+                "Create or Update Menus on Employee Portal"
+              ]
+            },
+            {
+              "id": "block-menus-on-employee-portal",
+              "name": "Block Menus on Employee Portal",
+              "legacyFeatures": [
+                "Block Menus on Employee Portal"
+              ]
+            },
+            {
+              "id": "disclaimer",
+              "name": "Disclaimer",
+              "legacyFeatures": [
+                "Disclaimer"
+              ]
+            },
+            {
+              "id": "about-application-update",
+              "name": "About Application Update",
+              "legacyFeatures": [
+                "About Application Update"
+              ]
+            },
+            {
+              "id": "employee-master-main",
+              "name": "Employee Master(Main)",
+              "legacyFeatures": [
+                "Employee Master(Main)"
+              ]
+            },
+            {
+              "id": "asset-brand-master",
+              "name": "Asset Brand Master",
+              "legacyFeatures": [
+                "Asset Brand Master"
+              ]
+            },
+            {
+              "id": "asset-template-master",
+              "name": "Asset Template Master",
+              "legacyFeatures": [
+                "Asset Template Master"
+              ]
+            },
+            {
+              "id": "vendor-master",
+              "name": "Vendor Master",
+              "legacyFeatures": [
+                "Vendor Master"
+              ]
+            },
+            {
+              "id": "create-or-update-document-template",
+              "name": "Create or Update Document Template",
+              "legacyFeatures": [
+                "Create or Update Document Template"
+              ]
+            },
+            {
+              "id": "define-labels-for-parameters",
+              "name": "Define Labels For Parameters",
+              "legacyFeatures": [
+                "Define Labels For Parameters"
+              ]
+            },
+            {
+              "id": "question-type-master",
+              "name": "Question Type Master",
+              "legacyFeatures": [
+                "Question Type Master"
+              ]
+            },
+            {
+              "id": "clearance-template-configuration",
+              "name": "Clearance Template Configuration",
+              "legacyFeatures": [
+                "Clearance Template Configuration"
+              ]
+            },
+            {
+              "id": "employee-movement-template-configuration",
+              "name": "Employee Movement Template Configuration",
+              "legacyFeatures": [
+                "Employee Movement Template Configuration"
+              ]
+            },
+            {
+              "id": "overtime-master",
+              "name": "Overtime Master",
+              "legacyFeatures": [
+                "Overtime Master"
+              ]
+            },
+            {
+              "id": "create-overtime-template-associate",
+              "name": "Create Overtime Template (Associate)",
+              "legacyFeatures": [
+                "Create Overtime Template (Associate)"
+              ]
+            },
+            {
+              "id": "assign-overtime-template",
+              "name": "Assign OverTime Template",
+              "legacyFeatures": [
+                "Assign OverTime Template"
+              ]
+            },
+            {
+              "id": "template-configuration",
+              "name": "Template Configuration",
+              "legacyFeatures": [
+                "Template Configuration"
+              ]
+            },
+            {
+              "id": "transport-mode-rate-master",
+              "name": "Transport Mode Rate Master",
+              "legacyFeatures": [
+                "Transport Mode Rate Master"
+              ]
+            },
+            {
+              "id": "travel-master",
+              "name": "Travel Master",
+              "legacyFeatures": [
+                "Travel Master"
+              ]
+            },
+            {
+              "id": "template-configuration-1",
+              "name": "Template Configuration",
+              "legacyFeatures": [
+                "Template Configuration"
+              ]
+            },
+            {
+              "id": "template-master",
+              "name": "Template Master",
+              "legacyFeatures": [
+                "Template Master"
+              ]
+            },
+            {
+              "id": "category-master",
+              "name": "Category Master",
+              "legacyFeatures": [
+                "Category Master"
+              ]
+            },
+            {
+              "id": "prms-feedback-question-master",
+              "name": "PRMS Feedback Question Master",
+              "legacyFeatures": [
+                "PRMS Feedback Question Master"
+              ]
+            },
+            {
+              "id": "budget-master",
+              "name": "Budget Master",
+              "legacyFeatures": [
+                "Budget Master"
+              ]
+            },
+            {
+              "id": "training-master",
+              "name": "Training Master",
+              "legacyFeatures": [
+                "Training Master"
+              ]
+            },
+            {
+              "id": "induction-training-master",
+              "name": "Induction Training Master",
+              "legacyFeatures": [
+                "Induction Training Master"
+              ]
+            },
+            {
+              "id": "training-feedback-question-master",
+              "name": "Training Feedback Question Master",
+              "legacyFeatures": [
+                "Training Feedback Question Master"
+              ]
+            },
+            {
+              "id": "assessment-feedback-survey-category-master",
+              "name": "Assessment/Feedback/Survey Category Master",
+              "legacyFeatures": [
+                "Assessment/Feedback/Survey Category Master"
+              ]
+            },
+            {
+              "id": "assessment-feedback-survey-question-master",
+              "name": "Assessment/Feedback/Survey Question Master",
+              "legacyFeatures": [
+                "Assessment/Feedback/Survey Question Master"
+              ]
+            },
+            {
+              "id": "temporary-employee-verification-master",
+              "name": "Temporary Employee Verification Master",
+              "legacyFeatures": [
+                "Temporary Employee Verification Master"
+              ]
+            },
+            {
+              "id": "template-settings-assignment",
+              "name": "Template Settings & Assignment",
+              "legacyFeatures": [
+                "Template Settings & Assignment"
+              ]
+            },
+            {
+              "id": "budget-master-1",
+              "name": "Budget Master",
+              "legacyFeatures": [
+                "Budget Master"
+              ]
+            },
+            {
+              "id": "define-sla",
+              "name": "Define SLA",
+              "legacyFeatures": [
+                "Define SLA"
+              ]
+            },
+            {
+              "id": "placement-agencies-institute-master-and-map-with-recruiter",
+              "name": "Placement Agencies / Institute Master and Map with Recruiter",
+              "legacyFeatures": [
+                "Placement Agencies / Institute Master and Map with Recruiter"
+              ]
+            }
           ]
         },
         {
-          "id": "time-setup",
           "name": "Leave & Attendance Setup",
-          "legacyFeatures": [
-            "Attendance Scheduler",
-            "Holiday Master",
-            "Assign Shift Rate Template",
-            "Online Attendance Workflow Template"
+          "pages": [
+            {
+              "id": "attendance-scheduler",
+              "name": "Attendance Scheduler",
+              "legacyFeatures": [
+                "Attendance Scheduler"
+              ]
+            },
+            {
+              "id": "holiday-master",
+              "name": "Holiday Master",
+              "legacyFeatures": [
+                "Holiday Master"
+              ]
+            },
+            {
+              "id": "assign-shift-rate-template",
+              "name": "Assign Shift Rate Template",
+              "legacyFeatures": [
+                "Assign Shift Rate Template"
+              ]
+            },
+            {
+              "id": "online-attendance-workflow-template",
+              "name": "Online Attendance Workflow Template",
+              "legacyFeatures": [
+                "Online Attendance Workflow Template"
+              ]
+            }
           ]
         },
         {
-          "id": "financial-setup",
           "name": "Financial & Compliance Setup",
-          "legacyFeatures": [
-            "Create Financial Year",
-            "Select Financial Year",
-            "PF / ESI Group",
-            "PF / ESI / PT Configuration",
-            "Create or Update Professional Tax Slab",
-            "Create or Update Income Tax Slab",
-            "Create or Update Tax Deductor",
-            "Designation",
-            "Create or Update Payhead Master",
-            "Create or Update Payhead Template",
-            "Resignation and Exit Interview Template Configuration",
-            "Create / Assign Salary Matrix Template"
+          "pages": [
+            {
+              "id": "create-financial-year",
+              "name": "Create Financial Year",
+              "legacyFeatures": [
+                "Create Financial Year"
+              ]
+            },
+            {
+              "id": "select-financial-year",
+              "name": "Select Financial Year",
+              "legacyFeatures": [
+                "Select Financial Year"
+              ]
+            },
+            {
+              "id": "pf-esi-group",
+              "name": "PF / ESI Group",
+              "legacyFeatures": [
+                "PF / ESI Group"
+              ]
+            },
+            {
+              "id": "pf-esi-pt-configuration",
+              "name": "PF / ESI / PT Configuration",
+              "legacyFeatures": [
+                "PF / ESI / PT Configuration"
+              ]
+            },
+            {
+              "id": "create-or-update-professional-tax-slab",
+              "name": "Create or Update Professional Tax Slab",
+              "legacyFeatures": [
+                "Create or Update Professional Tax Slab"
+              ]
+            },
+            {
+              "id": "create-or-update-income-tax-slab",
+              "name": "Create or Update Income Tax Slab",
+              "legacyFeatures": [
+                "Create or Update Income Tax Slab"
+              ]
+            },
+            {
+              "id": "create-or-update-tax-deductor",
+              "name": "Create or Update Tax Deductor",
+              "legacyFeatures": [
+                "Create or Update Tax Deductor"
+              ]
+            },
+            {
+              "id": "designation",
+              "name": "Designation",
+              "legacyFeatures": [
+                "Designation"
+              ]
+            },
+            {
+              "id": "create-or-update-payhead-master",
+              "name": "Create or Update Payhead Master",
+              "legacyFeatures": [
+                "Create or Update Payhead Master"
+              ]
+            },
+            {
+              "id": "create-or-update-payhead-template",
+              "name": "Create or Update Payhead Template",
+              "legacyFeatures": [
+                "Create or Update Payhead Template"
+              ]
+            },
+            {
+              "id": "resignation-and-exit-interview-template-configuration",
+              "name": "Resignation and Exit Interview Template Configuration",
+              "legacyFeatures": [
+                "Resignation and Exit Interview Template Configuration"
+              ]
+            },
+            {
+              "id": "create-assign-salary-matrix-template",
+              "name": "Create / Assign Salary Matrix Template",
+              "legacyFeatures": [
+                "Create / Assign Salary Matrix Template"
+              ]
+            }
           ]
         },
         {
-          "id": "user-management",
           "name": "User & Role Management",
-          "legacyFeatures": [
-            "Manage User Group",
-            "Manage Users",
-            "Manage Rights Master",
-            "Map Users With Payheads",
-            "Change Password Self",
-            "Reset Employee Password",
-            "Map Users With Widget",
-            "Map Employee With User Group",
-            "Map User With Leave Template"
+          "pages": [
+            {
+              "id": "manage-user-group",
+              "name": "Manage User Group",
+              "legacyFeatures": [
+                "Manage User Group"
+              ]
+            },
+            {
+              "id": "manage-users",
+              "name": "Manage Users",
+              "legacyFeatures": [
+                "Manage Users"
+              ]
+            },
+            {
+              "id": "manage-rights-master",
+              "name": "Manage Rights Master",
+              "legacyFeatures": [
+                "Manage Rights Master"
+              ]
+            },
+            {
+              "id": "map-users-with-payheads",
+              "name": "Map Users With Payheads",
+              "legacyFeatures": [
+                "Map Users With Payheads"
+              ]
+            },
+            {
+              "id": "change-password-self",
+              "name": "Change Password Self",
+              "legacyFeatures": [
+                "Change Password Self"
+              ]
+            },
+            {
+              "id": "reset-employee-password",
+              "name": "Reset Employee Password",
+              "legacyFeatures": [
+                "Reset Employee Password"
+              ]
+            },
+            {
+              "id": "map-users-with-widget",
+              "name": "Map Users With Widget",
+              "legacyFeatures": [
+                "Map Users With Widget"
+              ]
+            },
+            {
+              "id": "map-employee-with-user-group",
+              "name": "Map Employee With User Group",
+              "legacyFeatures": [
+                "Map Employee With User Group"
+              ]
+            },
+            {
+              "id": "map-user-with-leave-template",
+              "name": "Map User With Leave Template",
+              "legacyFeatures": [
+                "Map User With Leave Template"
+              ]
+            }
           ]
         }
       ]

@@ -31,34 +31,49 @@ data.navigation.forEach(mod => {
   });
 });
 
-// We want to reduce 461 items into ~30 consolidated pages.
 const modules = [
-  { module: "People", pages: [] },
-  { module: "Attendance & Leave", pages: [] },
-  { module: "Payroll", pages: [] },
-  { module: "Performance & Training", pages: [] },
-  { module: "Travel & Expenses", pages: [] },
-  { module: "Assets", pages: [] },
-  { module: "Approvals Hub", pages: [] },
-  { module: "Import Center", pages: [] },
-  { module: "Report Builder", pages: [] },
-  { module: "Settings", pages: [] }
+  { module: "People", categories: [] },
+  { module: "Attendance & Leave", categories: [] },
+  { module: "Payroll", categories: [] },
+  { module: "Performance & Training", categories: [] },
+  { module: "Travel & Expenses", categories: [] },
+  { module: "Assets", categories: [] },
+  { module: "Approvals Hub", categories: [] },
+  { module: "Import Center", categories: [] },
+  { module: "Report Builder", categories: [] },
+  { module: "Settings", categories: [] }
 ];
 
-// Helper to push to a page
-function pushToPage(modName, pageId, pageName, item) {
-  const mod = modules.find(m => m.module === modName);
-  let page = mod.pages.find(p => p.id === pageId);
-  if (!page) {
-    page = { id: pageId, name: pageName, legacyFeatures: [] };
-    mod.pages.push(page);
-  }
-  if (!page.legacyFeatures.includes(item.name)) {
-    page.legacyFeatures.push(item.name);
-  }
+function generateId(name) {
+  return name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
 }
 
-// Grouping Logic
+function pushToCategory(modName, catName, item) {
+  const mod = modules.find(m => m.module === modName);
+  let cat = mod.categories.find(c => c.name === catName);
+  if (!cat) {
+    cat = { name: catName, pages: [] };
+    mod.categories.push(cat);
+  }
+  
+  const pageId = generateId(item.name);
+  
+  // To avoid duplicate IDs, we append an index if it already exists
+  let finalId = pageId;
+  let counter = 1;
+  while (cat.pages.find(p => p.id === finalId)) {
+    finalId = `${pageId}-${counter}`;
+    counter++;
+  }
+
+  cat.pages.push({
+    id: finalId,
+    name: item.name,
+    legacyFeatures: [item.name] // For now, 1-to-1 mapping
+  });
+}
+
+// Grouping Logic (Similar to before but mapping to Category instead of merged Page)
 allItems.forEach(item => {
   const lower = item.name.toLowerCase();
   const ogMod = item.originalModule;
@@ -67,121 +82,121 @@ allItems.forEach(item => {
   if (lower.includes('report') || lower.includes('list of') || lower.includes('statement') || lower.includes('register') || lower.includes('challan details') || lower.includes('generate')) {
     if (!lower.includes('generate offer letter') && !lower.includes('generate type of assets')) {
       if (lower.includes('attendance') || lower.includes('leave') || lower.includes('absent')) {
-        return pushToPage("Report Builder", "attendance-reports", "Attendance & Leave Reports", item);
+        return pushToCategory("Report Builder", "Attendance & Leave Reports", item);
       }
       if (lower.includes('salary') || lower.includes('tax') || lower.includes('tds') || lower.includes('pf') || lower.includes('esi') || lower.includes('slip')) {
-        return pushToPage("Report Builder", "payroll-reports", "Payroll & Tax Reports", item);
+        return pushToCategory("Report Builder", "Payroll & Tax Reports", item);
       }
       if (lower.includes('employee') || lower.includes('joinee') || lower.includes('resign')) {
-        return pushToPage("Report Builder", "employee-reports", "Employee Reports", item);
+        return pushToCategory("Report Builder", "Employee Reports", item);
       }
-      return pushToPage("Report Builder", "custom-reports", "Custom Reports & Dashboards", item);
+      return pushToCategory("Report Builder", "Custom Reports & Dashboards", item);
     }
   }
 
   // 2. IMPORTS & EXPORTS
   if (lower.includes('import') || lower.includes('upload') || lower.includes('export')) {
     if (lower.includes('attendance') || lower.includes('shift') || lower.includes('punch')) {
-      return pushToPage("Import Center", "attendance-imports", "Attendance Imports", item);
+      return pushToCategory("Import Center", "Attendance Imports", item);
     }
     if (lower.includes('salary') || lower.includes('pf') || lower.includes('esi') || lower.includes('pt') || lower.includes('tds') || lower.includes('tax')) {
-      return pushToPage("Import Center", "payroll-imports", "Payroll & Tax Imports", item);
+      return pushToCategory("Import Center", "Payroll & Tax Imports", item);
     }
     if (lower.includes('employee') || lower.includes('candidate')) {
-      return pushToPage("Import Center", "employee-imports", "Employee & Candidate Data", item);
+      return pushToCategory("Import Center", "Employee & Candidate Data", item);
     }
     if (lower.includes('export')) {
-      return pushToPage("Import Center", "data-export", "Data Exports", item);
+      return pushToCategory("Import Center", "Data Exports", item);
     }
-    return pushToPage("Import Center", "bulk-imports", "General Bulk Imports", item);
+    return pushToCategory("Import Center", "General Bulk Imports", item);
   }
 
   // 3. APPROVALS
   if (lower.includes('approv') || lower.includes('reject') || lower.includes('authorize') || lower.includes('clearance approve')) {
     if (lower.includes('leave') || lower.includes('od') || lower.includes('mispunch') || lower.includes('attendance')) {
-      return pushToPage("Approvals Hub", "attendance-approvals", "Attendance & Leave Approvals", item);
+      return pushToCategory("Approvals Hub", "Attendance & Leave Approvals", item);
     }
     if (lower.includes('expense') || lower.includes('travel') || lower.includes('tour')) {
-      return pushToPage("Approvals Hub", "expense-approvals", "Travel & Expense Approvals", item);
+      return pushToCategory("Approvals Hub", "Travel & Expense Approvals", item);
     }
     if (lower.includes('salary') || lower.includes('loan') || lower.includes('tax')) {
-      return pushToPage("Approvals Hub", "finance-approvals", "Finance & Payroll Approvals", item);
+      return pushToCategory("Approvals Hub", "Finance & Payroll Approvals", item);
     }
-    return pushToPage("Approvals Hub", "general-approvals", "General Approvals", item);
+    return pushToCategory("Approvals Hub", "General Approvals", item);
   }
 
   // 4. SETTINGS
   if (lower.includes('master') || lower.includes('template') || lower.includes('setup') || lower.includes('configuration') || lower.includes('define') || ogMod === "Administration") {
     if (lower.includes('company') || lower.includes('bank') || lower.includes('branch') || lower.includes('location') || lower.includes('region') || lower.includes('department') || lower.includes('grade')) {
-      return pushToPage("Settings", "org-profile", "Organization Profile", item);
+      return pushToCategory("Settings", "Organization Profile", item);
     }
     if (lower.includes('user') || lower.includes('role') || lower.includes('password') || lower.includes('right')) {
-      return pushToPage("Settings", "user-management", "User & Role Management", item);
+      return pushToCategory("Settings", "User & Role Management", item);
     }
     if (lower.includes('tax') || lower.includes('pf') || lower.includes('esi') || lower.includes('salary') || lower.includes('payhead') || lower.includes('financial')) {
-      return pushToPage("Settings", "financial-setup", "Financial & Compliance Setup", item);
+      return pushToCategory("Settings", "Financial & Compliance Setup", item);
     }
     if (lower.includes('attendance') || lower.includes('shift') || lower.includes('leave') || lower.includes('holiday')) {
-      return pushToPage("Settings", "time-setup", "Leave & Attendance Setup", item);
+      return pushToCategory("Settings", "Leave & Attendance Setup", item);
     }
-    return pushToPage("Settings", "system-config", "System Configuration", item);
+    return pushToCategory("Settings", "System Configuration", item);
   }
 
   // 5. ATTENDANCE & LEAVE
   if (ogMod === "Attendance & Leave") {
-    if (lower.includes('leave') || lower.includes('encashment')) return pushToPage("Attendance & Leave", "leave-management", "Leave Management", item);
-    if (lower.includes('shift') || lower.includes('roster')) return pushToPage("Attendance & Leave", "shift-roster", "Shift & Roster Planning", item);
-    return pushToPage("Attendance & Leave", "daily-attendance", "Daily Attendance", item);
+    if (lower.includes('leave') || lower.includes('encashment')) return pushToCategory("Attendance & Leave", "Leave Management", item);
+    if (lower.includes('shift') || lower.includes('roster')) return pushToCategory("Attendance & Leave", "Shift & Roster Planning", item);
+    return pushToCategory("Attendance & Leave", "Daily Attendance", item);
   }
 
   // 6. PAYROLL & COMPLIANCE
   if (ogMod === "Salary Processing" || ogMod === "Compliance") {
     if (lower.includes('tax') || lower.includes('pf') || lower.includes('esi') || lower.includes('tds') || lower.includes('pt') || lower.includes('lwf') || lower.includes('perquisite') || lower.includes('investment')) {
-      return pushToPage("Payroll", "tax-declarations", "Tax & Declarations", item);
+      return pushToCategory("Payroll", "Tax & Declarations", item);
     }
     if (lower.includes('structure') || lower.includes('increment') || lower.includes('arrear')) {
-      return pushToPage("Payroll", "salary-structures", "Salary Structures", item);
+      return pushToCategory("Payroll", "Salary Structures", item);
     }
     if (lower.includes('payment') || lower.includes('cheque') || lower.includes('bank') || lower.includes('transfer')) {
-      return pushToPage("Payroll", "payouts", "Payouts & Disbursements", item);
+      return pushToCategory("Payroll", "Payouts & Disbursements", item);
     }
-    return pushToPage("Payroll", "run-payroll", "Run Payroll", item);
+    return pushToCategory("Payroll", "Run Payroll", item);
   }
 
   // 7. TRAVEL & EXPENSES
   if (ogMod === "Travel" || lower.includes('expense') || lower.includes('reimbursement')) {
-    if (lower.includes('travel') || lower.includes('tour')) return pushToPage("Travel & Expenses", "travel-desk", "Travel Desk", item);
-    return pushToPage("Travel & Expenses", "expense-claims", "Expense Claims", item);
+    if (lower.includes('travel') || lower.includes('tour')) return pushToCategory("Travel & Expenses", "Travel Desk", item);
+    return pushToCategory("Travel & Expenses", "Expense Claims", item);
   }
 
   // 8. ASSETS
   if (ogMod === "Asset") {
-    return pushToPage("Assets", "asset-registry", "Asset Registry", item);
+    return pushToCategory("Assets", "Asset Registry", item);
   }
 
   // 9. PERFORMANCE & TRAINING
   if (ogMod === "PMS" || ogMod === "Training") {
-    if (ogMod === "Training" || lower.includes('training')) return pushToPage("Performance & Training", "training-hub", "Learning & Training", item);
-    return pushToPage("Performance & Training", "performance-reviews", "Performance Reviews", item);
+    if (ogMod === "Training" || lower.includes('training')) return pushToCategory("Performance & Training", "Learning & Training", item);
+    return pushToCategory("Performance & Training", "Performance Reviews", item);
   }
 
   // 10. PEOPLE
   if (ogMod === "e-Recruitment" || lower.includes('candidate') || lower.includes('mrf') || lower.includes('interview') || lower.includes('vacancy')) {
-    return pushToPage("People", "recruitment", "Recruitment Hub", item);
+    return pushToCategory("People", "Recruitment Hub", item);
   }
   if (ogMod === "Onboarding" || lower.includes('temporary employee') || lower.includes('offer letter')) {
-    return pushToPage("People", "onboarding", "Onboarding Pipeline", item);
+    return pushToCategory("People", "Onboarding Pipeline", item);
   }
   if (lower.includes('resign') || lower.includes('exit') || lower.includes('clearance') || lower.includes('separation')) {
-    return pushToPage("People", "exit-management", "Exit Management", item);
+    return pushToCategory("People", "Exit Management", item);
   }
   if (lower.includes('award') || lower.includes('disciplinary') || lower.includes('help desk') || lower.includes('ticket')) {
-    return pushToPage("People", "employee-relations", "Employee Relations", item);
+    return pushToCategory("People", "Employee Relations", item);
   }
   
   // Default to Employee Directory
-  return pushToPage("People", "employee-directory", "Employee Directory", item);
+  return pushToCategory("People", "Employee Directory", item);
 });
 
 fs.writeFileSync(path.join(__dirname, '../../src/data/pages-ia.json'), JSON.stringify({ navigation: modules }, null, 2));
-console.log('Successfully generated pages-ia.json mapping 461 features to 26 consolidated pages!');
+console.log('Successfully generated 3-level pages-ia.json mapping 461 features to 461 individual pages!');

@@ -11,13 +11,20 @@ export default function GenericPage() {
   let currentPage = null;
   let currentModule = null;
 
+  let currentCategory = null;
+
   for (const mod of pagesData.navigation) {
-    const found = mod.pages.find(p => p.id === hubId);
-    if (found) {
-      currentPage = found;
-      currentModule = mod;
-      break;
+    if (!mod.categories) continue;
+    for (const cat of mod.categories) {
+      const found = cat.pages?.find(p => p.id === hubId);
+      if (found) {
+        currentPage = found;
+        currentCategory = cat;
+        currentModule = mod;
+        break;
+      }
     }
+    if (currentPage) break;
   }
 
   if (!currentPage) {
@@ -45,6 +52,8 @@ export default function GenericPage() {
         </button>
         <span style={{ color: 'var(--border-light)' }}>/</span>
         <span style={{ fontSize: '13px', color: 'var(--text-muted)', fontWeight: 500 }}>{currentModule.module}</span>
+        <span style={{ color: 'var(--border-light)' }}>/</span>
+        <span style={{ fontSize: '13px', color: 'var(--text-muted)', fontWeight: 500 }}>{currentCategory.name}</span>
         <span style={{ color: 'var(--border-light)' }}>/</span>
         <span style={{ fontSize: '13px', color: 'var(--text-main)', fontWeight: 600 }}>{currentPage.name}</span>
       </div>

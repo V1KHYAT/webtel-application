@@ -36,12 +36,14 @@ function flattenIA_V1(navigationData) {
 function flattenIA_Pages(navigationData) {
   const items = [];
   navigationData.forEach(mod => {
-    mod.pages.forEach(page => {
-      page.legacyFeatures.forEach(feat => {
+    if (!mod.categories) return;
+    mod.categories.forEach(cat => {
+      if (!cat.pages) return;
+      cat.pages.forEach(page => {
         items.push({
-          name: feat,
+          name: page.name,
           module: mod.module,
-          category: `Mapped to: ${page.name}`,
+          category: cat.name,
           route: `/page/${page.id}`
         });
       });

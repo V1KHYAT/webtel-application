@@ -63,13 +63,88 @@ const NestedMenuItem = ({ item, depth }) => {
           alignItems: 'center', 
           color: depth === 0 ? 'var(--text-main)' : 'var(--text-secondary)',
           background: isOpen ? 'var(--bg-hover)' : 'transparent',
-          borderRadius: 'var(--radius-sm)'
+          borderRadius: 'var(--radius-sm)',
+          textDecoration: 'none'
         }}
       >
         <span>{item.name}</span>
         {hasItems && (isOpen ? <ChevronDown size={14} /> : <ChevronRight size={14} />)}
       </a>
       {isOpen && hasItems && <NestedMenu items={item.items} depth={depth + 1} />}
+    </div>
+  );
+};
+
+// Custom nested menu for V2 (Category -> Pages)
+const NestedMenuItemPages = ({ category }) => {
+  const [isOpen, setIsOpen] = useState(false);
+  const hasPages = category.pages && category.pages.length > 0;
+  const navigate = useNavigate();
+  const location = useLocation();
+  
+  return (
+    <div style={{ marginTop: '2px' }}>
+      <a 
+        href="#" 
+        onClick={(e) => { 
+          e.preventDefault(); 
+          if (hasPages) setIsOpen(!isOpen); 
+        }}
+        style={{ 
+          fontSize: '12px', 
+          fontWeight: 600, 
+          padding: '6px 10px', 
+          display: 'flex', 
+          justifyContent: 'space-between', 
+          alignItems: 'center', 
+          color: 'var(--text-main)',
+          background: isOpen ? 'var(--bg-hover)' : 'transparent',
+          borderRadius: 'var(--radius-sm)',
+          textDecoration: 'none'
+        }}
+      >
+        <span>{category.name}</span>
+        {hasPages && (isOpen ? <ChevronDown size={14} /> : <ChevronRight size={14} />)}
+      </a>
+      {isOpen && hasPages && (
+        <div style={{ paddingLeft: '12px', marginTop: '4px' }}>
+          {category.pages.map((page) => (
+            <a 
+              key={page.id}
+              href="#"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate(`/page/${page.id}`);
+              }}
+              style={{ 
+                fontSize: '11px', 
+                padding: '6px 10px', 
+                display: 'block', 
+                color: location.pathname === `/page/${page.id}` ? 'var(--primary-color)' : 'var(--text-secondary)',
+                background: location.pathname === `/page/${page.id}` ? 'var(--primary-light)' : 'transparent',
+                fontWeight: location.pathname === `/page/${page.id}` ? 600 : 500,
+                borderRadius: 'var(--radius-sm)',
+                textDecoration: 'none',
+                marginBottom: '2px'
+              }}
+              onMouseEnter={(e) => {
+                if (location.pathname !== `/page/${page.id}`) {
+                  e.currentTarget.style.color = 'var(--primary-color)';
+                  e.currentTarget.style.background = 'var(--primary-subtle)';
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (location.pathname !== `/page/${page.id}`) {
+                  e.currentTarget.style.color = 'var(--text-secondary)';
+                  e.currentTarget.style.background = 'transparent';
+                }
+              }}
+            >
+              {page.name}
+            </a>
+          ))}
+        </div>
+      )}
     </div>
   );
 };
@@ -202,40 +277,8 @@ export default function Sidebar() {
                       <NestedMenu items={mod.categories} depth={0} />
                     ) : (
                       <div style={{ marginTop: '4px', marginBottom: '8px' }}>
-                        {mod.pages.map((page) => (
-                          <a 
-                            key={page.id}
-                            href="#"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              navigate(`/page/${page.id}`);
-                            }}
-                            style={{ 
-                              fontSize: '12px', 
-                              padding: '6px 10px', 
-                              display: 'block', 
-                              color: location.pathname === `/page/${page.id}` ? 'var(--primary-color)' : 'var(--text-secondary)',
-                              background: location.pathname === `/page/${page.id}` ? 'var(--primary-light)' : 'transparent',
-                              fontWeight: location.pathname === `/page/${page.id}` ? 600 : 500,
-                              borderRadius: 'var(--radius-sm)',
-                              textDecoration: 'none',
-                              marginBottom: '2px'
-                            }}
-                            onMouseEnter={(e) => {
-                              if (location.pathname !== `/page/${page.id}`) {
-                                e.currentTarget.style.color = 'var(--primary-color)';
-                                e.currentTarget.style.background = 'var(--primary-subtle)';
-                              }
-                            }}
-                            onMouseLeave={(e) => {
-                              if (location.pathname !== `/page/${page.id}`) {
-                                e.currentTarget.style.color = 'var(--text-secondary)';
-                                e.currentTarget.style.background = 'transparent';
-                              }
-                            }}
-                          >
-                            {page.name}
-                          </a>
+                        {mod.categories && mod.categories.map((cat, idx) => (
+                          <NestedMenuItemPages key={idx} category={cat} />
                         ))}
                       </div>
                     )}
