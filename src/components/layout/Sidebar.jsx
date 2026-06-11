@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from 'react';
 import { 
-  Building2, Users, Monitor, Calendar, 
+  Building2, Users, Monitor, Calendar, UserCog,
   CheckSquare, FileWarning, BadgeDollarSign, 
   PieChart, Grip, Plane, Target, GraduationCap, 
   Briefcase, UserPlus, ChevronRight, ChevronDown, Home,
