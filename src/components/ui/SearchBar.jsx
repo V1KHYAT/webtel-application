@@ -5,6 +5,7 @@ import { useMenu } from '../../context/MenuContext';
 import { useNavigate } from 'react-router-dom';
 import dropdownDataV1 from '../../../dropdown.json';
 import premiumIA from '../../data/premium-ia.json';
+import v3IA from '../../data/v3-ia.json';
 
 // V1 flattener
 function flattenIA_V1(navigationData) {
@@ -32,53 +33,86 @@ function flattenIA_V1(navigationData) {
   return items;
 }
 
-// V2/V3 flattener (Pages)
-function flattenIA_Pages(navigationData) {
-  const items = [];
-  navigationData.forEach(mod => {
-    if (!mod.categories) return;
-    mod.categories.forEach(cat => {
-      if (!cat.pages) return;
-      cat.pages.forEach(page => {
-        if (!page.legacyContentSources) return;
-        page.legacyContentSources.forEach(feat => {
-          items.push({
-            name: feat,
-            module: mod.module,
-            category: `Mapped to: ${page.name}`,
-            route: `/page/${page.id}`
-          });
+const formattedV1Data = flattenIA_V1(dropdownDataV1.navigation);
+
+// Format V2 Data
+const formattedV2Data = [];
+premiumIA.navigation.forEach(mod => {
+  if (!mod.categories) return;
+  mod.categories.forEach(cat => {
+    if (!cat.pages) return;
+    cat.pages.forEach(page => {
+      formattedV2Data.push({
+        id: page.id,
+        name: page.name,
+        type: 'V2 Page',
+        module: mod.module,
+        category: cat.name,
+        legacySources: page.legacyContentSources || [],
+        route: `/page/${page.id}`
+      });
+      (page.legacyContentSources || []).forEach(legacy => {
+        formattedV2Data.push({
+          id: page.id,
+          name: legacy,
+          type: 'Legacy Feature inside V2',
+          module: mod.module,
+          category: page.name,
+          legacySources: [],
+          route: `/page/${page.id}`
         });
       });
     });
   });
-  return items;
-}
+});
 
-const allItemsV1 = flattenIA_V1(dropdownDataV1.navigation);
-const allItemsV2 = flattenIA_Pages(premiumIA.navigation);
+// Format V3 Data
+const formattedV3Data = [];
+v3IA.navigation.forEach(mod => {
+  if (!mod.categories) return;
+  mod.categories.forEach(cat => {
+    if (!cat.pages) return;
+    cat.pages.forEach(page => {
+      formattedV3Data.push({
+        id: page.id,
+        name: page.name,
+        type: 'V3 Page',
+        module: mod.module,
+        category: cat.name,
+        legacySources: page.legacyContentSources || [],
+        route: `/page/${page.id}`
+      });
+    });
+  });
+});
 
 const fuseOptions = {
-  keys: ['name', 'category', 'module'],
-  threshold: 0.4,
-  ignoreLocation: true
+  keys: ['name', 'module', 'category', 'type', 'legacySources'],
+  threshold: 0.3,
+  includeMatches: true
 };
 
-const fuseV1 = new Fuse(allItemsV1, fuseOptions);
-const fuseV2 = new Fuse(allItemsV2, fuseOptions);
+const fuseV1 = new Fuse(formattedV1Data, fuseOptions);
+const fuseV2 = new Fuse(formattedV2Data, fuseOptions);
+const fuseV3 = new Fuse(formattedV3Data, fuseOptions);
 
 export default function SearchBar() {
   const [query, setQuery] = useState('');
+  const [results, setResults] = useState([]);
   const [isFocused, setIsFocused] = useState(false);
   const wrapperRef = useRef(null);
   const navigate = useNavigate();
   const { iaVersion } = useMenu();
 
-  const results = useMemo(() => {
-    if (!query.trim()) return [];
-    const fuse = iaVersion === 1 ? fuseV1 : fuseV2;
-    const fuseResults = fuse.search(query);
-    return fuseResults.slice(0, 8).map(res => res.item);
+  useEffect(() => {
+    if (!query) {
+      setResults([]);
+      return;
+    }
+
+    const fuse = iaVersion === 3 ? fuseV3 : (iaVersion === 2 ? fuseV2 : fuseV1);
+    const searchResults = fuse.search(query);
+    setResults(searchResults.slice(0, 8).map(res => res.item));
   }, [query, iaVersion]);
 
   useEffect(() => {

@@ -8,6 +8,7 @@ import {
 } from 'lucide-react';
 import dropdownDataV1 from '../../../dropdown.json';
 import premiumIA from '../../data/premium-ia.json';
+import v3IA from '../../data/v3-ia.json';
 import { useMenu } from '../../context/MenuContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -193,6 +194,7 @@ export default function Sidebar() {
   const location = useLocation();
 
   const modules = useMemo(() => {
+    if (iaVersion === 3) return v3IA.navigation;
     if (iaVersion === 2) return premiumIA.navigation;
 
     const rawData = dropdownDataV1.navigation;
@@ -220,19 +222,19 @@ export default function Sidebar() {
     });
   }, [iaVersion]);
 
-  const currentIconMap = iaVersion === 1 ? iconMapV1 : iconMapV2;
+  const currentIconMap = iaVersion === 2 ? iconMapV2 : iconMapV1;
 
   return (
     <div className="sidebar-column" style={{ position: 'relative' }}>
       
       {/* AB Test Badge */}
       <div style={{ position: 'absolute', top: '-30px', left: 0, fontSize: '11px', fontWeight: 'bold', color: 'var(--primary-color)' }}>
-        [ Press 1 or 2 to toggle IA: V{iaVersion} ]
+        [ Press 1, 2, or 3 to toggle IA: V{iaVersion} ]
       </div>
 
       <div className="notion-sidebar">
         <div className="notion-group" style={{ fontSize: '13px', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.2px', padding: '16px 16px 8px 16px', borderBottom: '1px solid var(--border-light)', marginBottom: '8px', textTransform: 'none' }}>
-          Webtel HRMS {iaVersion === 2 && <span style={{ color: 'var(--primary-color)', fontSize: '11px', marginLeft: '4px' }}>(Redesign)</span>}
+          Webtel HRMS {iaVersion === 2 && <span style={{ color: 'var(--primary-color)', fontSize: '11px', marginLeft: '4px' }}>(Redesign)</span>}{iaVersion === 3 && <span style={{ color: 'var(--primary-color)', fontSize: '11px', marginLeft: '4px' }}>(Dummy V3)</span>}
         </div>
         <nav className="notion-nav">
           
