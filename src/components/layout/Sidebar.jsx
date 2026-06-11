@@ -27,7 +27,8 @@ const iconMapV1 = {
   "PMS": Target,
   "Training": GraduationCap,
   "e-Recruitment": Briefcase,
-  "Onboarding": UserPlus
+  "Onboarding": UserPlus,
+  "Reports": BarChart3
 };
 
 const iconMapV2 = {
@@ -254,7 +255,9 @@ export default function Sidebar() {
           </div>
 
           {modules.map((mod) => {
-            const Icon = currentIconMap[mod.module] || Grip;
+            const moduleNameLower = mod.module.toLowerCase();
+            const iconKey = Object.keys(currentIconMap).find(k => k.toLowerCase() === moduleNameLower);
+            const Icon = iconKey ? currentIconMap[iconKey] : Grip;
             const isExpanded = expandedModule === mod.module;
             return (
               <div key={mod.module}>
