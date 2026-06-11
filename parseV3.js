@@ -4,11 +4,20 @@ import * as cheerio from 'cheerio';
 const navigation = [];
 const seenModules = new Set();
 
+function toTitleCase(str) {
+    if (str.toUpperCase() === 'HR') return 'HR';
+    return str.toLowerCase().split(' ').map(word => {
+        if (word === '&') return word;
+        return word.charAt(0).toUpperCase() + word.slice(1);
+    }).join(' ');
+}
+
 function parseHtml(htmlContent) {
     const $ = cheerio.load(htmlContent);
 
     $('#menuh > ul > li.nav-item').each((_, moduleEl) => {
-        const moduleName = $(moduleEl).children('a').first().text().replace(/\s+/g, ' ').trim();
+        let rawModuleName = $(moduleEl).children('a').first().text().replace(/\s+/g, ' ').trim();
+        const moduleName = toTitleCase(rawModuleName);
         
         // Skip if we already parsed this module (e.g. APPROVALS might overlap)
         if (seenModules.has(moduleName)) return;

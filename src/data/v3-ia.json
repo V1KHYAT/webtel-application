@@ -1,7 +1,7 @@
 {
   "navigation": [
     {
-      "module": "ADMINISTRATION",
+      "module": "Administration",
       "categories": [
         {
           "name": "Organization Setup",
@@ -689,7 +689,7 @@
       ]
     },
     {
-      "module": "EMPLOYEE",
+      "module": "Employee",
       "categories": [
         {
           "name": "Employee Setup",
@@ -1296,7 +1296,7 @@
       ]
     },
     {
-      "module": "ATTENDANCE & LEAVE",
+      "module": "Attendance & Leave",
       "categories": [
         {
           "name": "Leave & Attendance Setup",
@@ -1848,7 +1848,7 @@
       ]
     },
     {
-      "module": "APPROVALS",
+      "module": "Approvals",
       "categories": [
         {
           "name": "Authorize Employees To View Salary Slip and TDS Slip",
@@ -1961,7 +1961,7 @@
       ]
     },
     {
-      "module": "COMPLIANCE",
+      "module": "Compliance",
       "categories": [
         {
           "name": "Employee Provident Fund",
@@ -2391,7 +2391,7 @@
       ]
     },
     {
-      "module": "SALARY PROCESSING",
+      "module": "Salary Processing",
       "categories": [
         {
           "name": "Salary Lock / Unlock Month",
@@ -2829,7 +2829,7 @@
       ]
     },
     {
-      "module": "ANALYTICS",
+      "module": "Analytics",
       "categories": [
         {
           "name": "Audit Trail Report",
@@ -2872,7 +2872,7 @@
       ]
     },
     {
-      "module": "OTHERS",
+      "module": "Others",
       "categories": [
         {
           "name": "Employee Expense Management",
