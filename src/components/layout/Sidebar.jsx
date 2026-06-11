@@ -1,13 +1,13 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo } from 'react';
 import { 
-  Building2, Users, Monitor, UserCog, Clock, 
+  Building2, Users, Monitor, Calendar, 
   CheckSquare, FileWarning, BadgeDollarSign, 
   PieChart, Grip, Plane, Target, GraduationCap, 
   Briefcase, UserPlus, ChevronRight, ChevronDown, Home,
-  FileUp, Settings as SettingsIcon, Database
+  FileUp, Settings as SettingsIcon, Database, Clock, CreditCard, TrendingUp, Receipt, BarChart3
 } from 'lucide-react';
 import dropdownDataV1 from '../../../dropdown.json';
-import pagesDataV3 from '../../data/pages-ia.json';
+import premiumIA from '../../data/premium-ia.json';
 import { useMenu } from '../../context/MenuContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -30,15 +30,13 @@ const iconMapV1 = {
 };
 
 const iconMapV2 = {
-  "People": Users,
-  "Attendance & Leave": Clock,
-  "Payroll": BadgeDollarSign,
-  "Performance & Training": Target,
-  "Travel & Expenses": Plane,
-  "Assets": Monitor,
-  "Approvals Hub": CheckSquare,
-  "Import Center": FileUp,
-  "Report Builder": PieChart,
+  "Directory": Users,
+  "Time": Clock,
+  "Payroll": CreditCard,
+  "Recruitment": Briefcase,
+  "Performance": TrendingUp,
+  "Expenses": Receipt,
+  "Reports": BarChart3,
   "Settings": SettingsIcon
 };
 
@@ -195,7 +193,7 @@ export default function Sidebar() {
   const location = useLocation();
 
   const modules = useMemo(() => {
-    if (iaVersion === 2) return pagesDataV3.navigation;
+    if (iaVersion === 2) return premiumIA.navigation;
 
     const rawData = dropdownDataV1.navigation;
     return rawData.map(mod => {

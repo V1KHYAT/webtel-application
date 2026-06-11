@@ -1,19 +1,18 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { ChevronLeft, LayoutGrid } from 'lucide-react';
-import pagesData from '../data/pages-ia.json';
+import premiumIA from '../data/premium-ia.json';
 
 export default function GenericPage() {
   const { hubId } = useParams();
   const navigate = useNavigate();
 
-  // Find the requested page from our 26 consolidated pages
+  // Find the requested page from our curated pages
   let currentPage = null;
   let currentModule = null;
-
   let currentCategory = null;
 
-  for (const mod of pagesData.navigation) {
+  for (const mod of premiumIA.navigation) {
     if (!mod.categories) continue;
     for (const cat of mod.categories) {
       const found = cat.pages?.find(p => p.id === hubId);
@@ -63,8 +62,8 @@ export default function GenericPage() {
           {currentPage.name}
         </h1>
         <p style={{ color: 'var(--text-secondary)', fontSize: '15px', maxWidth: '700px', lineHeight: 1.5 }}>
-          This page is a consolidated hub under the <b>{currentModule.module}</b> module. In the redesigned architecture, 
-          this single unified page replaces the following <b>{currentPage.legacyFeatures.length}</b> separate screens from the legacy system.
+          This page is a consolidated hub under the <b>{currentModule.module}</b> module. In the redesigned premium architecture, 
+          this single unified page seamlessly integrates and replaces the following <b>{currentPage.legacyContentSources?.length || 0}</b> separate screens from the legacy system.
         </p>
       </div>
 
@@ -74,7 +73,7 @@ export default function GenericPage() {
         gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', 
         gap: '16px' 
       }}>
-        {currentPage.legacyFeatures.map((feat, idx) => (
+        {currentPage.legacyContentSources && currentPage.legacyContentSources.map((feat, idx) => (
           <div key={idx} style={{
             background: '#fff',
             border: '1px solid var(--border-light)',

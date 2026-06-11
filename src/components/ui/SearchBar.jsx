@@ -4,7 +4,7 @@ import Fuse from 'fuse.js';
 import { useMenu } from '../../context/MenuContext';
 import { useNavigate } from 'react-router-dom';
 import dropdownDataV1 from '../../../dropdown.json';
-import pagesDataV3 from '../../data/pages-ia.json';
+import premiumIA from '../../data/premium-ia.json';
 
 // V1 flattener
 function flattenIA_V1(navigationData) {
@@ -40,11 +40,14 @@ function flattenIA_Pages(navigationData) {
     mod.categories.forEach(cat => {
       if (!cat.pages) return;
       cat.pages.forEach(page => {
-        items.push({
-          name: page.name,
-          module: mod.module,
-          category: cat.name,
-          route: `/page/${page.id}`
+        if (!page.legacyContentSources) return;
+        page.legacyContentSources.forEach(feat => {
+          items.push({
+            name: feat,
+            module: mod.module,
+            category: `Mapped to: ${page.name}`,
+            route: `/page/${page.id}`
+          });
         });
       });
     });
@@ -53,7 +56,7 @@ function flattenIA_Pages(navigationData) {
 }
 
 const allItemsV1 = flattenIA_V1(dropdownDataV1.navigation);
-const allItemsV2 = flattenIA_Pages(pagesDataV3.navigation);
+const allItemsV2 = flattenIA_Pages(premiumIA.navigation);
 
 const fuseOptions = {
   keys: ['name', 'category', 'module'],
