@@ -3,14 +3,12 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 const MenuContext = createContext();
 
 export function MenuProvider({ children }) {
-  const [iaVersion, setIaVersion] = useState(1);
+  const [iaVersion, setIaVersion] = useState(2);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
       if (e.key === '1') setIaVersion(1);
       if (e.key === '2') setIaVersion(2);
-      if (e.key === '3') setIaVersion(3);
-      if (e.key === '4') setIaVersion(4);
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);

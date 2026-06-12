@@ -1,10 +1,13 @@
 import React, { useMemo } from 'react';
 import { Bell, Settings, LogOut, Search } from 'lucide-react';
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import v1IA from '../../data/v1-ia.json';
+import v2IA from '../../data/v2-ia.json';
+import { useMenu } from '../../context/MenuContext';
 
 export default function Header() {
   const location = useLocation();
+  const { iaVersion } = useMenu();
   
   const currentPageName = useMemo(() => {
     if (location.pathname === '/') return 'Dashboard';
@@ -14,7 +17,8 @@ export default function Header() {
     const hubId = parts[parts.length - 1];
     
     if (hubId) {
-      for (const mod of v1IA.navigation) {
+      const activeIA = iaVersion === 2 ? v2IA : v1IA;
+      for (const mod of activeIA.navigation) {
         if (!mod.categories) continue;
         for (const cat of mod.categories) {
           const page = cat.pages?.find(p => p.id === hubId);
@@ -23,7 +27,7 @@ export default function Header() {
       }
     }
     return 'Webtel Application';
-  }, [location]);
+  }, [location, iaVersion]);
 
   return (
     <header style={{ 
@@ -41,23 +45,6 @@ export default function Header() {
       </div>
       
       <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-        <div style={{ 
-          display: 'flex', 
-          alignItems: 'center', 
-          background: 'var(--bg-light)', 
-          padding: '8px 16px', 
-          borderRadius: '8px',
-          border: '1px solid var(--border-color)',
-          width: '300px'
-        }}>
-          <Search size={16} color="var(--text-secondary)" style={{ marginRight: '8px' }} />
-          <input 
-            type="text" 
-            placeholder="Search..." 
-            style={{ border: 'none', background: 'transparent', outline: 'none', width: '100%', fontSize: '14px', color: 'var(--text-main)' }} 
-          />
-        </div>
-        
         <button className="btn-ghost" style={{ padding: '8px' }}>
           <Bell size={18} />
         </button>

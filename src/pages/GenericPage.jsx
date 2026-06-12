@@ -1,24 +1,20 @@
-import React, { useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
-import { ChevronLeft, LayoutGrid, Search, Filter, SlidersHorizontal, FileText, CheckCircle, Settings, ChevronRight } from 'lucide-react';
-import premiumIA from '../data/premium-ia.json';
-import v1IA from '../data/v1-ia.json';
-import v3IA from '../data/v3-ia.json';
-import v4IA from '../data/v4-ia.json';
+import React from 'react';
+import { useParams, Link } from 'react-router-dom';
 import { useMenu } from '../context/MenuContext';
+import v1IA from '../data/v1-ia.json';
+import v2IA from '../data/v2-ia.json';
+import { LayoutGrid, FileText } from 'lucide-react';
 import LegacyParser from '../components/layout/LegacyParser';
 
 export default function GenericPage() {
   const { hubId } = useParams();
-  const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState(0);
   const { iaVersion } = useMenu();
 
-  // Find the requested page
+  // Find the page metadata across whichever JSON is currently active
+  const currentIA = iaVersion === 2 ? v2IA : v1IA;
+
   let currentPage = null;
   let currentModule = null;
-
-  const currentIA = iaVersion === 4 ? v4IA : (iaVersion === 3 ? v3IA : (iaVersion === 1 ? v1IA : premiumIA));
 
   for (const mod of currentIA.navigation) {
     if (!mod.categories) continue;
@@ -52,15 +48,15 @@ export default function GenericPage() {
         
         {iaVersion === 1 ? (
           <LegacyParser page={currentPage} />
-        ) : iaVersion === 4 && isMerged ? (
-          /* MERGED PAGE INDICATOR FOR V4 REDESIGN */
+        ) : iaVersion === 2 && isMerged ? (
+          /* MERGED PAGE INDICATOR FOR V2 REDESIGN */
           <div style={{ background: '#fff', borderRadius: '12px', border: '1px solid var(--border-light)', padding: '32px', maxWidth: '800px', margin: '0 auto', textAlign: 'center', marginTop: '32px' }}>
             <div style={{ display: 'inline-flex', background: '#fef08a', color: '#854d0e', padding: '6px 16px', borderRadius: '100px', fontWeight: 700, fontSize: '13px', marginBottom: '24px', letterSpacing: '0.5px' }}>
               MERGED COMPONENT
             </div>
             <h2 style={{ fontSize: '28px', fontWeight: 700, marginBottom: '16px', color: 'var(--text-main)' }}>{currentPage.name}</h2>
             <p style={{ color: 'var(--text-secondary)', fontSize: '16px', marginBottom: '32px', lineHeight: 1.6 }}>
-              This new section consolidates the functionality of multiple legacy V3 pages into a single modern interface. <br/><br/>
+              This new section consolidates the functionality of multiple legacy V1 pages into a single modern interface. <br/><br/>
               <span style={{ color: 'var(--text-main)', fontWeight: 500 }}>Please provide screenshots/images of the following original pages so we can begin the redesign:</span>
             </p>
             
@@ -75,8 +71,8 @@ export default function GenericPage() {
               ))}
             </div>
           </div>
-        ) : iaVersion === 4 && !isMerged ? (
-          /* BLANK CANVAS FOR V4 NON-MERGED PAGES */
+        ) : iaVersion === 2 && !isMerged ? (
+          /* BLANK CANVAS FOR V2 NON-MERGED PAGES */
           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%', color: 'var(--text-secondary)' }}>
             <LayoutGrid size={48} color="var(--border-light)" style={{ marginBottom: '16px' }} />
             <h3 style={{ fontSize: '20px', fontWeight: 600, color: 'var(--text-main)', marginBottom: '8px' }}>{currentPage.name}</h3>
