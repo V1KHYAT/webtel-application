@@ -1,0 +1,117 @@
+
+Module: System & Org Setup
+  - Organization Setup
+  - Employee Portal Setup
+  - Employee Compliance Setup
+  - Loan / TDS Setup
+  - Organization Master Setup
+  - Pay Component Setup
+  - User Administration
+  - Configuration Reports
+  - Dynamic Parameters
+  - Organization Database Backup
+  - End User License Agreement
+  - Disclaimer
+
+Module: Employee Records
+  - Onboarding & Master Data
+  - Organization Chart
+  - Document Management
+  - Contract Conversions
+  - Intercompany Transfers
+  - Shift & Biometric Transfers
+  - Employee of the Month
+  - Location Tracking
+  - Employee Reports
+  - Intercompany Transfer Reports
+
+Module: Time & Attendance
+  - Leave & Attendance Setup
+  - Assignments
+  - Work Schedule Assignments
+  - Holiday and OT Settings
+  - Time Management ( Manual )
+  - Time Management ( Automated )
+  - Attendance Processing
+  - Attendance Process ( Manual )
+  - Attendance ,OT & Night Allowance Calculation
+  - Attendance Correction ( After Process )
+  - Online Attendance
+  - Timesheet Process (Online)
+  - Leave Reports
+  - Attendance Reports
+  - Leave & Attendance Settings Report
+  - Employee Track (Attendance)
+  - Attendance Approval/Rejection (Mobile App)
+
+Module: Payroll Management
+  - Salary Lock / Unlock Month
+  - Salary Assignment
+  - Salary Process, Unlock & Hold / Release
+  - Tax Process & Edit
+  - List of Payheads
+  - Salary Structure Assigned to Employee
+  - LIC Premium Paid Report
+  - Employees Monthly Arrear Details
+  - Salary Slip & Register (Various Formats & E-Mailing)
+  - Salary Variance
+  - Journal Voucher
+  - Payment Made to Employee Reports
+  - Salary Slip & Register (With Attendance Details) (Custom Made)
+  - Monthly Budget Variance Report (Custom Made)
+  - Salary(MISC.) Payment Report
+  - Manage Payments Made to Employees
+  - Reports
+  - Map Payhead with SAP CODE
+
+Module: HR Operations
+  - Helpdesk & Ticketing
+  - HR Documents & Letters
+  - Communications
+  - Awards & Recognition
+  - Disciplinary Actions
+  - Incident Reporting
+  - Background & References
+  - Internal Movements
+  - Task Management
+  - Separation Workflows
+
+Module: Additional Tools
+  - Employee Expense Management
+  - Daily / Monthly Attendance with Expense Details Process
+  - Reimbursement Management
+  - Employee Exit Management
+  - Loan & Advance
+  - ASSET
+  - FBP
+
+Module: Approvals
+  - Authorize Employees To View Salary Slip and TDS Slip
+  - Approve Loan Requested by Employee
+  - Approve Changes made by Employee to his/her Master Record
+  - Approve OD & Tour Request Requested by Employee
+  - Approve Employee Travel Request Requested by Employee
+  - Approve Employee Expense Request
+  - Employee Overtime Approval
+  - LTA / Sodexho Request Export
+  - Employee Overtime Approval/Rejection (Daily)
+
+Module: Compliance
+  - Employee Provident Fund
+  - Employee State Insurance ( ESI )
+  - Professional Tax ( PT )
+  - TDS
+  - PF Reports
+  - ESI Reports
+  - LWF - Professional Tax Reports
+  - TDS Reports
+
+Module: Analytics
+  - Audit Trail Report
+  - Analytic Tools
+
+Module: Reports
+  - Attendance Reports
+  - Leave Reports
+  - Salary Reports
+  - Compliance Reports

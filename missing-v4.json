@@ -1,0 +1,1627 @@
+[
+  {
+    "name": "Salary Slip & Register Configuration",
+    "module": "Administration",
+    "category": "Organization Setup"
+  },
+  {
+    "name": "Set Code For Employee",
+    "module": "Administration",
+    "category": "Organization Setup"
+  },
+  {
+    "name": "Attendance Scheduler",
+    "module": "Administration",
+    "category": "Organization Setup"
+  },
+  {
+    "name": "Bank Master",
+    "module": "Administration",
+    "category": "Organization Setup"
+  },
+  {
+    "name": "Branch Master",
+    "module": "Administration",
+    "category": "Organization Setup"
+  },
+  {
+    "name": "Publish Msg on Payslip, Birthday etc. Scheduler",
+    "module": "Administration",
+    "category": "Organization Setup"
+  },
+  {
+    "name": "Company News",
+    "module": "Administration",
+    "category": "Organization Setup"
+  },
+  {
+    "name": "Create Financial Year",
+    "module": "Administration",
+    "category": "Organization Setup"
+  },
+  {
+    "name": "Select Financial Year",
+    "module": "Administration",
+    "category": "Organization Setup"
+  },
+  {
+    "name": "Company & Global Settings",
+    "module": "Administration",
+    "category": "Organization Setup"
+  },
+  {
+    "name": "Employee Portal Setup",
+    "module": "Administration",
+    "category": "Employee Portal Setup"
+  },
+  {
+    "name": "PF / ESI Group",
+    "module": "Administration",
+    "category": "Employee Compliance Setup"
+  },
+  {
+    "name": "PF / ESI / PT Configuration",
+    "module": "Administration",
+    "category": "Employee Compliance Setup"
+  },
+  {
+    "name": "PF / ESI / PT Location & Unit Mapping",
+    "module": "Administration",
+    "category": "Employee Compliance Setup"
+  },
+  {
+    "name": "Create - Update Professional Tax Slab",
+    "module": "Administration",
+    "category": "Employee Compliance Setup"
+  },
+  {
+    "name": "Enter - Update Labour Welfare Fund Slab",
+    "module": "Administration",
+    "category": "Employee Compliance Setup"
+  },
+  {
+    "name": "SBI Loan Interest Rate",
+    "module": "Administration",
+    "category": "Loan / TDS Setup"
+  },
+  {
+    "name": "Tax Settings",
+    "module": "Administration",
+    "category": "Loan / TDS Setup"
+  },
+  {
+    "name": "Create - Update Income Tax Slab",
+    "module": "Administration",
+    "category": "Loan / TDS Setup"
+  },
+  {
+    "name": "Create - Update Tax Deductor",
+    "module": "Administration",
+    "category": "Loan / TDS Setup"
+  },
+  {
+    "name": "Department",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "Sub Department",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "Designation",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "Language",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "Level",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "Grade",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "Domicile",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "Qualification",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "Blood Group",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "Country",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "State",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "City",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "Contractor",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "Cost Center",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "Region",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "Location",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "Unit",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "Import-Export Location Settings",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "Create/Enter Field Value and their Master",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "Import Employee Master Field & Value",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "Minimum wages Master",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "Minimum Wages Assignment",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "Import-Export Master Fields",
+    "module": "Administration",
+    "category": "Organization Master Setup"
+  },
+  {
+    "name": "Create-Update Payhead Master",
+    "module": "Administration",
+    "category": "Pay Component Setup"
+  },
+  {
+    "name": "Create-Update Payhead Template",
+    "module": "Administration",
+    "category": "Pay Component Setup"
+  },
+  {
+    "name": "Reimbursement Configuration",
+    "module": "Administration",
+    "category": "Pay Component Setup"
+  },
+  {
+    "name": "Formula",
+    "module": "Administration",
+    "category": "Pay Component Setup"
+  },
+  {
+    "name": "Ledger",
+    "module": "Administration",
+    "category": "Pay Component Setup"
+  },
+  {
+    "name": "Manage User Group",
+    "module": "Administration",
+    "category": "User Administration"
+  },
+  {
+    "name": "Map Locations With User Group",
+    "module": "Administration",
+    "category": "User Administration"
+  },
+  {
+    "name": "Manage Users",
+    "module": "Administration",
+    "category": "User Administration"
+  },
+  {
+    "name": "Manage Rights Master",
+    "module": "Administration",
+    "category": "User Administration"
+  },
+  {
+    "name": "Map Users With Payheads",
+    "module": "Administration",
+    "category": "User Administration"
+  },
+  {
+    "name": "Map Reporting Manager with Team",
+    "module": "Administration",
+    "category": "User Administration"
+  },
+  {
+    "name": "List of Reporting Manager",
+    "module": "Administration",
+    "category": "User Administration"
+  },
+  {
+    "name": "Change Password Self",
+    "module": "Administration",
+    "category": "User Administration"
+  },
+  {
+    "name": "Reset Employee Password",
+    "module": "Administration",
+    "category": "User Administration"
+  },
+  {
+    "name": "Change Employee Code",
+    "module": "Administration",
+    "category": "User Administration"
+  },
+  {
+    "name": "Map Users with Widget",
+    "module": "Administration",
+    "category": "User Administration"
+  },
+  {
+    "name": "Map Employee With User Group",
+    "module": "Administration",
+    "category": "User Administration"
+  },
+  {
+    "name": "Create - Update Menus On Employee Portal",
+    "module": "Administration",
+    "category": "User Administration"
+  },
+  {
+    "name": "Block Menus On Employee Portal",
+    "module": "Administration",
+    "category": "User Administration"
+  },
+  {
+    "name": "Map User with Leave Template",
+    "module": "Administration",
+    "category": "User Administration"
+  },
+  {
+    "name": "Dynamic Parameters",
+    "module": "Administration",
+    "category": "Dynamic Parameters"
+  },
+  {
+    "name": "Organization Database Backup",
+    "module": "Administration",
+    "category": "Organization Database Backup"
+  },
+  {
+    "name": "End User License Agreement",
+    "module": "Administration",
+    "category": "End User License Agreement"
+  },
+  {
+    "name": "Disclaimer",
+    "module": "Administration",
+    "category": "Disclaimer"
+  },
+  {
+    "name": "About Application Update",
+    "module": "Administration",
+    "category": "Disclaimer"
+  },
+  {
+    "name": "Employee Master(Main)",
+    "module": "Employee",
+    "category": "Employee Setup"
+  },
+  {
+    "name": "Employee PF Nomination Details",
+    "module": "Employee",
+    "category": "Employee Setup"
+  },
+  {
+    "name": "Import Employee Master(Main)",
+    "module": "Employee",
+    "category": "Employee Setup"
+  },
+  {
+    "name": "Import-Export Employee Master with Pay mode details and Salary Structure",
+    "module": "Employee",
+    "category": "Employee Setup"
+  },
+  {
+    "name": "Import Employee Qualification",
+    "module": "Employee",
+    "category": "Employee Setup"
+  },
+  {
+    "name": "Import Employee Master Changes(Using Keyword)",
+    "module": "Employee",
+    "category": "Employee Setup"
+  },
+  {
+    "name": "Import Employee PAN",
+    "module": "Employee",
+    "category": "Employee Setup"
+  },
+  {
+    "name": "Import Employee Details by CSV files(Custom Made)",
+    "module": "Employee",
+    "category": "Employee Setup"
+  },
+  {
+    "name": "Import Employee Master Field & Value",
+    "module": "Employee",
+    "category": "Employee Setup"
+  },
+  {
+    "name": "Import Employee Finalization Details",
+    "module": "Employee",
+    "category": "Employee Setup"
+  },
+  {
+    "name": "Enter Bank A/c No. of Employee",
+    "module": "Employee",
+    "category": "Employee Setup"
+  },
+  {
+    "name": "Mark Employee Payment Mode",
+    "module": "Employee",
+    "category": "Employee Setup"
+  },
+  {
+    "name": "Import Employee Bank A/c No.",
+    "module": "Employee",
+    "category": "Employee Setup"
+  },
+  {
+    "name": "Import Employee Payment Mode Details",
+    "module": "Employee",
+    "category": "Employee Setup"
+  },
+  {
+    "name": "Upload Employee Image (Bulk)",
+    "module": "Employee",
+    "category": "Employee Setup"
+  },
+  {
+    "name": "Create Document Type",
+    "module": "Employee",
+    "category": "Employee Document Bank"
+  },
+  {
+    "name": "Scan and Store Employee Document",
+    "module": "Employee",
+    "category": "Employee Document Bank"
+  },
+  {
+    "name": "Import Documents for Employee",
+    "module": "Employee",
+    "category": "Employee Document Bank"
+  },
+  {
+    "name": "Employee of the Month",
+    "module": "Employee",
+    "category": "Employee of the Month"
+  },
+  {
+    "name": "Transfer Employee, Employee Shift & Shift in Biometric Database",
+    "module": "Employee",
+    "category": "Transfer Employee, Employee Shift & Shift in Biometric Database"
+  },
+  {
+    "name": "Organization Chart",
+    "module": "Employee",
+    "category": "Organization Chart"
+  },
+  {
+    "name": "Trace Employee(s) Through Google Map",
+    "module": "Employee",
+    "category": "Trace Employee(s) Through Google Map"
+  },
+  {
+    "name": "Convert Temporary to Permanent Employee",
+    "module": "Employee",
+    "category": "Convert Temporary to Permanent Employee"
+  },
+  {
+    "name": "Intercompany Transfer",
+    "module": "Employee",
+    "category": "Intercompany Transfer"
+  },
+  {
+    "name": "Intercompany Transfer Report",
+    "module": "Employee",
+    "category": "Intercompany Transfer Report"
+  },
+  {
+    "name": "Import Candidate Detail",
+    "module": "HR",
+    "category": "Document Management"
+  },
+  {
+    "name": "Create - Update Document Type",
+    "module": "HR",
+    "category": "Document Management"
+  },
+  {
+    "name": "Create - Update Document Template",
+    "module": "HR",
+    "category": "Document Management"
+  },
+  {
+    "name": "Issue Employee Document-Groupwise",
+    "module": "HR",
+    "category": "Document Management"
+  },
+  {
+    "name": "Issue Employee Document",
+    "module": "HR",
+    "category": "Document Management"
+  },
+  {
+    "name": "List of Employee Documents",
+    "module": "HR",
+    "category": "Document Management"
+  },
+  {
+    "name": "Accident Incident Details",
+    "module": "HR",
+    "category": "Accident Incident Details"
+  },
+  {
+    "name": "Create - Update Disciplinary Action Type",
+    "module": "HR",
+    "category": "Disciplinary Action"
+  },
+  {
+    "name": "Enter Disciplinary Action taken",
+    "module": "HR",
+    "category": "Disciplinary Action"
+  },
+  {
+    "name": "Employee References Management",
+    "module": "HR",
+    "category": "Employee References Management"
+  },
+  {
+    "name": "Create - Update Award Type",
+    "module": "HR",
+    "category": "Employee Awards"
+  },
+  {
+    "name": "Create - Update Award Description",
+    "module": "HR",
+    "category": "Employee Awards"
+  },
+  {
+    "name": "Enter Awards given to Employee",
+    "module": "HR",
+    "category": "Employee Awards"
+  },
+  {
+    "name": "Report on Awards given to Employee",
+    "module": "HR",
+    "category": "Employee Awards"
+  },
+  {
+    "name": "Task List / Roster",
+    "module": "HR",
+    "category": "Employee Activity Management"
+  },
+  {
+    "name": "Define Labels For Parameters",
+    "module": "HR",
+    "category": "Help Desk"
+  },
+  {
+    "name": "Help Desk Ticket Category",
+    "module": "HR",
+    "category": "Help Desk"
+  },
+  {
+    "name": "Query Category",
+    "module": "HR",
+    "category": "Help Desk"
+  },
+  {
+    "name": "HelpDesk Ticket Location",
+    "module": "HR",
+    "category": "Help Desk"
+  },
+  {
+    "name": "HelpDesk Ticket Authority",
+    "module": "HR",
+    "category": "Help Desk"
+  },
+  {
+    "name": "Pending Ticket",
+    "module": "HR",
+    "category": "Help Desk"
+  },
+  {
+    "name": "Search Ticket",
+    "module": "HR",
+    "category": "Help Desk"
+  },
+  {
+    "name": "Question Type Master",
+    "module": "HR",
+    "category": "Online Separation Process"
+  },
+  {
+    "name": "Create/Update Question",
+    "module": "HR",
+    "category": "Online Separation Process"
+  },
+  {
+    "name": "Resignation and Exit Interview Template Configuration",
+    "module": "HR",
+    "category": "Online Separation Process"
+  },
+  {
+    "name": "Direct Employee Resignation – Termination",
+    "module": "HR",
+    "category": "Online Separation Process"
+  },
+  {
+    "name": "Resignation Approve / Reject",
+    "module": "HR",
+    "category": "Online Separation Process"
+  },
+  {
+    "name": "Exit Interview Approve / Reject",
+    "module": "HR",
+    "category": "Online Separation Process"
+  },
+  {
+    "name": "Clearance Department / Sub-department Master",
+    "module": "HR",
+    "category": "Online Separation Process"
+  },
+  {
+    "name": "Clearance Template Configuration",
+    "module": "HR",
+    "category": "Online Separation Process"
+  },
+  {
+    "name": "Clearance Approve / Reject",
+    "module": "HR",
+    "category": "Online Separation Process"
+  },
+  {
+    "name": "Generate e-Separation Report",
+    "module": "HR",
+    "category": "Online Separation Process"
+  },
+  {
+    "name": "Employee Movement Action Panel",
+    "module": "HR",
+    "category": "Employee Movement"
+  },
+  {
+    "name": "Employee Movement Template Configuration",
+    "module": "HR",
+    "category": "Employee Movement"
+  },
+  {
+    "name": "Employee Search & Send Email",
+    "module": "HR",
+    "category": "Employee Search & Send Email"
+  },
+  {
+    "name": "Leave and Attendance Setting & Assignment",
+    "module": "Attendance & Leave",
+    "category": "Leave & Attendance Setup"
+  },
+  {
+    "name": "Shift-Fooding-OT Setting",
+    "module": "Attendance & Leave",
+    "category": "Leave & Attendance Setup"
+  },
+  {
+    "name": "Assign Shift(Works With Att. Machine Data)",
+    "module": "Attendance & Leave",
+    "category": "Assignments"
+  },
+  {
+    "name": "Assign Shift through Import(Works With Att. Machine Data)",
+    "module": "Attendance & Leave",
+    "category": "Work Schedule Assignments"
+  },
+  {
+    "name": "Assign Weekly off",
+    "module": "Attendance & Leave",
+    "category": "Work Schedule Assignments"
+  },
+  {
+    "name": "Assign Holiday",
+    "module": "Attendance & Leave",
+    "category": "Work Schedule Assignments"
+  },
+  {
+    "name": "Import-Export Weekly Off",
+    "module": "Attendance & Leave",
+    "category": "Work Schedule Assignments"
+  },
+  {
+    "name": "Holiday Master",
+    "module": "Attendance & Leave",
+    "category": "Holiday and OT Settings"
+  },
+  {
+    "name": "Overtime Master",
+    "module": "Attendance & Leave",
+    "category": "Holiday and OT Settings"
+  },
+  {
+    "name": "List of Holidays",
+    "module": "Attendance & Leave",
+    "category": "Holiday and OT Settings"
+  },
+  {
+    "name": "Create Overtime Template (Associate)",
+    "module": "Attendance & Leave",
+    "category": "Holiday and OT Settings"
+  },
+  {
+    "name": "Temporary Overtime Approval/Rejection (Associate)",
+    "module": "Attendance & Leave",
+    "category": "Holiday and OT Settings"
+  },
+  {
+    "name": "Final Overtime Approval/Rejection (Associate)",
+    "module": "Attendance & Leave",
+    "category": "Holiday and OT Settings"
+  },
+  {
+    "name": "Import Overtime Approval Authority",
+    "module": "Attendance & Leave",
+    "category": "Holiday and OT Settings"
+  },
+  {
+    "name": "Assign Shift Rate Template",
+    "module": "Attendance & Leave",
+    "category": "Time Management ( Manual )"
+  },
+  {
+    "name": "Import No. of Shifts",
+    "module": "Attendance & Leave",
+    "category": "Time Management ( Manual )"
+  },
+  {
+    "name": "Import No. of Shifts with Rate",
+    "module": "Attendance & Leave",
+    "category": "Time Management ( Manual )"
+  },
+  {
+    "name": "Assign OverTime Template",
+    "module": "Attendance & Leave",
+    "category": "Time Management ( Manual )"
+  },
+  {
+    "name": "Import OT Rate Factor and Hours/Day Factor",
+    "module": "Attendance & Leave",
+    "category": "Time Management ( Manual )"
+  },
+  {
+    "name": "Import Overtime Hours / Days",
+    "module": "Attendance & Leave",
+    "category": "Time Management ( Manual )"
+  },
+  {
+    "name": "Capture Punch Time",
+    "module": "Attendance & Leave",
+    "category": "Time Management ( Automated )"
+  },
+  {
+    "name": "Import Leave, OD, Tour, Manual Punch",
+    "module": "Attendance & Leave",
+    "category": "Time Management ( Automated )"
+  },
+  {
+    "name": "Download Attendance Through Web API",
+    "module": "Attendance & Leave",
+    "category": "Time Management ( Automated )"
+  },
+  {
+    "name": "GEO Fence Mapping",
+    "module": "Attendance & Leave",
+    "category": "Time Management ( Automated )"
+  },
+  {
+    "name": "Employee Mobile Device Restriction",
+    "module": "Attendance & Leave",
+    "category": "Time Management ( Automated )"
+  },
+  {
+    "name": "Sanctioned Leaves with LWP & Unauthorized Leave Details",
+    "module": "Attendance & Leave",
+    "category": "Attendance Processing"
+  },
+  {
+    "name": "Leave Approve-Reject",
+    "module": "Attendance & Leave",
+    "category": "Attendance Processing"
+  },
+  {
+    "name": "OD/Tour/Mispunch Approve-Reject",
+    "module": "Attendance & Leave",
+    "category": "Attendance Processing"
+  },
+  {
+    "name": "Cancel Approve Leave",
+    "module": "Attendance & Leave",
+    "category": "Attendance Processing"
+  },
+  {
+    "name": "Cancel Approve OD/TOUR/MisPunch",
+    "module": "Attendance & Leave",
+    "category": "Attendance Processing"
+  },
+  {
+    "name": "Adjust Late Coming",
+    "module": "Attendance & Leave",
+    "category": "Attendance Processing"
+  },
+  {
+    "name": "Manual Compensatory off Assignment",
+    "module": "Attendance & Leave",
+    "category": "Attendance Processing"
+  },
+  {
+    "name": "Sanction Leave/Mispunch (Customized)",
+    "module": "Attendance & Leave",
+    "category": "Attendance Processing"
+  },
+  {
+    "name": "Export \\ Import Monthly Attendance with Leave Details",
+    "module": "Attendance & Leave",
+    "category": "Attendance Process ( Manual )"
+  },
+  {
+    "name": "Import Monthly Attendance",
+    "module": "Attendance & Leave",
+    "category": "Attendance Process ( Manual )"
+  },
+  {
+    "name": "Monthly Attendance Entry With OT",
+    "module": "Attendance & Leave",
+    "category": "Attendance Process ( Manual )"
+  },
+  {
+    "name": "Attendance Process",
+    "module": "Attendance & Leave",
+    "category": "Attendance ,OT & Night Allowance Calculation"
+  },
+  {
+    "name": "Calculate Overtime & Fooding",
+    "module": "Attendance & Leave",
+    "category": "Attendance ,OT & Night Allowance Calculation"
+  },
+  {
+    "name": "Night Allowance Calculate & Assign",
+    "module": "Attendance & Leave",
+    "category": "Attendance ,OT & Night Allowance Calculation"
+  },
+  {
+    "name": "Attendance Adjustment",
+    "module": "Attendance & Leave",
+    "category": "Attendance Correction ( After Process )"
+  },
+  {
+    "name": "Attendance Punch time Correction",
+    "module": "Attendance & Leave",
+    "category": "Attendance Correction ( After Process )"
+  },
+  {
+    "name": "Daily Attendance\\Punch Entry",
+    "module": "Attendance & Leave",
+    "category": "Attendance Correction ( After Process )"
+  },
+  {
+    "name": "Manual Punch Correction and Auto Shift Assignment",
+    "module": "Attendance & Leave",
+    "category": "Attendance Correction ( After Process )"
+  },
+  {
+    "name": "Attendance Entry/Approve/Reject",
+    "module": "Attendance & Leave",
+    "category": "Online Attendance"
+  },
+  {
+    "name": "Online Attendance Workflow Template",
+    "module": "Attendance & Leave",
+    "category": "Online Attendance"
+  },
+  {
+    "name": "Map Associate with Employee to Mark Attendance",
+    "module": "Attendance & Leave",
+    "category": "Online Attendance"
+  },
+  {
+    "name": "Attendance Approve/Reject(Associate)",
+    "module": "Attendance & Leave",
+    "category": "Online Attendance"
+  },
+  {
+    "name": "Timesheet Approve/Reject",
+    "module": "Attendance & Leave",
+    "category": "Timesheet Process (Online)"
+  },
+  {
+    "name": "Template Configuration",
+    "module": "Attendance & Leave",
+    "category": "Timesheet Process (Online)"
+  },
+  {
+    "name": "Timesheet Category",
+    "module": "Attendance & Leave",
+    "category": "Timesheet Process (Online)"
+  },
+  {
+    "name": "Timesheet Report",
+    "module": "Attendance & Leave",
+    "category": "Timesheet Process (Online)"
+  },
+  {
+    "name": "Timesheet Report (Custom)",
+    "module": "Attendance & Leave",
+    "category": "Timesheet Process (Online)"
+  },
+  {
+    "name": "Leave & Attendance Settings Report",
+    "module": "Attendance & Leave",
+    "category": "Leave & Attendance Settings Report"
+  },
+  {
+    "name": "Employee Track (Attendance)",
+    "module": "Attendance & Leave",
+    "category": "Employee Track (Attendance)"
+  },
+  {
+    "name": "Attendance Approval/Rejection (Mobile App)",
+    "module": "Attendance & Leave",
+    "category": "Attendance Approval/Rejection (Mobile App)"
+  },
+  {
+    "name": "Authorize Employees To View Salary Slip and TDS Slip",
+    "module": "Approvals",
+    "category": "Authorize Employees To View Salary Slip and TDS Slip"
+  },
+  {
+    "name": "Approve Loan Requested by Employee",
+    "module": "Approvals",
+    "category": "Approve Loan Requested by Employee"
+  },
+  {
+    "name": "Approve Changes made by Employee to his/her Master Record",
+    "module": "Approvals",
+    "category": "Approve Changes made by Employee to his/her Master Record"
+  },
+  {
+    "name": "Approve OD & Tour Request Requested by Employee",
+    "module": "Approvals",
+    "category": "Approve OD & Tour Request Requested by Employee"
+  },
+  {
+    "name": "Approve Employee Travel Request Requested by Employee",
+    "module": "Approvals",
+    "category": "Approve Employee Travel Request Requested by Employee"
+  },
+  {
+    "name": "Approve Employee Expense Request",
+    "module": "Approvals",
+    "category": "Approve Employee Expense Request"
+  },
+  {
+    "name": "Employee Overtime Approval",
+    "module": "Approvals",
+    "category": "Employee Overtime Approval"
+  },
+  {
+    "name": "LTA / Sodexho Request Export",
+    "module": "Approvals",
+    "category": "LTA / Sodexho Request Export"
+  },
+  {
+    "name": "Employee Overtime Approval/Rejection (Daily)",
+    "module": "Approvals",
+    "category": "Employee Overtime Approval/Rejection (Daily)"
+  },
+  {
+    "name": "Import PF (Before Salary Process)",
+    "module": "Compliance",
+    "category": "Employee Provident Fund"
+  },
+  {
+    "name": "Import Monthly PF (After Salary Process)",
+    "module": "Compliance",
+    "category": "Employee Provident Fund"
+  },
+  {
+    "name": "Import PF Opening Balance",
+    "module": "Compliance",
+    "category": "Employee Provident Fund"
+  },
+  {
+    "name": "PF UAN Details",
+    "module": "Compliance",
+    "category": "Employee Provident Fund"
+  },
+  {
+    "name": "Import ESI after Salary Process",
+    "module": "Compliance",
+    "category": "Employee State Insurance ( ESI )"
+  },
+  {
+    "name": "Import PT (Before Salary Process)",
+    "module": "Compliance",
+    "category": "Professional Tax ( PT )"
+  },
+  {
+    "name": "Import PT (After Salary Process)",
+    "module": "Compliance",
+    "category": "Professional Tax ( PT )"
+  },
+  {
+    "name": "Create - Update Perquisite",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Assign Perquisite",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Calculate Perquisite",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Import Car Perquisite",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Import Employee Monthly Car Perquisite Details",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Import Export Monthly CLA Detail",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Import Asset Perquisite Detail",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Create - Update Chapter VI A Section - Sub Section",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Enter Chapter-VI A Investments (Individually)",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Import Chapter VI A Investment Details",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Income from Other Sources (Individually & Import)",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Approve Chap. VIA, Rent Receipts, Other Income Requested by Employee",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Employee Rent Details (Individually)",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Import Monthly Rent Paid By Employee",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Import Annual Rent Paid By Employee",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Enter - Update Employee LIC Policy Details",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Import Mediclaim",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Import Employee(s) Previous Employer Salary",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Import Variable Payhead Non-Taxable Amount",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Enter TDS before Salary Process (Individually)",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Import TDS (Before Salary Process)",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Create - Update Tax Challan",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Generate E-TDS",
+    "module": "Compliance",
+    "category": "TDS"
+  },
+  {
+    "name": "Salary Lock / Unlock Month",
+    "module": "Salary Processing",
+    "category": "Salary Lock / Unlock Month"
+  },
+  {
+    "name": "Assign Salary Structure to Employees (Individually)",
+    "module": "Salary Processing",
+    "category": "Salary Assignment"
+  },
+  {
+    "name": "Assign Salary Structure to Employees (Group)",
+    "module": "Salary Processing",
+    "category": "Salary Assignment"
+  },
+  {
+    "name": "Import Salary Structure",
+    "module": "Salary Processing",
+    "category": "Salary Assignment"
+  },
+  {
+    "name": "Import Payhead Amount & Tax Paid Apart From Salary",
+    "module": "Salary Processing",
+    "category": "Salary Assignment"
+  },
+  {
+    "name": "Voluntary PF(Vol. PF)",
+    "module": "Salary Processing",
+    "category": "Salary Assignment"
+  },
+  {
+    "name": "Manage Arrears",
+    "module": "Salary Processing",
+    "category": "Salary Assignment"
+  },
+  {
+    "name": "Manage Leave Encashment (Individually)",
+    "module": "Salary Processing",
+    "category": "Salary Assignment"
+  },
+  {
+    "name": "Import Leave Encashment",
+    "module": "Salary Processing",
+    "category": "Salary Assignment"
+  },
+  {
+    "name": "Manage Increments",
+    "module": "Salary Processing",
+    "category": "Salary Assignment"
+  },
+  {
+    "name": "Import Employee Previous Calculated Salary",
+    "module": "Salary Processing",
+    "category": "Salary Assignment"
+  },
+  {
+    "name": "Create - Assign Salary Matrix Template",
+    "module": "Salary Processing",
+    "category": "Salary Assignment"
+  },
+  {
+    "name": "Import Salary Matrix",
+    "module": "Salary Processing",
+    "category": "Salary Assignment"
+  },
+  {
+    "name": "Salary Processing & Locks",
+    "module": "Salary Processing",
+    "category": "Salary Process, Unlock & Hold / Release"
+  },
+  {
+    "name": "Tax Process",
+    "module": "Salary Processing",
+    "category": "Tax Process & Edit"
+  },
+  {
+    "name": "Edit Tax After Salary Process",
+    "module": "Salary Processing",
+    "category": "Tax Process & Edit"
+  },
+  {
+    "name": "Import TDS (After Salary Process)",
+    "module": "Salary Processing",
+    "category": "Tax Process & Edit"
+  },
+  {
+    "name": "List of Payheads",
+    "module": "Salary Processing",
+    "category": "List of Payheads"
+  },
+  {
+    "name": "Salary Structure Assigned to Employee",
+    "module": "Salary Processing",
+    "category": "Salary Structure Assigned to Employee"
+  },
+  {
+    "name": "LIC Premium Paid Report",
+    "module": "Salary Processing",
+    "category": "LIC Premium Paid Report"
+  },
+  {
+    "name": "Employees Monthly Arrear Details",
+    "module": "Salary Processing",
+    "category": "Employees Monthly Arrear Details"
+  },
+  {
+    "name": "Salary Slip & Register (Various Formats & E-Mailing)",
+    "module": "Salary Processing",
+    "category": "Salary Slip & Register (Various Formats & E-Mailing)"
+  },
+  {
+    "name": "Salary Variance For Two Months",
+    "module": "Salary Processing",
+    "category": "Salary Variance"
+  },
+  {
+    "name": "Salary Variance For Multiple Months",
+    "module": "Salary Processing",
+    "category": "Salary Variance"
+  },
+  {
+    "name": "Group Wise Journal Voucher",
+    "module": "Salary Processing",
+    "category": "Journal Voucher"
+  },
+  {
+    "name": "Project Wise Journal Voucher",
+    "module": "Salary Processing",
+    "category": "Journal Voucher"
+  },
+  {
+    "name": "Company Wise Journal Voucher(Custom Made)",
+    "module": "Salary Processing",
+    "category": "Journal Voucher"
+  },
+  {
+    "name": "Journal Voucher (Customized)",
+    "module": "Salary Processing",
+    "category": "Journal Voucher"
+  },
+  {
+    "name": "Salary Slip & Register (With Attendance Details) (Custom Made)",
+    "module": "Salary Processing",
+    "category": "Salary Slip & Register (With Attendance Details) (Custom Made)"
+  },
+  {
+    "name": "Monthly Budget Variance Report (Custom Made)",
+    "module": "Salary Processing",
+    "category": "Monthly Budget Variance Report (Custom Made)"
+  },
+  {
+    "name": "Salary(MISC.) Payment Report",
+    "module": "Salary Processing",
+    "category": "Salary(MISC.) Payment Report"
+  },
+  {
+    "name": "Enter-Update Payment Details (Custom Made)",
+    "module": "Salary Processing",
+    "category": "Manage Payments Made to Employees"
+  },
+  {
+    "name": "Enter Unpaid Salary Details (Custom Made)",
+    "module": "Salary Processing",
+    "category": "Manage Payments Made to Employees"
+  },
+  {
+    "name": "Enter Employee Cheque Details",
+    "module": "Salary Processing",
+    "category": "Manage Payments Made to Employees"
+  },
+  {
+    "name": "Generate Salary Transfer to Bank Report",
+    "module": "Salary Processing",
+    "category": "Manage Payments Made to Employees"
+  },
+  {
+    "name": "Generate Salary Transfer to Bank Report with Reference No.",
+    "module": "Salary Processing",
+    "category": "Manage Payments Made to Employees"
+  },
+  {
+    "name": "Map Payhead with SAP CODE",
+    "module": "Salary Processing",
+    "category": "Map Payhead with SAP CODE"
+  },
+  {
+    "name": "Audit Trail Report",
+    "module": "Analytics",
+    "category": "Audit Trail Report"
+  },
+  {
+    "name": "Report Builder",
+    "module": "Analytics",
+    "category": "Analytic Tools"
+  },
+  {
+    "name": "Query Builder",
+    "module": "Analytics",
+    "category": "Analytic Tools"
+  },
+  {
+    "name": "Ask Me",
+    "module": "Analytics",
+    "category": "Analytic Tools"
+  },
+  {
+    "name": "Option A(Expense Approval Project Wise)",
+    "module": "Others",
+    "category": "Employee Expense Management"
+  },
+  {
+    "name": "Option B(Upload Expense Requested & Approved Amount)",
+    "module": "Others",
+    "category": "Employee Expense Management"
+  },
+  {
+    "name": "Option C i(Excel Attachment)Expense Type",
+    "module": "Others",
+    "category": "Employee Expense Management"
+  },
+  {
+    "name": "Option C ii(Excel Attachment)Approve Expense",
+    "module": "Others",
+    "category": "Employee Expense Management"
+  },
+  {
+    "name": "Transport Mode Rate Master",
+    "module": "Others",
+    "category": "Employee Expense Management"
+  },
+  {
+    "name": "Create-Update Expense Type Details (Step-1)",
+    "module": "Others",
+    "category": "Daily / Monthly Attendance with Expense Details Process"
+  },
+  {
+    "name": "Assign Expense Limit to Employee (Step-2)",
+    "module": "Others",
+    "category": "Daily / Monthly Attendance with Expense Details Process"
+  },
+  {
+    "name": "Daily / Monthly Attendance with Expense Details Format 2 (Step-3)",
+    "module": "Others",
+    "category": "Daily / Monthly Attendance with Expense Details Process"
+  },
+  {
+    "name": "Create - Update Reimbursement Cover Letter",
+    "module": "Others",
+    "category": "Reimbursement Management"
+  },
+  {
+    "name": "Process Reimbursements",
+    "module": "Others",
+    "category": "Reimbursement Management"
+  },
+  {
+    "name": "Reimbursement Hold/Unhold",
+    "module": "Others",
+    "category": "Reimbursement Management"
+  },
+  {
+    "name": "Generate Reimbursement Slip and Register",
+    "module": "Others",
+    "category": "Reimbursement Management"
+  },
+  {
+    "name": "Generate Reimbursement Report using Report Builder",
+    "module": "Others",
+    "category": "Reimbursement Management"
+  },
+  {
+    "name": "Reimbursement Slip & Register",
+    "module": "Others",
+    "category": "Reimbursement Management"
+  },
+  {
+    "name": "Manage & Import Reimbursements",
+    "module": "Others",
+    "category": "Reimbursement Management"
+  },
+  {
+    "name": "Full and Finalization",
+    "module": "Others",
+    "category": "Employee Exit Management"
+  },
+  {
+    "name": "Manage Security Deposit",
+    "module": "Others",
+    "category": "Loan & Advance"
+  },
+  {
+    "name": "Loan - Advance Details",
+    "module": "Others",
+    "category": "Loan & Advance"
+  },
+  {
+    "name": "Manage Loan & Advance",
+    "module": "Others",
+    "category": "Loan & Advance"
+  },
+  {
+    "name": "Asset Type",
+    "module": "Others",
+    "category": "ASSET"
+  },
+  {
+    "name": "Asset Brand Master",
+    "module": "Others",
+    "category": "ASSET"
+  },
+  {
+    "name": "Asset Details",
+    "module": "Others",
+    "category": "ASSET"
+  },
+  {
+    "name": "Asset Template Master",
+    "module": "Others",
+    "category": "ASSET"
+  },
+  {
+    "name": "Vendor Master",
+    "module": "Others",
+    "category": "ASSET"
+  },
+  {
+    "name": "Asset Approval",
+    "module": "Others",
+    "category": "ASSET"
+  },
+  {
+    "name": "Asset Transfer Process-Assign",
+    "module": "Others",
+    "category": "ASSET"
+  },
+  {
+    "name": "Asset Transfer Process-Return",
+    "module": "Others",
+    "category": "ASSET"
+  },
+  {
+    "name": "Issue / Return Asset",
+    "module": "Others",
+    "category": "ASSET"
+  },
+  {
+    "name": "Asset AMC / Insurance / Sales",
+    "module": "Others",
+    "category": "ASSET"
+  },
+  {
+    "name": "Generate Type of Assets",
+    "module": "Others",
+    "category": "ASSET"
+  },
+  {
+    "name": "Generate Assets Issued - Returned Report",
+    "module": "Others",
+    "category": "ASSET"
+  },
+  {
+    "name": "List of Asset",
+    "module": "Others",
+    "category": "ASSET"
+  },
+  {
+    "name": "Create – Update FBP Template",
+    "module": "Others",
+    "category": "FBP"
+  },
+  {
+    "name": "Enter - Update Payhead Choice for Employee",
+    "module": "Others",
+    "category": "FBP"
+  },
+  {
+    "name": "Export FBP choices made by employee",
+    "module": "Others",
+    "category": "FBP"
+  },
+  {
+    "name": "Employee Attendance Register Form No.26 [Prescribed Under Rule 106]",
+    "module": "Reports",
+    "category": "Attendance Reports"
+  },
+  {
+    "name": "Monthly Attendance Report",
+    "module": "Reports",
+    "category": "Attendance Reports"
+  },
+  {
+    "name": "Monthly Attendance Reports",
+    "module": "Reports",
+    "category": "Attendance Reports"
+  },
+  {
+    "name": "Daily attendance Reports",
+    "module": "Reports",
+    "category": "Attendance Reports"
+  },
+  {
+    "name": "Overtime Reports",
+    "module": "Reports",
+    "category": "Attendance Reports"
+  },
+  {
+    "name": "Long Days Absentee Report",
+    "module": "Reports",
+    "category": "Attendance Reports"
+  },
+  {
+    "name": "Attendance Register Form25 (Customized)",
+    "module": "Reports",
+    "category": "Attendance Reports"
+  },
+  {
+    "name": "Leave Encashment and Sanction",
+    "module": "Reports",
+    "category": "Leave Reports"
+  },
+  {
+    "name": "Leave Without Pay",
+    "module": "Reports",
+    "category": "Leave Reports"
+  },
+  {
+    "name": "Employee Leave Balance (Various Formats)",
+    "module": "Reports",
+    "category": "Leave Reports"
+  },
+  {
+    "name": "Employee Leave Register",
+    "module": "Reports",
+    "category": "Leave Reports"
+  },
+  {
+    "name": "Year to Date (YTD) Employee Salary Register",
+    "module": "Reports",
+    "category": "Salary Reports"
+  },
+  {
+    "name": "Finalized Employee Slip & Report Generation",
+    "module": "Reports",
+    "category": "Salary Reports"
+  },
+  {
+    "name": "Salary Slip & Register (Various Formats & E-Mailing)",
+    "module": "Reports",
+    "category": "Salary Reports"
+  },
+  {
+    "name": "PF / ESI / PT Group Details",
+    "module": "Reports",
+    "category": "Compliance Reports"
+  },
+  {
+    "name": "Monthly PF Stmt, Form 12A, Form 5, Form10, Covering Letter, Form2",
+    "module": "Reports",
+    "category": "Compliance Reports"
+  },
+  {
+    "name": "Form-F, Form-11, Form-16, Appointment Ltr, Form2 (Revised)",
+    "module": "Reports",
+    "category": "Compliance Reports"
+  },
+  {
+    "name": "PF Form 3A",
+    "module": "Reports",
+    "category": "Compliance Reports"
+  },
+  {
+    "name": "PF Form 6A",
+    "module": "Reports",
+    "category": "Compliance Reports"
+  },
+  {
+    "name": "PF Challan",
+    "module": "Reports",
+    "category": "Compliance Reports"
+  },
+  {
+    "name": "PF Form 9",
+    "module": "Reports",
+    "category": "Compliance Reports"
+  },
+  {
+    "name": "Employee PF / Pension Details",
+    "module": "Reports",
+    "category": "Compliance Reports"
+  },
+  {
+    "name": "Employee PF Eligibility Report",
+    "module": "Reports",
+    "category": "Compliance Reports"
+  },
+  {
+    "name": "Create DBF File",
+    "module": "Reports",
+    "category": "Compliance Reports"
+  },
+  {
+    "name": "Combined Challan for PF / ESI",
+    "module": "Reports",
+    "category": "Compliance Reports"
+  },
+  {
+    "name": "UAN Registration",
+    "module": "Reports",
+    "category": "Compliance Reports"
+  },
+  {
+    "name": "Multiple PF/ESI Reports",
+    "module": "Reports",
+    "category": "Compliance Reports"
+  }
+]

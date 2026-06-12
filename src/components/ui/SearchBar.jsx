@@ -3,38 +3,42 @@ import { Search, ChevronRight } from 'lucide-react';
 import Fuse from 'fuse.js';
 import { useMenu } from '../../context/MenuContext';
 import { useNavigate } from 'react-router-dom';
-import dropdownDataV1 from '../../../dropdown.json';
 import premiumIA from '../../data/premium-ia.json';
 import v3IA from '../../data/v3-ia.json';
 import v4IA from '../../data/v4-ia.json';
+import v1IA from '../../data/v1-ia.json';
 
 // V1 flattener
-function flattenIA_V1(navigationData) {
-  const items = [];
-  navigationData.forEach(mod => {
-    if (!mod.categories) return;
-    mod.categories.forEach(cat => {
-      if (typeof cat === 'string') {
-        items.push({ name: cat, module: mod.module, category: mod.module });
-      } else if (cat.items) {
-        cat.items.forEach(item => {
-          if (typeof item === 'string') {
-            items.push({ name: item, module: mod.module, category: cat.name });
-          } else if (item.name && item.items) {
-            item.items.forEach(sub => {
-              if (typeof sub === 'string') {
-                items.push({ name: sub, module: mod.module, category: `${cat.name} > ${item.name}` });
-              }
-            });
-          }
+// Format V1 Data
+const formattedV1Data = [];
+v1IA.navigation.forEach(mod => {
+  if (!mod.categories) return;
+  mod.categories.forEach(cat => {
+    if (!cat.pages) return;
+    cat.pages.forEach(page => {
+      formattedV1Data.push({
+        id: page.id,
+        name: page.name,
+        type: 'V1 Page',
+        module: mod.module,
+        category: cat.name,
+        legacySources: page.legacyContentSources || [],
+        route: `/page/${page.id}`
+      });
+      (page.legacyContentSources || []).forEach(legacy => {
+        formattedV1Data.push({
+          id: page.id,
+          name: legacy,
+          type: 'Legacy Feature inside V1',
+          module: mod.module,
+          category: page.name,
+          legacySources: [],
+          route: `/page/${page.id}`
         });
-      }
+      });
     });
   });
-  return items;
-}
-
-const formattedV1Data = flattenIA_V1(dropdownDataV1.navigation);
+});
 
 // Format V2 Data
 const formattedV2Data = [];

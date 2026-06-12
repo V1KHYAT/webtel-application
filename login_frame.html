@@ -1,0 +1,253 @@
+
+
+<html>
+<head id="Head1"><meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" /><link href="CPayroll/Css/bootstrap.min.css" rel="stylesheet" /><link href="CPayroll/Css/font-awesome.min.css" rel="stylesheet" /><link href="CPayroll/Css/style.css" rel="stylesheet" />
+    <script src="CPayroll/JavaFiles/jquery-3.7.1.js" type="text/javascript"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="Cpayroll/JavaFiles/jquery-1.4.2.min.js" type="text/javascript"></script>
+    <script src="Cpayroll/JavaFiles/jquery-ui-1.8.1.custom.min.js" type="text/javascript"></script>
+    <script src="Cpayroll/JavaFiles/Script_utill.js" type="text/javascript"></script>
+
+    <script src="js/aes.js" type="text/javascript"></script>
+    <script src="js/forge.all.min.js" type="text/javascript"></script>
+
+    <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" /><meta name="author" /><link rel="icon" href="images/favicon.ico" /><title>
+	Webtel Intelligent Pay
+</title><meta name="title" content="Webtel Intelligent Pay" /><meta name="keywords" content="Payroll software,HRMS software,India Payroll,We Payroll" /><meta name="description" content="Payroll Software,HRMS software,India Payroll Software,Webtel Payroll,Web Payroll,Salary Software" />
+   
+ 
+
+
+    <script type="text/javascript">
+        function Openfordownload(id) {
+            var height = 430;
+            var width = 800;
+            alert("Its look lke you don't have valid license contact to your vendor for cd key then fill license details on next window.")
+            window.open('frmcdkey.aspx?id=' + id + '', "", 'height=' + height + ' width=' + width + ' left=250' + ' menubar=0' + ' top=150' + ' scrollbars=0');
+        }
+
+
+        function onEnterpress(e) {
+            var KeyPress
+            if (e && e.which) {
+                e = e
+                KeyPress = e.which
+            }
+            else {
+                e = event
+                KeyPress = e.keyCode
+            }
+            if (KeyPress == 13) {
+                if ($("#ddlusertype").val() == '') {
+                    alert("User can not be left blank!");
+                    $("#ddlusertype").focus();
+                    return (false);
+                }
+                __doPostBack('BtnLogin', '');
+            }
+            else return false;
+        }
+
+        function BtnSubmit() {
+
+            if ($('#txtUser').val() == '') {
+                alert("Username can not left blank!");
+                $('#txtUser').focus();
+                return false;
+            }
+
+            if ($('#txtPWD').val() == '') {
+                alert("Password can not left blank!");
+                $('#txtPWD').focus();
+                return false;
+            }
+
+            if ($('#txtVerificationCode').val() == '') {
+                alert("Captcha can not left blank!");
+                $('#txtVerificationCode').focus();
+                return false;
+            }
+
+            if ($('#TxtDomain').val() == '') {
+                alert("Organisation can not left blank!");
+                $('#TxtDomain').focus();
+                return false;
+            }
+
+            if ($("#ddlusertype").val() == '') {
+                alert("User Type can not be left blank");
+                $("#ddlusertype").focus();
+                return (false);
+            }
+
+
+
+            var key = CryptoJS.enc.Utf8.parse('8080808080808080');
+            var iv = CryptoJS.enc.Utf8.parse('8080808080808080');
+
+
+
+            var encryptedlogin = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse($("#txtUser").val()), key,
+
+            { keySize: 128 / 8, iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 });
+
+
+          
+
+            var encryptedpassword = CryptoJS.AES.encrypt(CryptoJS.enc.Utf8.parse( $("#txtPWD").val()), key,
+
+            { keySize: 128 / 8, iv: iv, mode: CryptoJS.mode.CBC, padding: CryptoJS.pad.Pkcs7 });
+
+
+
+
+  
+            $("#txtUser").val(encryptedlogin);
+            $("#txtPWD").val(encryptedpassword);
+
+
+
+
+
+        }
+        function EmployeeChangeAlert() {
+            if (confirm("You must change your password before " + $("#hidUrl").val() + " Day(s)! Do you want to change it now?") == true) {
+                document.location.href = "Empuser/frmEmpChangePassword.aspx";
+                //                document.location.href = 'https://ipay.webtel.in' + "/Empuser/frmempchangepassword.aspx"; //Added by GK
+            }
+            else {
+                
+                document.location.href = 'https://ipay.webtel.in' + "/Empuser/default.htm";//Added by GK
+            }
+        }
+        function FirstLogin() {
+            document.location.href = "Empuser/frmempchangepassword.aspx?id=F";
+            //            document.location.href = 'Empuser/frmempchangepassword.aspx?id=F";//Added by GK
+        }
+
+        function EmployeeAlert() {
+            alert("Your password has been expired. Please contact your Admin!");
+            Ctrlclear();
+            return false;
+        }
+        function EmployeeConfirm() {
+            var Msg = '';
+            Msg = "Your password is going to be expired Today" + "\n" + "Press OK To update";
+            if (confirm(Msg) == true) {
+                
+                document.location.href = "Empuser/frmempchangepassword.aspx?id=E";//Added by GK
+            }
+            else {
+                Ctrlclear();
+                return false;
+            }
+        }
+       
+        function ForgotPassword() {
+            Msg = "Do you really want to reset password?";
+            var domain = '';
+            domain = $('#TxtDomain').val().trim();
+            Empcodes = $('#txtUser').val().trim();
+            if (Empcodes == '') {
+                alert("Username can not left blank!");
+                $("#txtUser").focus();
+                return (false);
+            }
+            if (domain == '') {
+                alert("Organisation can not left blank!");
+                $("#TxtDomain").focus();
+                return (false);
+            }
+            if (confirm(Msg) == false) {
+                return false;
+            }
+        }
+    </script>
+</head>
+<body class="bg-img">
+    <form name="form1" method="post" action="./frmMainlogin.aspx" id="form1">
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJNzA5MzE3NDI5D2QWAgIDD2QWBgIJDxYCHgVzdHlsZQUNZGlzcGxheTpub25lO2QCCw9kFgICAQ8PFgIeCEltYWdlVXJsBQ5+L0NhcHRjaGEuYXNweGRkAhMPFgIeCWlubmVyaHRtbAVpPGltZyBzcmMgPSdodHRwczovL2lwYXkud2VidGVsLmluL3NhZWwvVXNlcl9JbWFnZXMvUGF5cm9sbC1iYW5uZXIuanBnJyBjbGFzcz0naW1nLWZsdWlkIGgtMTAwJyBhbHQ9Jy4uLic+ZGTsYglGmC0kW+kU+ua7odfSRNx8H2689Wl5HBN7gEwt+w==" />
+
+<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="2A45FBA6" />
+<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEdABEivhvqgQva53Yw6MknawgqDFTzKcXJqLg+OeJ6QAEa2onkg/ut7Je4AtoEsfzZAOLYmhuurwuSw566g5EAaDrvQDfkAgPmi0YtgCLBLkrfGUIlGoFHA3LuvIMnrbM0ZEndYUoahHru/QWyhjynV8JNO/tc5AXuz0ezHYXg6idDwGh+42TDL0Fo4f/iJffIdb+dRFlnu8TAGxsMMjMcHDku8Z2jNbYxTei3/g1eNmRDpoI5fLqI0ofCbTvbwuAof8ZUjbJ5h6ia5COxAeywbQy14oqgkdAhGUiEm0qiTkVPxQgktchsWBy9OaJ+icvqbTV1ql5yhpKkyoHfbTtvdBk1bzHgxu2VFgFbZGgxxBLktBzCl8ZboSu1CefAqbjyDFXY4U9ghVVoxDjhl1dMEL+5" />
+     <div class="login-pg py-5">
+        <div class="container">
+            <div class="sec-1 shadow-2">
+                <div class="row g-0">
+
+                    <div class="col-lg-4 col-md-4 login-lft" style="background: rgba(7, 65, 115, 0.75);">
+                        <div class="p-lg-4 p-md-3 p-2">
+                            <figure class="login-head text-center text-white pt-4 pb-1">
+                                <img src="images/webtel-logo.png" class="img-fluid h-60">
+                                <figcaption>
+                                    <p class="fs-6 mb-0">Sign-in to your account</p>
+                                </figcaption>                                
+                            </figure>
+                            <div class="login-body font-14">
+                                    <div class="input-group mt-2 shadow">
+                                        <label id="id_1" class="bg-10 p-2 wm-110 fw-bold">Login</label>
+                                        <input name="txtUser" type="text" id="txtUser" class="form-control border-0 rounded-0" placeholder="" style="font-size:16px;" />
+                                    </div>
+                                    <div class="input-group mt-2 shadow fw-bold">
+                                        <label class="bg-10 p-2 wm-110">Password</label>
+                                        <input name="txtPWD" type="password" id="txtPWD" class="form-control border-0 rounded-0" placeholder="" />
+                                    </div>
+
+                                    <div id="TrDomain" class="input-group mt-2 shadow fw-bold" style="display:none;">
+                                        <label id="lblorganisation" class="bg-10 p-2 wm-110">Organisation</label>
+                                         <input name="TxtDomain" type="text" value="SAEL" id="TxtDomain" class="form-control border-0 rounded-0" placeholder="" style="font-size:16px;" />
+                                    </div>
+
+
+                                   
+
+
+
+                                    <div id="Div1" class="input-group mt-2 shadow fw-bold">
+                                        <label for="exampleInputPassword1" class="bg-10 p-2 wm-110">
+                                        <img id="imgcaptcha" oncontextmenu="return false;" src="Captcha.aspx" height="30" width="90" border="0" /></label>
+                                        <input name="txtVerificationCode" type="text" id="txtVerificationCode" class="form-control border-0 rounded-0" placeholder="Please enter captcha here" style="font-size:16px;" />
+
+                                    </div>
+                                <div class="input-group mt-2 shadow fw-bold" style="text-align: center;">
+                                    <span id="lblMsg"><b><font face="Arial" color="Red" size="2"></font></b></span>
+                                </div>
+                            </div>
+                            <div class="login-footer my-4 text-center" >
+                                <input type="submit" name="BtnLogin" value="LogIn" onclick="javascript:return BtnSubmit();" id="BtnLogin" class="btn-bg shadow-lg text-white me-1 text-center border-0 btn rounded-0 font-13 px-3 py-2 bg-9" />
+                              <input type="submit" name="lnkforgotpassword" value="Forgot Password" onclick="return ForgotPassword();" id="lnkforgotpassword" title="Click here to forgot employee password self !" class="btn-bg shadow-lg text-white me-1 text-center border-0 btn rounded-0 font-13 px-3 py-2 bg-9" />
+                        </div>
+                            </div>
+                    </div>
+                    <div class="col-lg-8 col-md-8 col-12 login-rht">
+                        <figure class="text-center mb-0 h-100">
+
+
+                            <div id="ImgSpclOcasn"><img src ='https://ipay.webtel.in/sael/User_Images/Payroll-banner.jpg' class='img-fluid h-100' alt='...'></div>
+                            
+
+                             
+
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        <input name="hidUrl" type="hidden" id="hidUrl" />
+        <input name="HidForgotPassword" type="hidden" id="HidForgotPassword" />
+        <input name="HidCompLogo" type="hidden" id="HidCompLogo" />
+
+        <input type="hidden" name="txt_RegID" id="txt_RegID" />
+        <input type="hidden" name="txt_CDKey1" id="txt_CDKey1" />
+        <input type="hidden" name="txt_CDKey2" id="txt_CDKey2" />
+        <input type="hidden" name="txt_CDKey3" id="txt_CDKey3" />
+
+        <input type="hidden" name="txt_ACT1" id="txt_ACT1" />
+        <input type="hidden" name="txt_ACT2" id="txt_ACT2" />
+        <input type="hidden" name="txt_ACT3" id="txt_ACT3" />
+    </form>
+</body>
+</html>
