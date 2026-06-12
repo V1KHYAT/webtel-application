@@ -12,18 +12,29 @@ export default function Header() {
   const currentPageName = useMemo(() => {
     if (location.pathname === '/') return 'Dashboard';
     
-    // Attempt to extract hubId from pathname if useParams doesn't catch it deeply
     const parts = location.pathname.split('/');
     const hubId = parts[parts.length - 1];
     
     if (hubId) {
       const activeIA = iaVersion === 2 ? v2IA : v1IA;
-      for (const mod of activeIA.navigation) {
-        if (!mod.categories) continue;
-        for (const cat of mod.categories) {
-          const page = cat.pages?.find(p => p.id === hubId);
-          if (page) return page.name;
+      
+      function findName(items) {
+        if (!items) return null;
+        for (const item of items) {
+          if (item.type === 'page' && item.id === hubId) {
+            return item.name;
+          }
+          if (item.items) {
+            const found = findName(item.items);
+            if (found) return found;
+          }
         }
+        return null;
+      }
+      
+      for (const mod of activeIA.navigation) {
+        const found = findName(mod.items);
+        if (found) return found;
       }
     }
     return 'Webtel Application';

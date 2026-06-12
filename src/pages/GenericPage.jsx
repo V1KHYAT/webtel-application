@@ -16,17 +16,25 @@ export default function GenericPage() {
   let currentPage = null;
   let currentModule = null;
 
-  for (const mod of currentIA.navigation) {
-    if (!mod.categories) continue;
-    for (const cat of mod.categories) {
-      const found = cat.pages?.find(p => p.id === hubId);
-      if (found) {
-        currentPage = found;
+  function findPage(items, mod) {
+    if (!items) return;
+    for (const item of items) {
+      if (item.type === 'page' && item.id === hubId) {
+        currentPage = item;
         currentModule = mod;
-        break;
+        return true;
+      }
+      if (item.items && findPage(item.items, mod)) {
+        return true;
       }
     }
-    if (currentPage) break;
+    return false;
+  }
+
+  for (const mod of currentIA.navigation) {
+    if (findPage(mod.items, mod)) {
+      break;
+    }
   }
 
   if (!currentPage) {

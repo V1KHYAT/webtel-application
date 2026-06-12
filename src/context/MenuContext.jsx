@@ -1,21 +1,31 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 
-const MenuContext = createContext();
+export const MenuContext = createContext();
 
 export function MenuProvider({ children }) {
-  const [iaVersion, setIaVersion] = useState(2);
+  const [iaVersion, setIaVersion] = useState(1);
+  const [navLayout, setNavLayout] = useState('topbar');
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === '1') setIaVersion(1);
-      if (e.key === '2') setIaVersion(2);
+      // Don't trigger if user is typing in an input
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      
+      if (e.key === '1') {
+        setIaVersion(1);
+      } else if (e.key === '2') {
+        setIaVersion(2);
+      } else if (e.key.toLowerCase() === 'o') {
+        setNavLayout(prev => prev === 'sidebar' ? 'topbar' : 'sidebar');
+      }
     };
+
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   return (
-    <MenuContext.Provider value={{ iaVersion, setIaVersion }}>
+    <MenuContext.Provider value={{ iaVersion, navLayout }}>
       {children}
     </MenuContext.Provider>
   );

@@ -6,67 +6,47 @@ import { useNavigate } from 'react-router-dom';
 import v1IA from '../../data/v1-ia.json';
 import v2IA from '../../data/v2-ia.json';
 
-// V1 flattener
-// Format V1 Data
+// Recursive flattener
+function flattenItems(items, moduleName, currentCategory = '', result = [], isV1 = true) {
+  if (!items) return result;
+  
+  items.forEach(item => {
+    if (item.type === 'page') {
+      result.push({
+        id: item.id,
+        name: item.name,
+        type: isV1 ? 'V1 Page' : 'V2 Page',
+        module: moduleName,
+        category: currentCategory,
+        legacySources: item.legacyContentSources || [],
+        route: `/page/${item.id}`
+      });
+      (item.legacyContentSources || []).forEach(legacy => {
+        result.push({
+          id: item.id,
+          name: legacy,
+          type: isV1 ? 'Legacy Feature inside V1' : 'Legacy Feature inside V2',
+          module: moduleName,
+          category: item.name,
+          legacySources: [],
+          route: `/page/${item.id}`
+        });
+      });
+    } else if (item.type === 'category' || item.items) {
+      flattenItems(item.items, moduleName, item.name, result, isV1);
+    }
+  });
+  return result;
+}
+
 const formattedV1Data = [];
 v1IA.navigation.forEach(mod => {
-  if (!mod.categories) return;
-  mod.categories.forEach(cat => {
-    if (!cat.pages) return;
-    cat.pages.forEach(page => {
-      formattedV1Data.push({
-        id: page.id,
-        name: page.name,
-        type: 'V1 Page',
-        module: mod.module,
-        category: cat.name,
-        legacySources: page.legacyContentSources || [],
-        route: `/page/${page.id}`
-      });
-      (page.legacyContentSources || []).forEach(legacy => {
-        formattedV1Data.push({
-          id: page.id,
-          name: legacy,
-          type: 'Legacy Feature inside V1',
-          module: mod.module,
-          category: page.name,
-          legacySources: [],
-          route: `/page/${page.id}`
-        });
-      });
-    });
-  });
+  flattenItems(mod.items, mod.module, '', formattedV1Data, true);
 });
 
-// Format V4 Data
 const formattedV2Data = [];
 v2IA.navigation.forEach(mod => {
-  if (!mod.categories) return;
-  mod.categories.forEach(cat => {
-    if (!cat.pages) return;
-    cat.pages.forEach(page => {
-      formattedV2Data.push({
-        id: page.id,
-        name: page.name,
-        type: 'V2 Page',
-        module: mod.module,
-        category: cat.name,
-        legacySources: page.legacyContentSources || [],
-        route: `/page/${page.id}`
-      });
-      (page.legacyContentSources || []).forEach(legacy => {
-        formattedV2Data.push({
-          id: page.id,
-          name: legacy,
-          type: 'Legacy Feature inside V2',
-          module: mod.module,
-          category: page.name,
-          legacySources: [],
-          route: `/page/${page.id}`
-        });
-      });
-    });
-  });
+  flattenItems(mod.items, mod.module, '', formattedV2Data, false);
 });
 
 const fuseOptions = {
