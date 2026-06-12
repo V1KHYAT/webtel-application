@@ -283,13 +283,13 @@ export default function Sidebar() {
         
           <div style={{ padding: '16px 16px 8px 16px', background: 'var(--primary-color)', borderBottom: '1px solid var(--border-light)', marginBottom: '8px' }}>
             <div style={{ position: 'relative' }}>
-              <Search size={14} style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)', color: '#fff' }} />
+              <Search size={14} style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-secondary)' }} />
               <input 
                 type="text" 
                 placeholder="Search Webtel..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                style={{ width: '100%', padding: '8px 12px 8px 32px', borderRadius: '6px', border: '1px solid var(--border-light)', fontSize: '13px', background: 'var(--bg-light)' }}
+                style={{ width: '100%', padding: '8px 12px 8px 32px', borderRadius: '6px', border: 'none', fontSize: '13px', background: '#fff' }}
               />
             </div>
           </div>
