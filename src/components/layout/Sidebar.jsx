@@ -281,9 +281,9 @@ export default function Sidebar() {
 
       <div className="notion-sidebar">
         
-          <div style={{ padding: '16px 16px 8px 16px', borderBottom: '1px solid var(--border-light)', marginBottom: '8px' }}>
+          <div style={{ padding: '16px 16px 8px 16px', background: 'var(--primary-color)', borderBottom: '1px solid var(--border-light)', marginBottom: '8px' }}>
             <div style={{ position: 'relative' }}>
-              <Search size={14} style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-secondary)' }} />
+              <Search size={14} style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)', color: '#fff' }} />
               <input 
                 type="text" 
                 placeholder="Search Webtel..."
