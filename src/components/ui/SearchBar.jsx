@@ -5,6 +5,7 @@ import { useMenu } from '../../context/MenuContext';
 import { useNavigate } from 'react-router-dom';
 import v1IA from '../../data/v1-ia.json';
 import v2IA from '../../data/v2-ia.json';
+import v3IA from '../../data/v3-ia.json';
 
 // V1 flattener
 // Format V1 Data
@@ -69,6 +70,37 @@ v2IA.navigation.forEach(mod => {
   });
 });
 
+// Format V3 Data
+const formattedV3Data = [];
+v3IA.navigation.forEach(mod => {
+  if (!mod.categories) return;
+  mod.categories.forEach(cat => {
+    if (!cat.pages) return;
+    cat.pages.forEach(page => {
+      formattedV3Data.push({
+        id: page.id,
+        name: page.name,
+        type: 'V3 Page',
+        module: mod.module,
+        category: cat.name,
+        legacySources: page.legacyContentSources || [],
+        route: `/page/${page.id}`
+      });
+      (page.legacyContentSources || []).forEach(legacy => {
+        formattedV3Data.push({
+          id: page.id,
+          name: legacy,
+          type: 'Legacy Feature inside V3',
+          module: mod.module,
+          category: page.name,
+          legacySources: [],
+          route: `/page/${page.id}`
+        });
+      });
+    });
+  });
+});
+
 const fuseOptions = {
   keys: ['name', 'module', 'category', 'type', 'legacySources'],
   threshold: 0.3,
@@ -77,6 +109,7 @@ const fuseOptions = {
 
 const fuseV1 = new Fuse(formattedV1Data, fuseOptions);
 const fuseV2 = new Fuse(formattedV2Data, fuseOptions);
+const fuseV3 = new Fuse(formattedV3Data, fuseOptions);
 
 export default function SearchBar() {
   const [query, setQuery] = useState('');
@@ -92,7 +125,7 @@ export default function SearchBar() {
       return;
     }
 
-    const fuse = iaVersion === 2 ? fuseV2 : fuseV1;
+    const fuse = iaVersion === 3 ? fuseV3 : (iaVersion === 2 ? fuseV2 : fuseV1);
     const searchResults = fuse.search(query);
     setResults(searchResults.slice(0, 8).map(res => res.item));
   }, [query, iaVersion]);

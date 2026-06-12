@@ -9,6 +9,7 @@ export function MenuProvider({ children }) {
     const handleKeyDown = (e) => {
       if (e.key === '1') setIaVersion(1);
       if (e.key === '2') setIaVersion(2);
+      if (e.key === '3') setIaVersion(3);
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);

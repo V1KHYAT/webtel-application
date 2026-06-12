@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+﻿import React, { useState, useMemo } from 'react';
 import { 
   Building2, Users, Monitor, Calendar, UserCog,
   CheckSquare, FileWarning, BadgeDollarSign, 
@@ -7,9 +7,10 @@ import {
   FileUp, Settings as SettingsIcon, Database, Clock, CreditCard, TrendingUp, Receipt, BarChart3,
   Search, ChevronLeft, Banknote, BookOpen, Heart, UserMinus, Shield, Grid
 } from 'lucide-react';
-import v1IA from '../../data/v1-ia.json';
-import v2IA from '../../data/v2-ia.json';
+import premiumIA from '../../data/premium-ia.json';
 import v3IA from '../../data/v3-ia.json';
+import v4IA from '../../data/v4-ia.json';
+import v1IA from '../../data/v1-ia.json';
 import { useMenu } from '../../context/MenuContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -32,9 +33,18 @@ const iconMapV1 = {
   "Reports": BarChart3
 };
 
-
-
 const iconMapV2 = {
+  "Directory": Users,
+  "Time": Clock,
+  "Payroll": CreditCard,
+  "Recruitment": Briefcase,
+  "Performance": TrendingUp,
+  "Expenses": Receipt,
+  "Reports": BarChart3,
+  "Settings": SettingsIcon
+};
+
+const iconMapV4 = {
   "System & Org Setup": SettingsIcon,
   "Employee Records": Users,
   "Recruitment (ATS)": Briefcase,
@@ -48,11 +58,6 @@ const iconMapV2 = {
   "Offboarding": UserMinus,
   "Tax & Compliance (TDS)": Shield,
   "Additional Tools": Grid
-,
-  "Approvals": CheckSquare,
-  "Compliance": FileWarning,
-  "Analytics": PieChart,
-  "Reports": BarChart3
 };
 
 // Custom nested menu for V2 (Category -> Pages)
@@ -249,9 +254,11 @@ export default function Sidebar() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Get current modules based on version
   const modules = useMemo(() => {
+    if (iaVersion === 4) return v4IA.navigation;
     if (iaVersion === 3) return v3IA.navigation;
-    if (iaVersion === 2) return v2IA.navigation;
+    if (iaVersion === 2) return premiumIA.navigation;
     return v1IA.navigation;
   }, [iaVersion]);
 
@@ -273,7 +280,7 @@ export default function Sidebar() {
     }
   }, [location.pathname, modules]);
 
-  const currentIconMap = iaVersion === 2 ? iconMapV2 : iconMapV1;
+  const currentIconMap = iaVersion === 4 ? iconMapV4 : (iaVersion === 2 ? iconMapV2 : iconMapV1);
 
   return (
     <div className="sidebar-column" style={{ position: 'relative' }}>
@@ -281,8 +288,8 @@ export default function Sidebar() {
       {/* AB Test Badge Removed */}
 
       <div className="notion-sidebar">
-        
-          <div style={{ padding: '16px', background: 'var(--primary-color)', borderBottom: '1px solid var(--border-light)', marginBottom: '8px' }}>
+        {iaVersion === 3 || iaVersion === 4 ? (
+          <div style={{ padding: '16px 16px 8px 16px', borderBottom: '1px solid var(--border-light)', marginBottom: '8px' }}>
             <div style={{ position: 'relative' }}>
               <Search size={14} style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-secondary)' }} />
               <input 
@@ -290,13 +297,158 @@ export default function Sidebar() {
                 placeholder="Search Webtel..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                style={{ width: '100%', padding: '8px 12px 8px 32px', borderRadius: '6px', border: 'none', fontSize: '13px', background: '#fff' }}
+                style={{ width: '100%', padding: '8px 12px 8px 32px', borderRadius: '6px', border: '1px solid var(--border-light)', fontSize: '13px', background: 'var(--bg-light)' }}
               />
             </div>
           </div>
-        
-                <nav className="notion-nav">
-          {iaVersion === 3 ? (
+        ) : (
+          <div className="notion-group" style={{ fontSize: '13px', fontWeight: 800, color: 'var(--text-main)', letterSpacing: '-0.2px', padding: '16px 16px 8px 16px', borderBottom: '1px solid var(--border-light)', marginBottom: '8px', textTransform: 'none' }}>
+            Webtel HRMS {iaVersion === 2 && <span style={{ color: 'var(--primary-color)', fontSize: '11px', marginLeft: '4px' }}>(Redesign)</span>}
+          </div>
+        )}
+        <nav className="notion-nav">
+          
+          {iaVersion !== 3 && iaVersion !== 4 && (
+            <div style={{ marginBottom: '8px' }}>
+              <a 
+                href="#" 
+                className={location.pathname === '/' ? 'active' : ''} 
+                onClick={(e) => { 
+                  e.preventDefault(); 
+                  setExpandedModule(null);
+                  setV3ActiveModule(null);
+                  navigate('/');
+                }}
+              >
+                <Home size={18} />
+                <span style={{ flex: 1 }}>Home</span>
+              </a>
+            </div>
+          )}
+
+          {iaVersion === 3 || iaVersion === 4 ? (
+            !v3ActiveModule ? (
+              /* V3 Home View */
+              <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                <div style={{ flex: 1, overflowY: 'hidden', padding: '0 12px', paddingBottom: '12px' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px', justifyContent: 'center' }}>
+                    
+                    {/* Home Full Width Button */}
+                    <button
+                      onClick={() => { setV3ActiveModule(null); navigate('/'); }}
+                      style={{
+                        gridColumn: '1 / -1', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '12px 14px', marginBottom: '4px',
+                        background: 'var(--bg-light)', border: '1px solid var(--border-light)', borderRadius: '8px',
+                        cursor: 'pointer', color: 'var(--text-main)', fontSize: '12px', fontWeight: 500,
+                        transition: 'all 0.2s', width: '100%', boxSizing: 'border-box'
+                      }}
+                      onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--primary-color)'; e.currentTarget.style.background = 'var(--primary-subtle)'; }}
+                      onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-light)'; e.currentTarget.style.background = 'var(--bg-light)'; }}
+                    >
+                      <Home size={16} color="var(--primary-color)" />
+                      <span>Home</span>
+                    </button>
+                    {modules.map(mod => {
+                      const moduleNameLower = mod.module.toLowerCase();
+                      const iconKey = Object.keys(currentIconMap).find(k => k.toLowerCase() === moduleNameLower);
+                      const Icon = iconKey ? currentIconMap[iconKey] : Grip;
+                      return (
+                        <button
+                          key={mod.module}
+                          onClick={() => setV3ActiveModule(mod)}
+                          style={{
+                            display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '12px 6px',
+                            background: 'var(--bg-light)', border: '1px solid var(--border-light)', borderRadius: '8px',
+                            cursor: 'pointer', textAlign: 'center', color: 'var(--text-main)', fontSize: '11px', fontWeight: 500,
+                            transition: 'all 0.2s', width: '100%', height: '80px', boxSizing: 'border-box'
+                          }}
+                          onMouseEnter={(e) => { 
+                            e.currentTarget.style.borderColor = 'var(--primary-color)';
+                            e.currentTarget.style.background = 'var(--primary-subtle)';
+                          }}
+                          onMouseLeave={(e) => { 
+                            e.currentTarget.style.borderColor = 'var(--border-light)';
+                            e.currentTarget.style.background = 'var(--bg-light)';
+                          }}
+                        >
+                          <Icon size={20} color="var(--primary-color)" />
+                          <span style={{ lineHeight: '1.2' }}>{mod.module}</span>
+                        </button>
+                      );
+                    })}
+                  </div>
+                </div>
+              </div>
+            ) : (
+              /* V3 Module View */
+              <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
+                <div style={{ padding: '0 12px 12px 12px', borderBottom: '1px solid var(--border-light)', marginBottom: '8px' }}>
+                  <button 
+                    onClick={() => setV3ActiveModule(null)}
+                    style={{ display: 'flex', alignItems: 'center', gap: '6px', background: 'transparent', border: 'none', cursor: 'pointer', color: 'var(--text-secondary)', fontSize: '12px', fontWeight: 500, padding: '4px 0' }}
+                    onMouseEnter={e => e.currentTarget.style.color='var(--text-main)'}
+                    onMouseLeave={e => e.currentTarget.style.color='var(--text-secondary)'}
+                  >
+                    <ChevronLeft size={14} /> Back
+                  </button>
+                  <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-main)', marginTop: '8px' }}>
+                    {v3ActiveModule.module}
+                  </h3>
+                </div>
+
+                <div style={{ flex: 1, overflowY: 'auto', padding: '0 12px' }}>
+                  {v3ActiveModule.categories && v3ActiveModule.categories.map((cat, idx) => {
+                    if (cat.pages && cat.pages.length === 1) {
+                      const page = cat.pages[0];
+                      return (
+                        <button
+                          key={idx}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            navigate(`/page/${page.id}`);
+                          }}
+                          style={{ 
+                            width: '100%',
+                            display: 'block',
+                            padding: '8px 12px',
+                            background: location.pathname === `/page/${page.id}` ? 'var(--primary-light)' : 'transparent',
+                            border: 'none',
+                            borderRadius: '6px',
+                            marginBottom: '2px',
+                            textAlign: 'left',
+                            fontSize: '12px',
+                            fontWeight: 500,
+                            color: location.pathname === `/page/${page.id}` ? 'var(--primary-color)' : 'var(--text-main)',
+                            cursor: 'pointer',
+                            transition: 'all 0.15s'
+                          }}
+                          onMouseEnter={e => e.currentTarget.style.background = location.pathname === `/page/${page.id}` ? 'var(--primary-light)' : 'var(--bg-hover)'}
+                          onMouseLeave={e => e.currentTarget.style.background = location.pathname === `/page/${page.id}` ? 'var(--primary-light)' : 'transparent'}
+                        >
+                          {page.name}
+                        </button>
+                      );
+                    }
+                    
+                    // Button that expands to show content under it
+                    const hasPages = cat.pages && cat.pages.length > 0;
+                    const isActiveCategory = hasPages && cat.pages.some(p => location.pathname === `/page/${p.id}`);
+                    
+                    return (
+                      <V3ExpandableCategory 
+                        key={idx} 
+                        category={cat} 
+                        isActiveCategory={isActiveCategory} 
+                        location={location} 
+                        navigate={navigate} 
+                      />
+                    );
+                  })}
+                </div>
+              </div>
+            )
+          ) : (
+            /* STANDARD RENDER FOR V1, V2, V4 */
             modules.map((mod) => {
               const moduleNameLower = mod.module.toLowerCase();
               const iconKey = Object.keys(currentIconMap).find(k => k.toLowerCase() === moduleNameLower);
@@ -386,125 +538,6 @@ export default function Sidebar() {
                 </div>
               );
             })
-          ) : !v3ActiveModule ? (
-            /* Home View */
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <div style={{ flex: 1, overflowY: 'hidden', padding: '0 12px', paddingBottom: '12px' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '8px', justifyContent: 'center' }}>
-                  
-                  {/* Home Full Width Button */}
-                  <button
-                    onClick={() => { setV3ActiveModule(null); navigate('/'); }}
-                    style={{
-                      gridColumn: '1 / -1', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '12px 14px', marginBottom: '4px',
-                      background: 'var(--bg-light)', border: '1px solid var(--border-light)', borderRadius: '8px',
-                      cursor: 'pointer', color: 'var(--text-main)', fontSize: '12px', fontWeight: 500,
-                      transition: 'all 0.2s', width: '100%', boxSizing: 'border-box'
-                    }}
-                    onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--primary-color)'; e.currentTarget.style.background = 'var(--primary-subtle)'; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-light)'; e.currentTarget.style.background = 'var(--bg-light)'; }}
-                  >
-                    <Home size={16} color="var(--primary-color)" />
-                    <span>Home</span>
-                  </button>
-                  {modules.map(mod => {
-                    const moduleNameLower = mod.module.toLowerCase();
-                    const iconKey = Object.keys(currentIconMap).find(k => k.toLowerCase() === moduleNameLower);
-                    const Icon = iconKey ? currentIconMap[iconKey] : Grip;
-                    return (
-                      <button
-                        key={mod.module}
-                        onClick={() => setV3ActiveModule(mod)}
-                        style={{
-                          display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: '8px', padding: '12px 6px',
-                          background: 'var(--bg-light)', border: '1px solid var(--border-light)', borderRadius: '8px',
-                          cursor: 'pointer', textAlign: 'center', color: 'var(--text-main)', fontSize: '11px', fontWeight: 500,
-                          transition: 'all 0.2s', width: '100%', height: '80px', boxSizing: 'border-box'
-                        }}
-                        onMouseEnter={(e) => { 
-                          e.currentTarget.style.borderColor = 'var(--primary-color)';
-                          e.currentTarget.style.background = 'var(--primary-subtle)';
-                        }}
-                        onMouseLeave={(e) => { 
-                          e.currentTarget.style.borderColor = 'var(--border-light)';
-                          e.currentTarget.style.background = 'var(--bg-light)';
-                        }}
-                      >
-                        <Icon size={20} color="var(--primary-color)" />
-                        <span style={{ lineHeight: '1.2' }}>{mod.module}</span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
-            </div>
-          ) : (
-            /* Module View */
-            <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-              <div style={{ padding: '0 12px 12px 12px', borderBottom: '1px solid var(--border-light)', marginBottom: '8px' }}>
-                <button 
-                  onClick={() => setV3ActiveModule(null)}
-                  style={{ display: 'flex', alignItems: 'center', gap: '6px', background: 'transparent', border: 'none', cursor: 'pointer', color: 'var(--text-secondary)', fontSize: '12px', fontWeight: 500, padding: '4px 0' }}
-                  onMouseEnter={e => e.currentTarget.style.color='var(--text-main)'}
-                  onMouseLeave={e => e.currentTarget.style.color='var(--text-secondary)'}
-                >
-                  <ChevronLeft size={14} /> Back
-                </button>
-                <h3 style={{ fontSize: '14px', fontWeight: 600, color: 'var(--text-main)', marginTop: '8px' }}>
-                  {v3ActiveModule.module}
-                </h3>
-              </div>
-
-              <div style={{ flex: 1, overflowY: 'auto', padding: '0 12px' }}>
-                {v3ActiveModule.categories && v3ActiveModule.categories.map((cat, idx) => {
-                  if (cat.pages && cat.pages.length === 1) {
-                    const page = cat.pages[0];
-                    return (
-                      <button
-                        key={idx}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          navigate(`/page/${page.id}`);
-                        }}
-                        style={{ 
-                          width: '100%',
-                          display: 'block',
-                          padding: '8px 12px',
-                          background: location.pathname === `/page/${page.id}` ? 'var(--primary-light)' : 'transparent',
-                          border: 'none',
-                          borderRadius: '6px',
-                          marginBottom: '2px',
-                          textAlign: 'left',
-                          fontSize: '12px',
-                          fontWeight: 500,
-                          color: location.pathname === `/page/${page.id}` ? 'var(--primary-color)' : 'var(--text-main)',
-                          cursor: 'pointer',
-                          transition: 'all 0.15s'
-                        }}
-                        onMouseEnter={e => e.currentTarget.style.background = location.pathname === `/page/${page.id}` ? 'var(--primary-light)' : 'var(--bg-hover)'}
-                        onMouseLeave={e => e.currentTarget.style.background = location.pathname === `/page/${page.id}` ? 'var(--primary-light)' : 'transparent'}
-                      >
-                        {page.name}
-                      </button>
-                    );
-                  }
-                  
-                  // Button that expands to show content under it
-                  const hasPages = cat.pages && cat.pages.length > 0;
-                  const isActiveCategory = hasPages && cat.pages.some(p => location.pathname === `/page/${p.id}`);
-                  
-                  return (
-                    <V3ExpandableCategory 
-                      key={idx} 
-                      category={cat} 
-                      isActiveCategory={isActiveCategory} 
-                      location={location} 
-                      navigate={navigate} 
-                    />
-                  );
-                })}
-              </div>
-            </div>
           )}
         </nav>
       </div>
