@@ -3,7 +3,6 @@ import { useParams, Link } from 'react-router-dom';
 import { useMenu } from '../context/MenuContext';
 import v1IA from '../data/v1-ia.json';
 import v2IA from '../data/v2-ia.json';
-import v3IA from '../data/v3-ia.json';
 import { LayoutGrid, FileText } from 'lucide-react';
 import LegacyParser from '../components/layout/LegacyParser';
 
@@ -12,7 +11,7 @@ export default function GenericPage() {
   const { iaVersion } = useMenu();
 
   // Find the page metadata across whichever JSON is currently active
-  const currentIA = iaVersion === 3 ? v3IA : (iaVersion === 2 ? v2IA : v1IA);
+  const currentIA = iaVersion === 2 ? v2IA : v1IA;
 
   let currentPage = null;
   let currentModule = null;
@@ -47,7 +46,7 @@ export default function GenericPage() {
       {/* Dynamic UX Pattern Demonstration */}
       <div style={{ flex: 1, padding: '32px', overflow: 'auto', background: 'var(--bg-light)' }}>
         
-        {iaVersion === 1 || iaVersion === 3 ? (
+        {iaVersion === 1 ? (
           <LegacyParser page={currentPage} />
         ) : iaVersion === 2 && isMerged ? (
           /* MERGED PAGE INDICATOR FOR V2 REDESIGN */

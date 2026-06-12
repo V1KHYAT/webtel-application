@@ -9,7 +9,6 @@ import {
 } from 'lucide-react';
 import v1IA from '../../data/v1-ia.json';
 import v2IA from '../../data/v2-ia.json';
-import v3IA from '../../data/v3-ia.json';
 import { useMenu } from '../../context/MenuContext';
 import { useNavigate, useLocation } from 'react-router-dom';
 
@@ -249,8 +248,8 @@ export default function Sidebar() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // Get current modules based on version
   const modules = useMemo(() => {
-    if (iaVersion === 3) return v3IA.navigation;
     if (iaVersion === 2) return v2IA.navigation;
     return v1IA.navigation;
   }, [iaVersion]);
@@ -296,97 +295,7 @@ export default function Sidebar() {
           </div>
         
                 <nav className="notion-nav">
-          {iaVersion === 3 ? (
-            modules.map((mod) => {
-              const moduleNameLower = mod.module.toLowerCase();
-              const iconKey = Object.keys(currentIconMap).find(k => k.toLowerCase() === moduleNameLower);
-              const Icon = iconKey ? currentIconMap[iconKey] : Grip;
-              const isExpanded = expandedModule === mod.module;
-              return (
-                <div key={mod.module}>
-                  <a 
-                    href="#" 
-                    className={isExpanded ? 'active' : ''}
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setExpandedModule(isExpanded ? null : mod.module);
-                    }}
-                  >
-                    <Icon size={18} />
-                    <span style={{ flex: 1 }}>{mod.module}</span>
-                    {isExpanded ? <ChevronDown size={14} /> : <ChevronRight size={14} />}
-                  </a>
-                  
-                  {isExpanded && (
-                    <div className="notion-submenu" style={{ paddingLeft: '8px' }}>
-                      <div style={{ marginTop: '4px', marginBottom: '8px' }}>
-                        {mod.categories && mod.categories.map((cat, idx) => {
-                          if (cat.pages && cat.pages.length === 1) {
-                            const page = cat.pages[0];
-                            return (
-                              <a 
-                                key={idx}
-                                href="#"
-                                title={page.mergedFrom ? `Merged from: \n- ${page.mergedFrom.join('\n- ')}` : undefined}
-                                onClick={(e) => {
-                                  e.preventDefault();
-                                  navigate(`/page/${page.id}`);
-                                }}
-                                style={{ 
-                                  fontSize: '12px', 
-                                  padding: '6px 10px', 
-                                  display: 'block', 
-                                  color: location.pathname === `/page/${page.id}` ? 'var(--primary-color)' : 'var(--text-secondary)',
-                                  background: location.pathname === `/page/${page.id}` 
-                                    ? 'var(--primary-light)' 
-                                    : (page.mergedFrom ? 'rgba(250, 204, 21, 0.15)' : 'transparent'),
-                                  fontWeight: location.pathname === `/page/${page.id}` ? 600 : 500,
-                                  borderRadius: 'var(--radius-sm)',
-                                  textDecoration: 'none',
-                                  marginBottom: '4px',
-                                  border: page.mergedFrom ? '1px solid rgba(250, 204, 21, 0.3)' : '1px solid transparent'
-                                }}
-                                onMouseEnter={(e) => {
-                                  if (location.pathname !== `/page/${page.id}`) {
-                                    e.currentTarget.style.color = 'var(--primary-color)';
-                                    e.currentTarget.style.background = page.mergedFrom ? 'rgba(250, 204, 21, 0.3)' : 'var(--primary-subtle)';
-                                  }
-                                }}
-                                onMouseLeave={(e) => {
-                                  if (location.pathname !== `/page/${page.id}`) {
-                                    e.currentTarget.style.color = 'var(--text-secondary)';
-                                    e.currentTarget.style.background = page.mergedFrom ? 'rgba(250, 204, 21, 0.15)' : 'transparent';
-                                  }
-                                }}
-                              >
-                                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                                  <span>{page.name}</span>
-                                  {page.mergedFrom && (
-                                    <span style={{ 
-                                      fontSize: '9px', 
-                                      background: '#fef08a', 
-                                      color: '#854d0e', 
-                                      padding: '2px 6px', 
-                                      borderRadius: '8px',
-                                      fontWeight: 700,
-                                      letterSpacing: '0.5px'
-                                    }}>
-                                      MERGED
-                                    </span>
-                                  )}
-                                </div>
-                              </a>
-                            );
-                          }
-                          return <NestedMenuItemPages key={idx} category={cat} />;
-                        })}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              );
-            })
-          ) : !v3ActiveModule ? (
+          {!v3ActiveModule ? (
             /* Home View */
             <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
               <div style={{ flex: 1, overflowY: 'hidden', padding: '0 12px', paddingBottom: '12px' }}>
