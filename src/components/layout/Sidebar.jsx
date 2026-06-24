@@ -5,7 +5,7 @@ import {
   PieChart, Grip, Plane, Target, GraduationCap, 
   Briefcase, UserPlus, ChevronRight, ChevronDown, Home,
   FileUp, Settings as SettingsIcon, Database, Clock, CreditCard, TrendingUp, Receipt, BarChart3,
-  Search, ChevronLeft, Banknote, BookOpen, Heart, UserMinus, Shield, Grid
+  Search, ChevronLeft, Banknote, BookOpen, Heart, UserMinus, Shield, Grid, Bell, Menu
 } from 'lucide-react';
 import v1IA from '../../data/v1-ia.json';
 import v2IA from '../../data/v2-ia.json';
@@ -51,7 +51,7 @@ const iconMapV2 = {
   "Reports": BarChart3
 };
 
-const SidebarItem = ({ item, depth = 0 }) => {
+const SidebarItem = ({ item, depth = 0, iaVersion }) => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
@@ -59,6 +59,8 @@ const SidebarItem = ({ item, depth = 0 }) => {
   const isPage = item.type === 'page';
   const hasChildren = item.items && item.items.length > 0;
   const isActive = isPage && location.pathname === `/page/${item.id}`;
+
+  const Icon = depth === 0 ? (iaVersion === 2 ? iconMapV2[item.module] : iconMapV1[item.module]) || Grid : null;
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -69,8 +71,49 @@ const SidebarItem = ({ item, depth = 0 }) => {
     }
   };
 
+  if (depth === 0) {
+    return (
+      <div style={{ borderBottom: '1px solid var(--border-light)' }}>
+        <a
+          href="#"
+          onClick={handleClick}
+          style={{
+            display: 'flex',
+            alignItems: 'center',
+            padding: '14px 20px',
+            textDecoration: 'none',
+            background: isOpen ? 'rgba(0, 0, 0, 0.04)' : 'transparent',
+            transition: 'background 0.2s',
+            cursor: 'pointer'
+          }}
+          onMouseEnter={e => { e.currentTarget.style.background = 'rgba(0, 0, 0, 0.04)'; }}
+          onMouseLeave={e => { if(!isOpen) e.currentTarget.style.background = 'transparent'; }}
+        >
+          {Icon && <Icon size={20} style={{ color: 'var(--text-main)', marginRight: '14px', flexShrink: 0 }} strokeWidth={1.5} />}
+          <div style={{ flex: 1 }}>
+            <span style={{ fontSize: '14px', fontWeight: 500, color: 'var(--text-main)', letterSpacing: '-0.2px' }}>
+              {item.name || item.module}
+            </span>
+          </div>
+          {hasChildren && (
+            <ChevronRight size={16} style={{ color: 'var(--text-muted)', flexShrink: 0, transform: isOpen ? 'rotate(90deg)' : 'none', transition: 'transform 0.2s' }} />
+          )}
+        </a>
+        
+        {isOpen && hasChildren && (
+          <div style={{ background: 'rgba(0,0,0,0.015)', borderTop: '1px solid rgba(0,0,0,0.04)', paddingBottom: '8px', paddingTop: '4px' }}>
+            {item.items.map((child, idx) => (
+              <SidebarItem key={idx} item={child} depth={depth + 1} iaVersion={iaVersion} />
+            ))}
+          </div>
+        )}
+      </div>
+    );
+  }
+
+  // Nested Items
   return (
-    <div style={{ marginTop: depth === 0 ? '4px' : '2px' }}>
+    <div>
       <a
         href="#"
         onClick={handleClick}
@@ -78,30 +121,29 @@ const SidebarItem = ({ item, depth = 0 }) => {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          padding: `6px 12px 6px ${12 + depth * 12}px`,
-          fontSize: depth === 0 ? '13px' : '12px',
-          fontWeight: depth === 0 ? 600 : (isActive ? 600 : 500),
-          color: isActive ? 'var(--primary-color)' : 'var(--text-main)',
-          background: isActive ? 'var(--primary-light)' : (isOpen && depth === 0 ? 'var(--bg-hover)' : 'transparent'),
+          padding: `10px 20px 10px ${20 + depth * 16}px`,
+          fontSize: '13.5px',
+          fontWeight: isActive ? 600 : 400,
+          color: isActive ? 'var(--primary-hover)' : 'var(--text-secondary)',
+          background: isActive ? 'var(--primary-light)' : 'transparent',
           textDecoration: 'none',
-          borderRadius: 'var(--radius-sm)',
           transition: 'background 0.15s, color 0.15s'
         }}
         onMouseEnter={e => {
-          if (!isActive) e.currentTarget.style.background = 'var(--bg-hover)';
+          if (!isActive) e.currentTarget.style.background = 'var(--border-light)';
         }}
         onMouseLeave={e => {
-          if (!isActive) e.currentTarget.style.background = (isOpen && depth === 0 ? 'var(--bg-hover)' : 'transparent');
+          if (!isActive) e.currentTarget.style.background = 'transparent';
         }}
       >
         <span style={{ lineHeight: '1.4' }}>{item.name || item.module}</span>
-        {hasChildren && (isOpen ? <ChevronDown size={14} style={{flexShrink:0}}/> : <ChevronRight size={14} style={{flexShrink:0}}/>)}
+        {hasChildren && (isOpen ? <ChevronDown size={14} style={{color: 'var(--text-muted)'}}/> : <ChevronRight size={14} style={{color: 'var(--text-muted)'}}/>)}
       </a>
       
       {isOpen && hasChildren && (
-        <div style={{ paddingLeft: '4px' }}>
+        <div>
           {item.items.map((child, idx) => (
-            <SidebarItem key={idx} item={child} depth={depth + 1} />
+            <SidebarItem key={idx} item={child} depth={depth + 1} iaVersion={iaVersion} />
           ))}
         </div>
       )}
@@ -110,7 +152,6 @@ const SidebarItem = ({ item, depth = 0 }) => {
 };
 
 export default function Sidebar() {
-  const [searchQuery, setSearchQuery] = useState('');
   const { iaVersion } = useMenu();
   const navigate = useNavigate();
 
@@ -120,45 +161,39 @@ export default function Sidebar() {
   }, [iaVersion]);
 
   return (
-    <div className="sidebar-column" style={{ position: 'relative' }}>
-      <div className="notion-sidebar">
-        <div style={{ padding: '16px', background: 'var(--primary-color)', borderBottom: '1px solid var(--border-light)', marginBottom: '8px' }}>
-          <div style={{ position: 'relative' }}>
-            <Search size={14} style={{ position: 'absolute', left: '10px', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-secondary)' }} />
-            <input 
-              type="text" 
-              placeholder="Search Webtel..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              style={{ width: '100%', padding: '8px 12px 8px 32px', borderRadius: '6px', border: 'none', fontSize: '13px', background: '#fff' }}
-            />
-          </div>
+    <div className="sidebar-column" style={{ 
+      width: '280px', 
+      minWidth: '280px', 
+      maxWidth: '280px', 
+      margin: '0', 
+      height: '100%', 
+      background: 'rgba(255, 255, 255, 0.65)', 
+      backdropFilter: 'blur(24px) saturate(180%)',
+      WebkitBackdropFilter: 'blur(24px) saturate(180%)',
+      borderRight: '1px solid rgba(255, 255, 255, 0.4)',
+      boxShadow: '1px 0 24px rgba(0,0,0,0.03)',
+      display: 'flex', 
+      flexDirection: 'column',
+      overflow: 'hidden'
+    }}>
+      
+      {/* Settings / Header like Paytm */}
+      <div style={{ padding: '24px 24px 16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', background: 'transparent' }}>
+        <h1 style={{ fontSize: '24px', fontWeight: 700, color: 'var(--text-main)', letterSpacing: '-0.5px', margin: 0 }}>
+          Webtel HR
+        </h1>
+        <div style={{ display: 'flex', gap: '16px' }}>
+          <Search size={22} style={{ color: 'var(--text-main)', cursor: 'pointer' }} strokeWidth={2} />
+          <Bell size={22} style={{ color: 'var(--text-main)', cursor: 'pointer' }} strokeWidth={2} />
         </div>
-        <nav className="notion-nav">
-          <div style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
-            <div style={{ flex: 1, overflowY: 'auto', padding: '0 8px' }}>
-              <button
-                onClick={() => navigate('/')}
-                style={{
-                  display: 'flex', alignItems: 'center', gap: '8px', padding: '8px 12px', marginBottom: '8px',
-                  background: 'transparent', border: 'none', borderRadius: '6px',
-                  cursor: 'pointer', color: 'var(--text-main)', fontSize: '13px', fontWeight: 600,
-                  width: '100%', textAlign: 'left', transition: 'background 0.2s'
-                }}
-                onMouseEnter={e => e.currentTarget.style.background = 'var(--bg-hover)'}
-                onMouseLeave={e => e.currentTarget.style.background = 'transparent'}
-              >
-                <Home size={16} color="var(--primary-color)" />
-                <span>Home</span>
-              </button>
-              
-              {modules.map((mod, idx) => (
-                <SidebarItem key={idx} item={mod} depth={0} />
-              ))}
-            </div>
-          </div>
-        </nav>
       </div>
+
+      <div style={{ flex: 1, overflowY: 'auto' }}>
+        {modules.map((mod, idx) => (
+          <SidebarItem key={idx} item={mod} depth={0} iaVersion={iaVersion} />
+        ))}
+      </div>
+
     </div>
   );
 }

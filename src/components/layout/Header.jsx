@@ -45,26 +45,19 @@ export default function Header() {
       display: 'flex', 
       justifyContent: 'space-between', 
       alignItems: 'center', 
-      marginBottom: '32px',
-      paddingBottom: '16px',
+      marginBottom: 'var(--space-4)',
+      paddingBottom: 'var(--space-2)',
       borderBottom: '1px solid var(--border-light)'
     }}>
       <div>
-        <h1 style={{ fontSize: '22px', fontWeight: 700, color: 'var(--text-main)', margin: 0, letterSpacing: '-0.5px' }}>
-          {currentPageName}
+        <h1 style={{ fontSize: location.pathname === '/' ? 'var(--text-xl)' : 'var(--text-lg)', fontWeight: 700, color: 'var(--text-main)', margin: '0 0 var(--space-0-5) 0', letterSpacing: '-0.5px' }}>
+          {location.pathname === '/' ? 'Good morning, Vikhyat 👋' : currentPageName}
         </h1>
-      </div>
-      
-      <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-        <button className="btn-ghost" style={{ padding: '8px' }}>
-          <Bell size={18} />
-        </button>
-        <button className="btn-ghost" style={{ padding: '8px' }}>
-          <Settings size={18} />
-        </button>
-        <button className="btn-ghost" style={{ padding: '8px', color: 'var(--accent-red)' }}>
-          <LogOut size={18} />
-        </button>
+        {location.pathname === '/' && (
+          <p style={{ fontSize: 'var(--text-sm)', color: 'var(--text-secondary)', margin: 0 }}>
+            Here is what's happening across your organization today.
+          </p>
+        )}
       </div>
     </header>
   );

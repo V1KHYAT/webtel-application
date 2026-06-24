@@ -5,6 +5,7 @@ export const MenuContext = createContext();
 export function MenuProvider({ children }) {
   const [iaVersion, setIaVersion] = useState(1);
   const [navLayout, setNavLayout] = useState('topbar');
+  const [dropdownStyle, setDropdownStyle] = useState('classic');
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -17,6 +18,8 @@ export function MenuProvider({ children }) {
         setIaVersion(2);
       } else if (e.key.toLowerCase() === 'o') {
         setNavLayout(prev => prev === 'sidebar' ? 'topbar' : 'sidebar');
+      } else if (e.key.toLowerCase() === 'p') {
+        setDropdownStyle(prev => prev === 'classic' ? 'mega' : 'classic');
       }
     };
 
@@ -25,7 +28,7 @@ export function MenuProvider({ children }) {
   }, []);
 
   return (
-    <MenuContext.Provider value={{ iaVersion, navLayout }}>
+    <MenuContext.Provider value={{ iaVersion, navLayout, dropdownStyle }}>
       {children}
     </MenuContext.Provider>
   );
